@@ -1,7 +1,7 @@
 body,html{
     height: 100%;
     margin: 0;
-    font-family: "Letter Gothic Std";
+    font-family: "Lucida Sans Unicode";
 }
 *{
     box-sizing: border-box;
@@ -14,7 +14,7 @@ body,html{
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    border: 3px solid #f1f1f1;
+    border: 2px solid #f1f1f1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,4 +67,44 @@ body,html{
 .info1:hover {
     background: #2196F3;
     color: white;
+}
+
+/*FOOTER **/
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40%;
+}
+.fa-facebook{
+    background:#3B5998;
+    color:white;
+}
+.fa-twitter{
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+
+.footer{
+    position: absolute;
+    width: 100px;
+    bottom: 8px;
+    left:16px;
+    color:#63A0CC;
 }
