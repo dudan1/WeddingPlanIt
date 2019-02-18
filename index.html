@@ -1,10 +1,70 @@
 <!DOCTYPE html>
+<!-- code adapted from source: www.w3schools.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Wedding PlanIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
+<p align="right">
+    <img src="assets/images/logo.png" valign="middle" style="float:right"><img>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:200px;height:auto;float:right">Existing Users: LOGIN</button><button onclick="document.getElementById('id01').style.display='block'" style="width:300px;height:auto;float:right">Not registered? SIGN UP HERE</button>
+
+</p>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="assets/images/avatar.png" alt="Avatar" height="50" width="50px">
+        </div>
+
+        <div class="container">
+            <h2>REGISTER:</h2>
+            <p>User type.  Are you: <input list="UserType" placeholder="Click to select">
+                <datalist id="UserType">
+                    <option value="a Service Provider?">
+                    <option value="a Customer?">
+                </datalist>
+            <p>Your email: <input type="email" name="email"></p>
+            <p>Password: <input type="password" required name="pwd1"></p>
+            <p>Confirm Password: <input type="password" required name="pwd2"></p>
+
+            <button type="submit">Sign Up!</button>
+
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+        </div>
+    </form>
+</div>
+
+<div id="id02" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="assets/images/avatar.png" alt="Avatar" height="50" width="50" bgcolor="red">
+        </div>
+        <div class="container">
+            <h2>LOGIN:</h2>
+
+            <p>Your email: <input type="email" name="email"></p>
+            <p>Your Password: <input type="password" required name="pwd1"></p>
+
+            <button type="submit">Log in</button>
+
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+        </div>
+    </form>
+</div>
+
+
 
 </body>
 </html>
