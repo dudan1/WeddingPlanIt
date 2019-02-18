@@ -24,7 +24,7 @@
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="/action_page.php">
+    <form class="modal-content animate" action="/PHP_database_insert/process.php" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="assets/images/avatar.png" alt="Avatar" height="50" width="50px">
@@ -33,7 +33,7 @@
         <div class="container">
             <h2>REGISTER:</h2>
             <p>User type.  Are you: <input list="UserType" placeholder="Click to select">
-                <datalist id="UserType">
+                <datalist id="UserType" name="user_type">
                     <option value="a Service Provider?">
                     <option value="a Customer?">
                 </datalist>
