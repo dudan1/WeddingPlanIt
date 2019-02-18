@@ -16,7 +16,6 @@ if (mysqli_query($connection, $sql)){
 
     echo "Error: Could not execute." . mysqli_error($connection);
 }
-
 mysqli_close($connection);
 ?>
 
