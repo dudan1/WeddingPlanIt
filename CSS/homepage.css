@@ -34,8 +34,7 @@ body,html{
 
     position: absolute;
     top: 60px;
-    right: 30px;
-
+    right: 90px;
 }
 .info {
     border-color: #2196F3;
@@ -44,6 +43,28 @@ body,html{
 }
 
 .info:hover {
+    background: #2196F3;
+    color: white;
+}
+.btn1 {
+    border: 2px solid black;
+    background-color: gainsboro;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 60px;
+    right: 210px;
+}
+.info1 {
+    border-color: #2196F3;
+    color: dodgerblue
+
+}
+
+.info1:hover {
     background: #2196F3;
     color: white;
 }
