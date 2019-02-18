@@ -12,7 +12,7 @@ require_once('test-db.php');
 if ($connection === false) {
     die("Error: Could not connect. " . mysqli_connect_error());
 }
-if(!isset($_POST['email'], $_POST['password'])){
+if(!isset($_POST['email'], $_POST['pwd1'])){
     die('Username or password does not exist');
 }
 
