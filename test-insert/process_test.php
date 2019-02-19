@@ -11,7 +11,7 @@ $sql = "INSERT INTO test (first_name, surname, email, password) VALUES ('$_POST[
 
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
-    header('Location:home.php');
+    header('Location:home_test.php');
 } else {
 
     echo "Error: Could not execute." . mysqli_error($connection);

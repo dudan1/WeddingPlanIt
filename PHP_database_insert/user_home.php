@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:../prototype_login.html");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +15,9 @@
 </header>
 <main>
     <p>Hi ... you have successfully logged in</p>
+    <a href="logout.php">Log Out</a>
 </main>
+
 <footer>
     <p>&copy; <?php echo date("Y"); ?> Wedding Planit</p>
 </footer>

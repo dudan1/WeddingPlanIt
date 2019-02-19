@@ -6,16 +6,35 @@
  * Time: 16:11
  */
 session_start();
-require_once('test-db.php');
+require_once('db.php');
 
 // Check connection
 if ($connection === false) {
     die("Error: Could not connect. " . mysqli_connect_error());
 }
-if(!isset($_POST['email'], $_POST['pwd1'])){
-    die('Username or password does not exist');
+$email = $_POST['email'];
+
+$password = $_POST['pwd1'];
+
+
+
+$sql = "Select email, password FROM users WHERE '$email' = email AND '$password' = password";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$active = $row['active'];
+
+$count =mysqli_num_rows($result);
+
+if($count == 1){
+    $_SESSION['name'] =$email;
+    $_SESSION['password'] = $password;
+    header('Location:user_home.php');
+
+}
+else{
+    $error = 'Your login email or password is invalid';
+    header('Location:../index.html');
 }
 
-session_destroy();
 
 
