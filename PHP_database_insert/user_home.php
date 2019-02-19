@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:../prototype_login.html");
+    header("Location:../index.html");
 ?>
 <!DOCTYPE html>
 <html>
