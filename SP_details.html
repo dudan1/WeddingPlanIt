@@ -3,8 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Additional Service Provider Details</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="CSS/homepage.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--<link rel="stylesheet" href="CSS/styles.css">-->
+
+
+    <style>
+        .bg-image{
+            background-image: url('assets/images/wed.jpg');
+            filter: blur(2px);
+            -webkit-filter:blur(2px);
+            z-index: -1;
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
 </head>
+
 <body>
-<p>This is where the Additional Service Provider Details form would be</p>
+<header>
+
+</header>
+
+
+<div class="bg-image"></div>
+
+</div>
+
+<div class = "bg-text1">
+
+    <form action="/action_page.php#">
+    <h1 style="font-size:50px">Your Service Provider Details</h1>
+    <p>Please enter the following details for email address (email).</p>
+    <!--<p>Your email: <input type="email" required name="email"></p>-->
+    <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"></p>
+    <p>Your personal first name: <input type="text" required name="first_name" maxlength="20"></p>
+    <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
+    <p>Your personal address: <input type="text" required name="address" maxlength="60"></p>
+    <p>Your personal postcode: <input type="text" required name="business_name" maxlength="40"></p>
+    <p>The category of your business:
+        <select name="category">
+            <option value="beautician">Beautician</option>
+            <option value="caterer">Caterer</option>
+            <option value="jeweller">Jeweller</option>
+            <option value="venue">Venue</option>
+        </select></p>
+        <button type="submit">Submit details</button>
+
+        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
+    </form>
+
+</div>
+
+
+<footer class="footer">
+    <!--<p>DJNT (c) 2019</p>-->
+    <p>Join us on</p>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-youtube"></a>
+
+
+</footer>
+
 </body>
+
+
 </html>
