@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:signin.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
