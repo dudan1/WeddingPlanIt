@@ -19,6 +19,8 @@ if ($connection === false) {
     //Redirect to correct additional details form
     if($_POST[user_type] == 'Service Provider'){
         header('Location:../SP_details.html');
+        $SPsql = "INSERT INTO Contractor(email) SELECT email FROM Users WHERE email = '$_POST[email]'";
+        mysqli_query($connection, $SPsql);
     }
     else if($_POST[user_type] == 'Customer'){
         header('Location:../cust_details.html');
