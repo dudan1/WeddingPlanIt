@@ -1,5 +1,5 @@
-
 <?php
+
 session_start();
 require_once('db.php');
 
@@ -7,14 +7,13 @@ require_once('db.php');
 if ($connection === false) {
     die("Error: Could not connect. " . mysqli_connect_error());
 }
+
 //Retrieve email from Session
 $session_email = $_SESSION['name'];
 
-
 // Attempt to insert into database
-
-$sql = "INSERT INTO service_provider (email, first_name, surname, address, postcode, category, business_name) 
-            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]','$_POST[address]','$_POST[postcode]','$_POST[category]','$_POST[business_name]')";
+$sql = "INSERT INTO customer (email, first_name, surname) 
+            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
     header('Location:user_home.php');
