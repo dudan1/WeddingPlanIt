@@ -1,7 +1,7 @@
 body,html{
     height: 100%;
     margin: 0;
-    font-family: "Lucida Sans Unicode";
+    font-family:"Trebuchet MS",Helvetica, "Sans-serif";;
 }
 *{
     box-sizing: border-box;
@@ -17,10 +17,9 @@ body,html{
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-
     position: absolute;
     top: 60px;
-    right: 90px;
+    right: 140px;
 }
 .info {
     border-color: #2196F3;
@@ -42,7 +41,7 @@ body,html{
 
     position: absolute;
     top: 60px;
-    right: 210px;
+    right: 270px;
 }
 .info1 {
     border-color: #2196F3;
@@ -55,7 +54,7 @@ body,html{
     color: white;
 }
 
-/*FOOTER **/
+/*FOOTER  left: 25px; **/
 .fa {
     padding: 10px;
     font-size: 30px;
@@ -63,19 +62,21 @@ body,html{
     text-align: center;
     text-decoration: none;
     border-radius: 40%;
+
+
 }
 .fa-facebook{
     background:#3B5998;
     color:white;
+    position: absolute;
+    left: 110px;
+
 }
 .fa-twitter{
     background: #55ACEE;
     color: white;
 }
-.fa-youtube {
-    background: #bb0000;
-    color: white;
-}
+
 
 .fa-instagram {
     background: #125688;
@@ -88,9 +89,15 @@ body,html{
 
 
 .footer{
-    position: absolute;
+    position:absolute;
+    left:16px;
     width: 100px;
     bottom: 8px;
-    left:16px;
-    color:#63A0CC;
+    color:#1685A6;
+    /**#63A0CC;**/
+}
+.logo img {
+    width: 200px;
+    height: auto;
+    float: left;
 }
