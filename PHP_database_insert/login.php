@@ -18,7 +18,7 @@ $password = $_POST['pwd1'];
 
 
 
-$sql = "Select email, password FROM users WHERE '$email' = email AND '$password' = password";
+$sql = "Select email, password, user_type FROM users WHERE '$email' = email AND '$password' = password";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $active = $row['active'];
@@ -28,8 +28,16 @@ $count =mysqli_num_rows($result);
 if($count == 1){
     $_SESSION['name'] =$email;
     $_SESSION['password'] = $password;
-    header('Location:user_home.php');
 
+    if($row['user_type'] == 'Customer'){
+        header('Location:../Cust_Homepage.php');
+    }
+    elseif($row['user_type'] == 'Service Provider'){
+        header('Location:../SP_Homepage.php');
+    }
+    else{
+        echo 'User Type is invalid';
+    }
 }
 else{
     $error = 'Your login email or password is invalid';

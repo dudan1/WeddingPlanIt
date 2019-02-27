@@ -12,7 +12,7 @@ if ($connection === false) {
     $session_user_type = $_POST['user_type'];
 
 $_SESSION['name'] =$session_email;
-$_SESSION['user_type'] = $user_type;
+$_SESSION['user_type'] = $session_user_type;
 
 
 
