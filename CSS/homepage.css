@@ -53,6 +53,28 @@ body,html{
     background: #2196F3;
     color: white;
 }
+.btn2 {
+    border: 2px solid black;
+    background-color: gainsboro;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 60px;
+    right: 400px;
+}
+.info2 {
+    border-color: #2196F3;
+    color: dodgerblue
+
+}
+
+.info2:hover {
+    background: #2196F3;
+    color: white;
+}
 
 /*FOOTER  left: 25px; **/
 .fa {
