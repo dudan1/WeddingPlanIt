@@ -16,10 +16,19 @@ $sql = "INSERT INTO customer (email, first_name, surname)
             VALUES ('$session_email','$_POST[first_name]','$_POST[surname]')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
-    header('Location:user_home.php');
-} else {
+
+   if($_SESSION['user_type'] == 'Customer'){
+       header('Location:../Cust_Homepage.php');
+   }
+   elseif($_SESSION['user_type'] == 'Service Provider'){
+       header('Location:../SP_Homepage.php');
+   }
+   else{
+       echo 'User type invalid';
+   }
+}
+else {
     echo "Error: Could not execute." . mysqli_error($connection);
 }
 mysqli_close($connection);
-session_destroy();
 ?>
