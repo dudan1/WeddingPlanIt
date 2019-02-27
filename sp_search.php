@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Customer Search Page</title>
+    <title>Service Provider Search Page</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
-    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
+    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
@@ -59,29 +59,41 @@
             <li><a href="#">HOME</a></li>
             <li><a href="#">CONTACT US</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="#">MY PLAN</a></li>
+            <li><a href="#">OUR CUSTOMERS</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
         </ul>
     </nav>
     </div>
-    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
-    <div id="id02" class="modal">
+    <p><button class="btn3 info3" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
+    <div id="id01" class="modal">
 
         <form class="modal-content animate" action="php" method="post">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
-                <h1 style="font-size:50px">Your customer Details</h1>
-                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
-                <!--<p>Your email: <input type="email" required name="email"></p>-->
-                <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
-
+                <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"></p>
+                <p>Your personal first name: <input type="text" required name="first_name" maxlength="20"></p>
+                <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
+                <p>Your personal address: <input type="text" required name="address" maxlength="60"></p>
+                <p>Your personal postcode: <input type="text" required name="postcode" maxlength="8"></p>
+                <p>The category of your business:
+                    <select name="Category">
+                        <option value="beautician">Beautician</option>
+                        <option value="caterer">Caterer</option>
+                        <option value="jeweller">Jeweller</option>
+                        <option value="venue">Venue</option>
+                        <option value="flowers">Flowers </option>
+                        <option value="photography">Photography </option>
+                        <option value="music">Music</option>
+                        <option value=" Beauticians">Beauticians</option>
+                        <option value="decor">Decor</option>
+                        <option value="weddingplanners">Wedding Planners</option>
+                        <option value="dressers">Dresses</option>
+                    </select></p>
                 <button type="submit">Submit details</button>
-
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
             </div>
         </form>
