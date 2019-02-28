@@ -1,48 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
     <meta charset="UTF-8">
-    <title>Service Provider Details</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="CSS/homepage.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Service Provider Search Page</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
-
     <style>
-        .bg-image{
-            background-image: url('assets/images/wed.jpg');
-            filter: blur(2px);
-            -webkit-filter:blur(2px);
-            z-index: -1;
-            /* Full height */
-            height: 100%;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .heading{
+            position: absolute;
+            padding-left: 400px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
+            font-size: 20px;
         }
+        h2{
+            color:darkseagreen;
+            font-size: 70px;
+            text-align: center;
+            margin-top: 275px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
+        }
+        .row{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .logo img{
+            width: 200px;
+            height:auto;
+            float: left;
+        }
+        .main-nav{
+            float: right;
+            list-style: none;
+            margin-top: 30px;
+        }
+        .main-nav li{
+            display:inline-block;
+        }
+        .main-nav li a{
+            color: darkseagreen;
+            text-decoration: none;
+            padding: 5px 35px;
+            font-family: "Trebuchet MS","Helvetica", "Sans-serif";
+            font-size: 20px;
+        }
+        .main-nav li a:hover{
+            border: 1px goldenrod;
+        }
+        body{
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
 
     </style>
 </head>
 
-<body>
-<!--<header>-->
+<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
 
-<!--</header>-->
-
-
-<div class="bg-image"></div>
-
-</div>
+<header>
+    <div class="row">
+        <div class="logo">
+            <img src="assets/images/logo1.png" alt="wedding band">
+        </div>
+    </div>
+</header>
 
 <div class = "bg-text1">
 
-    <h1 style="font-size:50px">Your Service Provider Details</h1>
-    <p>Please enter the following details<!-- for email address (email)-->.</p>
+    <h1>Your service provider details</h1>
+    <p>Please enter the following details:<!-- for email address (email)-->.</p>
 
         <form action="PHP_database_insert/contr-reg-script.php" method="post">
         <!--<p>Your email: <input type="email" required name="email"></p>-->
@@ -60,7 +93,6 @@
                 <option value="flowers">Flowers </option>
                 <option value="photography">Photography </option>
                 <option value="music">Music</option>
-                <option value=" Beauticians">Beauticians</option>
                 <option value="decor">Decor</option>
                 <option value="weddingplanners">Wedding Planners</option>
                 <option value="dressers">Dresses</option>

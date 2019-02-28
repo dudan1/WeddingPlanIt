@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
-    <title>Service Provider Search Page</title>
+    <title>Service Provider Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
@@ -18,12 +17,12 @@
             font-family:  "Comic Sans MS", cursive, sans-serif;
             font-size: 20px;
         }
-        h2{
+        h3{
             color:darkseagreen;
             font-size: 70px;
             text-align: center;
             margin-top: 275px;
-            font-family:  "Comic Sans MS", cursive, sans-serif;
+            font-family:  "Comic Sans MS", cursive, sans-serif;*/
         }
         .row{
             max-width: 1200px;
@@ -52,10 +51,10 @@
         .main-nav li a:hover{
             border: 1px goldenrod;
         }
-   body{
-       height: 100vh;
-       background-size: cover;
-       background-position: center;
+        body{
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
    }
 
 
@@ -88,6 +87,7 @@
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
+                <h1>Update your service provider details</h1>
                 <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"></p>
                 <p>Your personal first name: <input type="text" required name="first_name" maxlength="20"></p>
                 <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
@@ -102,7 +102,6 @@
                         <option value="flowers">Flowers </option>
                         <option value="photography">Photography </option>
                         <option value="music">Music</option>
-                        <option value=" Beauticians">Beauticians</option>
                         <option value="decor">Decor</option>
                         <option value="weddingplanners">Wedding Planners</option>
                         <option value="dressers">Dresses</option>
@@ -117,7 +116,7 @@
 
 <main>
             <form name="search" method="get" action="search.php">
-            <h2>Service Provider</h2>
+            <h3>Service Provider</h3>
             <div class="heading">
         <label>What are you looking for?</label>
                 <select>
@@ -129,7 +128,6 @@
                     <option value="flowers">Flowers </option>
                     <option value="photography">Photography </option>
                     <option value="music">Music</option>
-                    <option value=" Beauticians">Beauticians</option>
                     <option value="decor">Decor</option>
                     <option value="weddingplanners">Wedding Planners</option>
                     <option value="dressers">Dresses</option>
@@ -145,7 +143,6 @@
 
 </body>
 </html>
-
 
 
 
