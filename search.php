@@ -1,72 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+    <<<<<<< HEAD
     <meta charset="UTF-8">
-    <title>User home Wedding PlanIt</title>
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>Service Provider Search Page</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .heading{
+            position: absolute;
+            padding-left: 400px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
+            font-size: 20px;
+        }
+        h2{
+            color:darkseagreen;
+            font-size: 70px;
+            text-align: center;
+            margin-top: 275px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
+        }
+        .row{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .logo img{
+            width: 200px;
+            height:auto;
+            float: left;
+        }
+        .main-nav{
+            float: right;
+            list-style: none;
+            margin-top: 30px;
+        }
+        .main-nav li{
+            display:inline-block;
+        }
+        .main-nav li a{
+            color: darkseagreen;
+            text-decoration: none;
+            padding: 5px 35px;
+            font-family: "Trebuchet MS","Helvetica", "Sans-serif";
+            font-size: 20px;
+        }
+        .main-nav li a:hover{
+            border: 1px goldenrod;
+        }
+        body{
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+    </style>
 </head>
-<body>
 
+<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
 
-
- <div class="jumbotron" align="center">
-<form name="search" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-
-
-  <select name="search" id="search">
-
-      <option value="">Select Service Provider category to search</option>
-      <option value="beautician">Beautician</option>
-      <option value="caterer">Caterer</option>
-      <option value="jeweller">Jeweller</option>
-      <option value="venue">Venue</option>
-      <option value="flowers">Flowers </option>
-      <option value="photography">Photography </option>
-      <option value="music">Music</option>
-      <option value=" Beauticians">Beauticians</option>
-      <option value="decor">Decor</option>
-      <option value="weddingplanners">Wedding Planners</option>
-      <option value="dressers">Dresses</option>
-  </select>
-  &nbsp;
-  <input type="submit" id="submit" name="submit" value="Search">
-</form>
- </div>
-
- $search_value = $_GET['search'];
-
+<header>
+    <div class="row">
+        <div class="logo">
+            <img src="assets/images/logo1.png" alt="wedding band">
+        </div>
+    </div>
+</header>
 <?php
-require_once('assets/db.php');
+$search_value = $_GET['search'];
+
+require_once('PHP_database_insert/db.php');
 
 //check connection
 if ($db === false) {
     die ("Error: could not connect. " . mysqli_connect_error());
 }
-$sql = "SELECT * from contractors WHERE category = $search_value']";
+$sql = "SELECT * from service_provider WHERE category = $search_value";
 if ($result = mysqli_query($db, $sql)) {
     if (mysqli_num_rows($result) > 0) {
-      #  echo "All Contractors";
+        #  echo "All Contractors";
 
         //while ($row = mysqli_fetch_array($result)) {
         while($row = $result->fetch_array()){
 
             echo "<div class='card'>";
             echo "<div class='card-header'>" . $row['business_name'] . "</div>";
-           # echo "<div class='card-body'>" . $row['category'] . "</div>";
+            # echo "<div class='card-body'>" . $row['category'] . "</div>";
             echo "</div>" . "<br>";
         }
 
@@ -81,3 +105,4 @@ if ($result = mysqli_query($db, $sql)) {
 
 </body>
 </html>
+
