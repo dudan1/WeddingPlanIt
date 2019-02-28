@@ -1,118 +1,56 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <title>Service Provider Search Page</title>
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
-    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
-
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-
+    <title>Search for Service Provider</title>
     <style>
-        .row{
-            max-width: 1200px;
-            margin: auto;
-        }
-        .logo img{
-            width: 200px;
-            height:auto;
-            float: left;
-        }
-        .main-nav{
-            float: right;
-            list-style: none;
-            margin-top: 30px;
-        }
-        .main-nav li{
-            display:inline-block;
-        }
-        .main-nav li a{
-            color: darkseagreen;
-            text-decoration: none;
-            padding: 5px 35px;
-            font-family: "Trebuchet MS","Helvetica", "Sans-serif";
+        .heading{
+            position: absolute;
+            padding-left: 400px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
             font-size: 20px;
         }
-        .main-nav li a:hover{
-            border: 1px goldenrod;
+        h2{
+            color:darkseagreen;
+            font-size: 70px;
+            text-align: center;
+            margin-top: 275px;
+            font-family:  "Comic Sans MS", cursive, sans-serif;
         }
-   body{
-       height: 100vh;
-       background-size: cover;
-       background-position: center;
-   }
-
 
     </style>
+
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
-
-<header>
-    <div class="row">
-    <div class="logo">
-<img src="assets/images/logo1.png" alt="wedding band">
-    </div>
-    <nav>
-        <ul class="main-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">CONTACT US</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">OUR CUSTOMERS</a></li>
-            <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
-        </ul>
-    </nav>
-    </div>
-    <p><button class="btn3 info3" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
-    <div id="id01" class="modal">
-
-        <form class="modal-content animate" action="php" method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
-            </div>
-            <div class="container">
-                <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"></p>
-                <p>Your personal first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
-                <p>Your personal address: <input type="text" required name="address" maxlength="60"></p>
-                <p>Your personal postcode: <input type="text" required name="postcode" maxlength="8"></p>
-                <p>The category of your business:
-                    <select name="Category">
-                        <option value="beautician">Beautician</option>
-                        <option value="caterer">Caterer</option>
-                        <option value="jeweller">Jeweller</option>
-                        <option value="venue">Venue</option>
-                        <option value="flowers">Flowers </option>
-                        <option value="photography">Photography </option>
-                        <option value="music">Music</option>
-                        <option value=" Beauticians">Beauticians</option>
-                        <option value="decor">Decor</option>
-                        <option value="weddingplanners">Wedding Planners</option>
-                        <option value="dressers">Dresses</option>
-                    </select></p>
-                <button type="submit">Submit details</button>
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-            </div>
-        </form>
-    </div>
-</header>
+<body>
 
 <main>
 
+        <form action="" method="">
+            <h2>Service Provider</h2>
+            <div class="heading">
+        <label>What are you looking for?</label>
+                <select>
+            <option value="baker">Baker</option>
+            <option value="music">Music</option>
+            <option value="jeweller">Jeweller</option>
+            <option value="flowers">Flower</option>
+            <option value="dresses">Dresses</option>
+        </select> &nbsp;
+            <button type="submit" class="b">Search</button>
 
-</main>
+
+            </div>
+
+    </form>
 
 
 <?php
 
+
 ?>
 
-<footer>
 
-</footer>
+</main>
 
 </body>
+
 </html>
