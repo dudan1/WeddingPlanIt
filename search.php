@@ -66,7 +66,7 @@ if ($result = mysqli_query($db, $sql)) {
 
             echo "<div class='card'>";
             echo "<div class='card-header'>" . $row['business_name'] . "</div>";
-            echo "<div class='card-body'>" . $row['category'] . "</div>";
+           # echo "<div class='card-body'>" . $row['category'] . "</div>";
             echo "</div>" . "<br>";
         }
 
