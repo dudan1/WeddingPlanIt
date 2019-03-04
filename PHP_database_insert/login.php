@@ -30,10 +30,10 @@ if($count == 1){
     $_SESSION['password'] = $password;
 
     if($row['user_type'] == 'Customer'){
-        header('Location:../Cust_Homepage.php');
+        header('Location:../cust_home.php');
     }
     elseif($row['user_type'] == 'Service Provider'){
-        header('Location:../SP_Homepage.php');
+        header('Location:../sp_home.php');
     }
     else{
         echo 'User Type is invalid';

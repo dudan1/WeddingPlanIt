@@ -1,8 +1,21 @@
 <?php
 session_start();
-#if (!IsSet($_SESSION["name"]))
- #   header("Location:index.html");
+if (!IsSet($_SESSION["name"]))
+    header("Location:index.html");
+require_once('PHP_database_insert/db.php');
+
+$email = $_SESSION['name'];
+
+$sql = "Select first_name, surname FROM customer WHERE email = '$email'";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
+$firstname = $row['first_name'];
+$surname = $row['surname'];
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +23,7 @@ session_start();
     <title>Customer Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
-    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
@@ -71,7 +84,7 @@ session_start();
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id02" class="modal">
 
-        <form class="modal-content animate" action="php" method="post">
+        <form class="modal-content animate" action="PHP_database_insert/cust_update.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
@@ -80,8 +93,8 @@ session_start();
                 <h1>Update your customer details</h1>
                 <p>Please enter the following personal details<!-- for email address (email)-->.</p>
                 <!--<p>Your email: <input type="email" required name="email"></p>-->
-                <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
+                <p>Your first name: <input type="text" required name="first_name" maxlength="20" value ="<?php echo $firstname ?>"/></p>
+                <p>Your surname: <input type="text" required name="surname" maxlength="20" value ="<?php echo $surname ?>"/></p>
 
                 <button type="submit">Submit details</button>
 

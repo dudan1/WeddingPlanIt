@@ -18,10 +18,10 @@ if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
 
    if($_SESSION['user_type'] == 'Customer'){
-       header('Location:../Cust_Homepage.php');
+       header('Location:../cust_home.php');
    }
    elseif($_SESSION['user_type'] == 'Service Provider'){
-       header('Location:../SP_Homepage.php');
+       header('Location:../sp_home.php');
    }
    else{
        echo 'User type invalid';
