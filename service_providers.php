@@ -1,7 +1,18 @@
 <?php
 session_start();
 #if (!IsSet($_SESSION["name"]))
- #   header("Location:index.html");
+#   header("Location:index.html");
+
+if (isset($_GET['id'])) {
+    require_once('PHP_database_insert/db.php');
+    $id = $_GET['id']; // assign variable for id
+    $sql = "SELECT * from service_provider WHERE sp_id = '$id'"; //run query
+    $result = mysqli_query($connection, $sql) or die ("Bad Query: $sql");
+    $row = ($row = mysqli_fetch_array($result));
+}else {
+    header("Location: cust_home.php");
+}
+?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -127,70 +138,13 @@ session_start();
 <main>
 
     <div align="center">
-        <h2 style="color:darkseagreen">Search for Service Providers</h2>
-        <form method="GET" action="search_providers.php">
-            <div>
+        <h2 style="color:darkseagreen"><?php echo $row['business_name'] ?></h2>
 
-                <select  name="search_value">
-
-                    <option value="">Select Service Provider category to search</option>
-                    <option value="beautician">Beautician</option>
-                    <option value="caterer">Caterer</option>
-                    <option value="jeweller">Jeweller</option>
-                    <option value="venue">Venue</option>
-                    <option value="flowers">Flowers </option>
-                    <option value="photography">Photography </option>
-                    <option value="music">Music</option>
-                    <option value=" Beauticians">Beauticians</option>
-                    <option value="decor">Decor</option>
-                    <option value="weddingplanners">Wedding Planners</option>
-                    <option value="dressers">Dresses</option>
-                </select>
-                &nbsp;
-                <input type="submit" value="Search">
-            </div>
-        </form>
 
 
     </div>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
 
-
-        <div class="col-sm-8">
-
-            <?php
-            //check connection
-            require_once('PHP_database_insert/db.php');
-            if ($connection === false) {
-                die ("Error: could not connect. " . mysqli_connect_error());
-            }
-            //assign search variable
-            $search_value = $_GET['search_value'];
-            //run query
-            $sql = "SELECT * from service_provider WHERE category = '$search_value'";
-            if ($result = mysqli_query($connection, $sql)) {
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_array($result)) {
-                        //while($row = $result->fetch_array()){
-                        echo "<div class='container'>";
-                        echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
-                        echo "<p class='title'>" . $row['category'] . "</p>";
-                        echo "<p class=''>" . $row['description'] . "</p>";
-                        echo "<p><a href='service_providers.php?id={$row['SP_ID']}' class='button'>View Service Provider</a></p>";
-                        echo "</div>" . "<br>";
-                    }
-//free result set
-                    mysqli_free_result($result);
-                }else{
-                    echo "No records matching your query were found.";
-                }
-            }
-            ?>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
 
 </main>
 
