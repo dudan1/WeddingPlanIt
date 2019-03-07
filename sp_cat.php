@@ -19,7 +19,7 @@
                 <h2>Jane Doe</h2>
                 <p class="sp_title">Jeweller</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
+                <p>Price £400</p>
                 <p><button class="button">Contact</button></p>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <h2>Mike Ross</h2>
                 <p class="sp_title">Jeweller</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
+                <p>Price £400</p>
                 <p><button class="button">Contact</button></p>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <h2>John Doe</h2>
                 <p class="sp_title">Jeweller</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
+                <p>Price £400</p>
                 <p><button class="button">Contact</button></p>
             </div>
         </div>
