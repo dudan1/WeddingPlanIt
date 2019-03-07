@@ -95,7 +95,7 @@ session_start();
 <main>
 
     <div align="center">
-        <h2>Search for Service Providers</h2>
+        <h2 style="color:darkseagreen">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">
             <div>
 
