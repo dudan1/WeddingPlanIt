@@ -120,7 +120,7 @@ if (!IsSet($_SESSION["name"]))
 </header>
 
 <main>
-            <form name="search" method="get" action="search.php">
+            <form name="search" method="get" action="Old versions/search.php">
             <h3>Service Provider</h3>
             <div class="heading">
         <label>What are you looking for?</label>
