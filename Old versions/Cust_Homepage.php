@@ -11,6 +11,6 @@ if (!IsSet($_SESSION["name"]))
 </head>
 <body>
 <p>Congratulations you have reached the Customer Homepage!</p>
-<a href="PHP_database_insert/logout.php">Log Out</a>
+<a href="../PHP_database_insert/logout.php">Log Out</a>
 </body>
 </html>

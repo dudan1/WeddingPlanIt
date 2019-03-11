@@ -1,8 +1,4 @@
-<?php
-session_start();
-if (!IsSet($_SESSION["name"]))
-    header("Location:../index.html");
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +11,7 @@ if (!IsSet($_SESSION["name"]))
 </header>
 <main>
     <p>Hi ... you have successfully logged in</p>
-    <a href="logout.php">Log Out</a>
+    <a href="../PHP_database_insert/logout.php">Log Out</a>
 </main>
 
 <footer>

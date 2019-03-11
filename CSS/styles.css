@@ -133,7 +133,7 @@ span.psw {
     to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Change styles for span and cancel button on extra small screeens */
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
@@ -142,4 +142,66 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+/*STYLE FOR sp_cat.php PAGE*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.sp_column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+    .sp_column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.sp_card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sp_container {
+    padding: 0 16px;
+}
+
+.sp_container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.sp_title {
+    color:darkgoldenrod;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+body{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }

@@ -17,13 +17,17 @@ $_SESSION['user_type'] = $session_user_type;
 
 
 // Attempt to insert into database
+if($_POST['pwd1']== $_POST['pwd2']) {
     $sql = "INSERT INTO users (email, password, user_type) VALUES ('$_POST[email]','$_POST[pwd1]','$_POST[user_type]')";
     if (mysqli_query($connection, $sql)) {
         #echo "Successfully registered.";
-    }
-    else {
+    } else {
         echo "Error: Could not execute." . mysqli_error($connection);
     }
+}
+else{
+    die('Passwords do not match, please reurn to the previous page');
+}
 
 
     //Redirect to correct additional details form

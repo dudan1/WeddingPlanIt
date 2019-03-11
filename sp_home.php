@@ -1,3 +1,23 @@
+<?php
+session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:../index.html");
+require_once('PHP_database_insert/db.php');
+
+$email = $_SESSION['name'];
+
+$sql = "Select first_name, surname, address, postcode, business_name, category FROM service_provider WHERE email = '$email'";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
+$firstname = $row['first_name'];
+$surname = $row['surname'];
+$address = $row['address'];
+$postcode = $row['postcode'];
+$business_name = $row['business_name'];
+$category = $row['category'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,30 +101,30 @@
     <p><button class="btn3 info3" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="php" method="post">
+        <form class="modal-content animate" action="PHP_database_insert/sp_update.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
                 <h1>Update your service provider details</h1>
-                <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"></p>
-                <p>Your personal first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
-                <p>Your personal address: <input type="text" required name="address" maxlength="60"></p>
-                <p>Your personal postcode: <input type="text" required name="postcode" maxlength="8"></p>
+                <p>The name of your business: <input type="text" required name="business_name" maxlength="40" width="200"value ="<?php echo $business_name ?>"></p>
+                <p>Your personal first name: <input type="text" required name="first_name" maxlength="20" value ="<?php echo $firstname ?>"></p>
+                <p>Your personal surname: <input type="text" required name="surname" maxlength="20" value ="<?php echo $surname ?>"></p>
+                <p>Your personal address: <input type="text" required name="address" maxlength="60" value ="<?php echo $address ?>"></p>
+                <p>Your personal postcode: <input type="text" required name="postcode" maxlength="8" value ="<?php echo $postcode ?>"></p>
                 <p>The category of your business:
-                    <select name="Category">
-                        <option value="beautician">Beautician</option>
-                        <option value="caterer">Caterer</option>
-                        <option value="jeweller">Jeweller</option>
-                        <option value="venue">Venue</option>
-                        <option value="flowers">Flowers </option>
-                        <option value="photography">Photography </option>
-                        <option value="music">Music</option>
-                        <option value="decor">Decor</option>
-                        <option value="weddingplanners">Wedding Planners</option>
-                        <option value="dressers">Dresses</option>
+                    <select name="category">
+                        <option value="beautician" <?php if($category =="beautician") echo 'selected="selected"' ?>>Beautician</option>
+                        <option value="caterer" <?php if($category =="caterer") echo 'selected="selected"' ?>>Caterer</option>
+                        <option value="jeweller" <?php if($category =="jeweller") echo 'selected="selected"' ?>>Jeweller</option>
+                        <option value="venue" <?php if($category =="venue") echo 'selected="selected"' ?>>Venue</option>
+                        <option value="flowers" <?php if($category =="flowers") echo 'selected="selected"' ?>>Flowers </option>
+                        <option value="photography" <?php if($category =="photography") echo 'selected="selected"' ?>>Photography </option>
+                        <option value="music" <?php if($category =="music") echo 'selected="selected"' ?>>Music</option>
+                        <option value="decor" <?php if($category =="decor") echo 'selected="selected"' ?>>Decor</option>
+                        <option value="weddingplanners" <?php if($category =="weddingplanners") echo 'selected="selected"' ?>>Wedding Planners</option>
+                        <option value="dressers" <?php if($category =="dressers") echo 'selected="selected"' ?>>Dresses</option>
                     </select></p>
                 <button type="submit">Submit details</button>
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -115,7 +135,7 @@
 </header>
 
 <main>
-            <form name="search" method="get" action="search.php">
+            <form name="search" method="get" action="Old versions/search.php">
             <h3>Service Provider</h3>
             <div class="heading">
         <label>What are you looking for?</label>

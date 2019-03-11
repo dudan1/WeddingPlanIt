@@ -17,7 +17,7 @@ $sql = "INSERT INTO service_provider (email, first_name, surname, address, postc
             VALUES ('$session_email','$_POST[first_name]','$_POST[surname]','$_POST[address]','$_POST[postcode]','$_POST[category]','$_POST[business_name]')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
-    header('Location:user_home.php');
+    header('Location:../sp_home.php');
 } else {
     echo "Error: Could not execute." . mysqli_error($connection);
 }
