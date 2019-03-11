@@ -14,6 +14,10 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $firstname = $row['first_name'];
 $surname = $row['surname'];
 
+   // Join Contracts and Service_provider table
+   SELECT business_name, category
+   FROM contracts c, service_provider s
+   WHERE c.sp_id = s.sp_id AND cust_id = "$customer_id"
 */?>
 
 <!DOCTYPE html>
@@ -64,7 +68,7 @@ $surname = $row['surname'];
     </style>
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(20190308/assets/images/wed.jpg);">
+
 
 <header>
     <div class="row">
