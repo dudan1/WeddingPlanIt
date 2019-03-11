@@ -5,15 +5,10 @@ if (!IsSet($_SESSION["name"]))
 
     require_once('PHP_database_insert/db.php');
     $sp_id = $_GET['id']; // assign variable for id
-    /*$sql = "SELECT * from service_provider WHERE sp_id = '$sp_id'"; //run query
-    $result = mysqli_query($connection, $sql) or die ("Bad Query: $sql");
-    $row = ($row = mysqli_fetch_array($result));*/
-
-
-$sql = "Select C_ID FROM customer WHERE '$_SESSION[name]' = email";
-$result =mysqli_query($connection,$sql);
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-$cust_id = $row['C_ID'];
+    $sql = "Select C_ID FROM customer WHERE '$_SESSION[name]' = email";
+    $result =mysqli_query($connection,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $cust_id = $row['C_ID'];
 
 ?>
 <!DOCTYPE html>
@@ -113,6 +108,7 @@ $cust_id = $row['C_ID'];
 
     <div align="center">
         <h2 style="color:darkseagreen"><?php echo $row['business_name'] ?></h2>
+        <p>Here goes further details about the service provider</p>
 
 
 
