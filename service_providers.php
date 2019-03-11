@@ -1,24 +1,28 @@
 <?php
 session_start();
-#if (!IsSet($_SESSION["name"]))
-#   header("Location:index.html");
+if (!IsSet($_SESSION["name"]))
+   header("Location:index.html");
 
-if (isset($_GET['id'])) {
     require_once('PHP_database_insert/db.php');
-    $id = $_GET['id']; // assign variable for id
-    $sql = "SELECT * from service_provider WHERE sp_id = '$id'"; //run query
+    $sp_id = $_GET['id']; // assign variable for id
+    /*$sql = "SELECT * from service_provider WHERE sp_id = '$sp_id'"; //run query
     $result = mysqli_query($connection, $sql) or die ("Bad Query: $sql");
-    $row = ($row = mysqli_fetch_array($result));
-}else {
-    header("Location: cust_home.php");
-}
-?>
+    $row = ($row = mysqli_fetch_array($result));*/
+
+
+$sql = "Select C_ID FROM customer WHERE '$_SESSION[name]' = email";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$cust_id = $row['C_ID'];
+
+print $sp_id;
+print $cust_id;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Customer Homepage</title>
+    <title>Service Provider Details</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
@@ -111,31 +115,17 @@ if (isset($_GET['id'])) {
             </ul>
         </nav>
     </div>
-    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
-    <div id="id02" class="modal">
 
-        <form class="modal-content animate" action="php" method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
-            </div>
-            <div class="container">
-                <h1>Update your customer details</h1>
-                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
-                <!--<p>Your email: <input type="email" required name="email"></p>-->
-                <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
-
-                <button type="submit">Submit details</button>
-
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-            </div>
-        </form>
-    </div>
 </header>
 <br><br><br><br><br><br><br><br>
 <main>
+    <div>
+        <form action ="PHP_database_insert/contract.php" method="post">
+            <input type = "hidden" name = "cust_id" value="<?php echo $cust_id; ?>">
+            <input type = "hidden" name = "sp_id" value="<?php echo $sp_id; ?>">
+            <button type="submit">BOOK THIS SERVICE PROVIDER</button>
+        </form>
+    </div>
 
     <div align="center">
         <h2 style="color:darkseagreen"><?php echo $row['business_name'] ?></h2>

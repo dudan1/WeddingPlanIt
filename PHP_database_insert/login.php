@@ -30,9 +30,11 @@ if($count == 1){
     $_SESSION['password'] = $password;
 
     if($row['user_type'] == 'Customer'){
+        $_SESSION['user_type'] = $row['user_type'];
         header('Location:../cust_home.php');
     }
     elseif($row['user_type'] == 'Service Provider'){
+        $_SESSION['user_type'] = $row['user_type'];
         header('Location:../sp_home.php');
     }
     else{
