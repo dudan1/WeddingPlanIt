@@ -86,7 +86,7 @@ if (!IsSet($_SESSION["name"]))
 <body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
 
 <header>
-    <?php include 'PHP_database_insert/nav_bar.php';?>
+    <?php require 'PHP_database_insert/nav_bar.php';?>
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id02" class="modal">
 

@@ -25,14 +25,14 @@ $surname = $row['surname'];
 <head>
     <meta charset="UTF-8">
     <title>Customer Homepage</title>
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/styles.css">
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/homepage.css">
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/unsemantic-grid-responsive-tablet.css">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 
-    <link rel="shortcut icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
-    <style>
+    <!-- <style>
         .row{
             max-width: 1200px;
             margin: auto;
@@ -65,30 +65,20 @@ $surname = $row['surname'];
             background-size: cover;
             background-position: center;
    }
-    </style>
+    </style>-->
 </head>
 
 <body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
-    <div class="row">
-    <div class="logo">
-<img src="20190308/assets/images/logo1.png" alt="wedding band">
-    </div>
-    <nav>
-        <ul class="main-nav">
-            <li><a>HOME</a></li>
-            <li><a href="contact_us.php">CONTACT US</a></li>
-            <li><a href="faq.php">FAQ</a></li>
-            <li><a href="#">MY PLAN</a></li>
-            <li><a href="20190308/PHP_database_insert/logout.php">LOG OUT</a></li>
-        </ul>
-    </nav>
-    </div>
+    <?php include 'PHP_database_insert/nav_bar.php';
+
+    ?>
+
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id02" class="modal">
 
-        <form class="modal-content animate" action="20190308/PHP_database_insert/cust_update.php" method="post">
+        <form class="modal-content animate" action="/PHP_database_insert/cust_update.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
@@ -113,7 +103,7 @@ $surname = $row['surname'];
 
     <div align="center">
         <h2 color="white">Search for Service Providers</h2>
-        <form method="GET" action="20190308/search_providers.php">
+        <form method="GET" action="search_providers.php">
             <div>
 
                 <select  name="search_value">
