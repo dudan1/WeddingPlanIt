@@ -10,7 +10,6 @@ session_start();
 </head>
 
 <body>
-
 <?php
 // Captcha
 if(empty($_SESSION['captcha2'] ) ||
