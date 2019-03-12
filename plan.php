@@ -11,6 +11,7 @@ if (!IsSet($_SESSION["name"]))
     $cust_id = $row['C_ID'];
     $cust_fname = $row['first_name'];
     $cust_sname = $row['surname'];
+    $wed_date = $row['wedding_date'];
 
 ?>
 <!DOCTYPE html>
@@ -57,10 +58,11 @@ if (!IsSet($_SESSION["name"]))
 <main>
 <div class ="grid-container" >
     <div class = "grid-25" style="background-color:lightgoldenrodyellow"><h2>Dashboard</h2>
-        <p><?php
-            echo $cust_fname . " " . $cust_sname
-            ?></p>
-        <p>Wedding Date: php echo wdate here</p>
+        <?php
+            echo "<p>" . $cust_fname . " " . $cust_sname . "</p>";
+            echo "<p>" . "Wedding Date: " . $wed_date . "</p>";
+            ?>
+
     </div>
     <div class = "grid-75" style="background-color:whitesmoke">
         <h2 style="color:darkseagreen">WEDDING PLAN</h2>

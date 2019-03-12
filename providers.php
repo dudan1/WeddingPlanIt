@@ -134,9 +134,8 @@ $surname = $row['surname'];
         <?php
         require_once('PHP_database_insert/db.php');
 
-        if (IsSET($_GET['go'])){
-
-            }
+       # if (IsSET($_GET['search'])){
+        #$sql= "SELECT * FROM providers WHERE business_name LIKE '%$keyword%'";
 
 
 echo "PEOPLE WORKING AGEAD. trying to implement a search button here";
@@ -144,7 +143,9 @@ echo "PEOPLE WORKING AGEAD. trying to implement a search button here";
         if ($connection === false) {
             die("Error: could not connect to database. " . mysqli_connect_error());
             }
+
             $sql = "SELECT * FROM service_provider";
+
             if ($result = mysqli_query($connection, $sql)){
                 if (mysqli_num_rows($result) > 0){
                     while($row = mysqli_fetch_array($result)){

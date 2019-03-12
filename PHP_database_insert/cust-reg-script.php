@@ -12,8 +12,8 @@ if ($connection === false) {
 $session_email = $_SESSION['name'];
 
 // Attempt to insert into database
-$sql = "INSERT INTO customer (email, first_name, surname) 
-            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]')";
+$sql = "INSERT INTO customer (email, first_name, surname, phone_number, wedding_date) 
+            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]', '$_POST[phone_number]', '$_POST[wedding_date]')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
 

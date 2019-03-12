@@ -10,7 +10,7 @@
            <li><a href="plan.php">MY PLAN</a></li>
            <!-- <li><a href="providers.php">SERVICE PROVIDERS</a></li>-->
             <li><a href="#">FAQ</a></li>
-            <li><a href="contact_us">CONTACT US</a></li>
+            <li><a href="#">CONTACT US</a></li>
             <li><a href="#">MY PROFILE</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
         </ul>
