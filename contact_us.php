@@ -4,14 +4,14 @@
 
     <meta charset="UTF-8">
     <title>Contact Us Page</title>
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/styles.css">
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/homepage.css">
-    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 
-    <link rel="shortcut icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
-    <style>
+<!--    <style>
         .heading{
             position: absolute;
             padding-left: 400px;
@@ -59,27 +59,40 @@
         }
 
 
-    </style>
+    </style>-->
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),*/url(20190308/assets/images/wed.jpg);">
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
-    <div class="row">
-        <div class="logo">
-            <img src="20190308/assets/images/logo1.png" alt="wedding band">
-        </div>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="cust_home.php">HOME</a></li>
-                <li><a>CONTACT US</a></li>
-                <li><a href="faq.php">FAQ</a></li>
-                <li><a href="#">MY PLAN</a></li>
-                <li><a href="20190308/PHP_database_insert/logout.php">LOG OUT</a></li>
-            </ul>
-        </nav>
+    <?php include 'PHP_database_insert/nav_bar.php';
+
+    ?>
+
+    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/PHP_database_insert/cust_update.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
+            </div>
+            <div class="container">
+                <h1>Update your details</h1>
+                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
+                <!--<p>Your email: <input type="email" required name="email"></p>-->
+                <p>Your first name: <input type="text" required name="first_name" maxlength="20" value ="<?php echo $firstname ?>"/></p>
+                <p>Your surname: <input type="text" required name="surname" maxlength="20" value ="<?php echo $surname ?>"/></p>
+
+                <button type="submit">Submit details</button>
+
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
     </div>
 </header>
+<br><br><br><br><br><br><br><br>
 <main>
 <div class = "bg-text1">
 
@@ -87,7 +100,7 @@
     <hr/>
     <p>Please submit a query:</p>
 
-        <form action="20190308/PHP_database_insert?" method="post">
+        <form action="PHP_database_insert?" method="post">
         <!--<p>Your email: <input type="email" required name="email"></p>-->
         <p align="left"><textarea rows="4" cols="47" required name="cust_query" placeholder="Type your query here..."></textarea></p>
             <p align="left">Your first name: <textarea rows="1" cols="20" required name="first_name" maxlength="20"></textarea></p>

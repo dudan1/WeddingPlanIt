@@ -58,11 +58,19 @@ td.calendar-day, td.calendar-day-np {
 	border-right: 1px solid #999;
 }
 </style>
+
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Booking calendar - DEMO</title>
+<title>Booking Calendar</title>
+<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+<link rel="stylesheet" type="text/css" href="../CSS/homepage.css">
+<link rel="stylesheet" type="text/css" href="../CSS/unsemantic-grid-responsive-tablet.css">
+
+<link rel="shortcut icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
 <link href="jquery-ui.css" rel="stylesheet">
 <script src="jquery-1.10.2.js"></script>
 <script src="jquery-ui.js"></script>
+
 <!--<script src="lang/datepicker-fi.js"></script>-->
 <script>
     $(function() {
@@ -86,19 +94,48 @@ td.calendar-day, td.calendar-day-np {
     });
   });  </script>
 </head>
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(../assets/images/wed.jpg);">
 
-<body>
+<header>
+    <?php include '../PHP_database_insert/nav_bar_calendar.php';
 
-<h1>Booking calendar - DEMO</h1>
+    ?>
+
+    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/PHP_database_insert/cust_update.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
+            </div>
+            <div class="container">
+                <h1>Update your details</h1>
+                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
+                <!--<p>Your email: <input type="email" required name="email"></p>-->
+                <p>Your first name: <input type="text" required name="first_name" maxlength="20" value ="<?php echo $firstname ?>"/></p>
+                <p>Your surname: <input type="text" required name="surname" maxlength="20" value ="<?php echo $surname ?>"/></p>
+
+                <button type="submit">Submit details</button>
+
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
+</header>
+<br><br><br><br><br><br><br><br>
+<div class="bg-text2">
+<h1>Booking calendar for supplier "$"</h1>
 <table border="1" cellpadding="5" width="800">
 	<tr>
 		<td valign="top">
 		<form action="book.php" method="post">
 			<h3>Make booking</h3>
-			<p><input checked="checked" name="item" type="radio" value="Meeting room" />Meeting room 
+			<!--<p><input checked="checked" name="item" type="radio" value="Meeting room" />Meeting room
 			| <input name="item" type="radio" value="Swimming pool" />Swimming pool 
 			| <input name="item" type="radio" value="Drill" />Drill | 
-			<input name="item" type="radio" value="Tennis court" />Tennis court</p>
+			<input name="item" type="radio" value="Tennis court" />Tennis court</p>-->
 			<table style="width: 70%">
 				<tr>
 					<td>Name:</td>
@@ -106,21 +143,21 @@ td.calendar-day, td.calendar-day-np {
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
-				<tr>
+				<!--<tr>
 					<td>Phone:</td>
 					<td>
 			<input maxlength="20" name="phone" required="" type="text" /></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
-				</tr>
+				</tr>-->
 				<tr>
-					<td>Reservation time:</td>
+					<td>Reservation date:</td>
 					<td>
 			<input id="from" name="start_day" required="" type="text" /></td>
 					<td>-</td>
 					<td><input id="to" name="end_day" required="" type="text" /></td>
 				</tr>
-				<tr>
+				<!--<tr>
 					<td>&nbsp;</td>
 					<td> <select name="start_hour">
 			<option selected="selected">00</option>
@@ -181,11 +218,11 @@ td.calendar-day, td.calendar-day-np {
 			<option>00</option>
 			<option selected="selected">30</option>
 			</select></td>
-				</tr>
+				</tr>-->
 			</table>
-			<p>
-			<img id="captchaimg" src="captcha_code_file.php?rand=<?php echo rand(); ?>" /><br>
-			<input id="captcha" name="captcha" required="" type="text" /></p>
+			<!--<p>
+			<img id="captchaimg" src="captcha_code_file.php?rand=<?php /*echo rand(); */?>" /><br>
+			<input id="captcha" name="captcha" required="" type="text" /></p>-->
 			<input name="book" type="submit" value="Book" />
 		</form>
 		</td>
@@ -194,14 +231,25 @@ td.calendar-day, td.calendar-day-np {
 		<form action="cancel.php" method="post">
 			<p></p>
 			ID: <input name="id" required="" type="text" /><br />
-			<p>
-			<img id="captchaimg2" src="captcha_code_file2.php?rand=<?php echo rand(); ?>" /><br>
-			<input id="captcha2" name="captcha2" required="" type="text" /></p>
+			<!--<p>
+			<img id="captchaimg2" src="captcha_code_file2.php?rand=<?php /*echo rand(); */?>" /><br>
+			<input id="captcha2" name="captcha2" required="" type="text" /></p>-->
 			<p><input name="cancel" type="submit" value="Cancel" /></p>
-		</form>
+        </form></td>
+        <td valign="top">
+            <h3>Delete booking</h3>
+            <form action="delete.php" method="post">
+                <p></p>
+            ID: <input name="id" required="" type="text" /><br />
+                <!--<p>
+			<img id="captchaimg2" src="captcha_code_file2.php?rand=<?php /*echo rand(); */?>" /><br>
+			<input id="captcha2" name="captcha2" required="" type="text" /></p>-->
+            <p><input name="delete" type="submit" value="Delete" /></p>
+            </form>
 		</td>
 	</tr>
 </table>
+
 <?php
 /* draws a calendar */
 function draw_calendar($month,$year){
@@ -321,7 +369,7 @@ echo '<h3>' . $months[$d->format('n')-1] . ' ' . $d->format('Y') . '</h3>';
 echo draw_calendar($d->format('m'),$d->format('Y'));
 
 ?>
-
+</div>
 </body>
 
 </html>

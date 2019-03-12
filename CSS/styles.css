@@ -10,7 +10,7 @@ body {font-family: Arial, Helvetica, sans-serif;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 50%;
     padding: 20px;
     text-align: center;
 }
@@ -21,10 +21,24 @@ body {font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     border: 2px solid #f1f1f1;
     position: absolute;
-    top: 100px;
+    top: 150px;
     left: 50%;
     transform: translate(-50%, -10%);
     width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+.bg-text2 {
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through - For Details Forms */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 850px;
     padding: 20px;
     text-align: center;
 }

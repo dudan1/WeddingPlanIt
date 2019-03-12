@@ -49,7 +49,7 @@ if(empty($_SESSION['captcha2'] ) ||
 	}
 ?>
 
-<a href="index.php"><p>Back to the booking calendar</p></a>
+<a href="indexFormatted.php"><p>Back to the booking calendar</p></a>
 
 </body>
 
