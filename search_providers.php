@@ -49,7 +49,7 @@ if (!IsSet($_SESSION["name"]))
 </header>
 <br><br><br>
 <main>
-<div class="grid-container" style: "background-color=white">
+<div class="grid-container">
 
     <div align="center">
         <h2 style="color:darkseagreen">Search for Service Providers</h2>
@@ -101,7 +101,8 @@ if (!IsSet($_SESSION["name"]))
                         echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
                         echo "<p class=''>" . $row['description'] . "</p>";
-                        echo "<button class='bt1' >" . "<a href='service_providers.php?id={$row['SP_ID']}'>" . "View Service Provider" . "</a>" . "</button>";
+                        echo "<form><button class='bt1' action = 'get'><input type ='hidden' name = 'sp_id' value = $sp_id>"
+                              . "View Service Provider" . "</button></form>";
                         echo "</div>" . "<br>";
                         echo "</div>";
                         echo "</div>";

@@ -9,9 +9,6 @@ $sp_id = $_POST['sp_id'];
 print $cust_id;
 $sql = "INSERT INTO contracts (Cust_ID, SP_ID, Contract_Date) VALUES ('$cust_id', '$sp_id', now())";
 if (mysqli_query($connection, $sql)){
-    echo "<script>",
- "window.alert('You have successfully contracted this service provider!');",
- "</script>";
     header('Location:../cust_home.php');
 } else {
     echo "Error: Could not execute." . mysqli_error($connection);

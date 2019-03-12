@@ -4,11 +4,19 @@ if (!IsSet($_SESSION["name"]))
    header("Location:index.html");
 
     require_once('PHP_database_insert/db.php');
-    $sp_id = $_GET['id']; // assign variable for id
+    if(isset ($_SESSION['sp_id'])) {
+        unset ($_SESSION['sp_id']);
+        $_SESSION['sp_id'] = $_GET['id']; // assign variable for id
+    }
+    else{
+        $_SESSION['sp_id'] = $_GET['id'];
+    }
     $sql = "Select C_ID FROM customer WHERE '$_SESSION[name]' = email";
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $cust_id = $row['C_ID'];
+    $_SESSION['cust_id'] = $row['C_ID'];
+    print $_SESSION['cust_id'];
+    print $sp_id;
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,9 +41,9 @@ if (!IsSet($_SESSION["name"]))
 <main>
     <div class="grid-container" style="background-color:whitesmoke">
     <div>
-        <form action ="PHP_database_insert/contract.php" method="post">
-            <input type = "hidden" name = "cust_id" value="<?php echo $cust_id; ?>">
-            <input type = "hidden" name = "sp_id" value="<?php echo $sp_id; ?>">
+        <form action ="calendar/calendar.php" method="post">
+            <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
+            <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
             <button type="submit">BOOK THIS SERVICE PROVIDER</button>
         </form>
     </div>
