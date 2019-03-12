@@ -93,15 +93,20 @@ if (!IsSet($_SESSION["name"]))
             $sql = "SELECT * from service_provider WHERE category = '$search_value'";
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
+                    echo "<div class='sp-row'>";
                     while ($row = mysqli_fetch_array($result)) {
-                        //while($row = $result->fetch_array()){
+                        echo "<div class='sp_column'>";
+                        echo "<div class='sp_card'>";
                         echo "<div class='container'>";
                         echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
                         echo "<p class=''>" . $row['description'] . "</p>";
-                        echo "<button><a href='service_providers.php?id={$row['SP_ID']}' >View Service Provider</a></button>";
+                        echo "<button class='bt1' >" . "<a href='service_providers.php?id={$row['SP_ID']}'>" . "View Service Provider" . "</a>" . "</button>";
                         echo "</div>" . "<br>";
+                        echo "</div>";
+                        echo "</div>";
                     }
+                    echo "</div>";
 //free result set
                     mysqli_free_result($result);
                 }else{
