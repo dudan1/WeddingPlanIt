@@ -32,7 +32,7 @@ session_start();
 		$end_epoch = $end_day;
 		
 		// prevent double booking
-		$sql = "SELECT * FROM bookings WHERE sp_id= $sp_id AND (start_day>=$start_day OR end_day>=$start_day) AND cancelled=0";
+		$sql = "SELECT * FROM bookings WHERE sp_id= $sp_id AND (start_day=$start_day OR end_day=$start_day) AND cancelled=0";
 		$result = mysqli_query($connection, $sql);
 		if (mysqli_num_rows($result) > 0) {
 			// handle every row
@@ -52,11 +52,11 @@ session_start();
 		if (mysqli_query($connection, $sql)) {
 		    echo "<h3>Booking succeed.</h3>";
 		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 		}
 		
 		end:
-		mysqli_close($conn);
+		mysqli_close($connection);
 	}
 ?>
 

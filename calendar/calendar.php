@@ -2,6 +2,19 @@
 session_start();
 $cust_id = $_SESSION['cust_id'];
 $sp_id = $_SESSION['sp_id'];
+
+require '../PHP_database_insert/db.php';
+$sql = "Select business_name FROM service_provider WHERE sp_id = $sp_id;";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$active = $row['active'];
+
+$count =mysqli_num_rows($result);
+
+if($count == 1) {
+    $business_name = $row['business_name'];
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -94,7 +107,7 @@ td.calendar-day, td.calendar-day-np {
 
 <body>
 
-<h1>Booking calendar</h1>
+<h1>Booking calendar for <?php echo $business_name; ?></h1>
 <table border="1" cellpadding="5" width="800">
 	<tr>
 		<td valign="top">
@@ -148,7 +161,6 @@ function draw_calendar($month,$year){
     $months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
     $headings = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
 
-    $cust_id = $_SESSION['cust_id'];
     $sp_id = $_SESSION['sp_id'];
 
 // Create connection
