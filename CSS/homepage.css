@@ -63,7 +63,7 @@ body,html{
 
     position: absolute;
     top: 25px;
-    right: 360px;
+    right: 140px;
 }
 .info2 {
     border-color:darkseagreen;
@@ -85,7 +85,7 @@ body,html{
 
     position: absolute;
     top: 25px;
-    right: 480px;
+    right: 270px;
 }
 .info3 {
     border-color: darkseagreen;
@@ -151,24 +151,33 @@ body,html{
      margin: auto;
  }
 .logo img{
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     height:auto;
     float: left;
 }
 .main-nav{
-    float: right;
+    float:right;
     list-style: none;
     margin-top: 30px;
+    position: absolute;
+    right:400px;
+
 }
 .main-nav li{
     display:inline-block;
+
+
 }
 .main-nav li a{
     color: darkseagreen;
     text-decoration: none;
-    padding: 5px 35px;
+    padding: 5px 10px;
     font-family: "Trebuchet MS","Helvetica", "Sans-serif";
     font-size: 20px;
+
+
+
 }
 .main-nav li a:hover{
     border: 1px goldenrod;

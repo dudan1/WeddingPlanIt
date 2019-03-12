@@ -1,4 +1,5 @@
-
+<div class="grid-container">
+    <div class="grid-50">
 <div class="row">
     <div class="logo">
         <img src="assets/images/logo1.png" alt="wedding band">
@@ -13,4 +14,6 @@
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
         </ul>
     </nav>
+</div>
+    </div>
 </div>

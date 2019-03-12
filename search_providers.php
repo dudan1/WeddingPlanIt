@@ -14,78 +14,13 @@ if (!IsSet($_SESSION["name"]))
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-
-    <style>
-
-        .container {
-            padding: 0 16px;
-        }
-        .container::after, .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .title {
-            color:darkgoldenrod;
-        }
-        .row{
-            max-width: 1200px;
-            margin: auto;
-        }
-        .logo img{
-            width: 200px;
-            height:auto;
-            float: left;
-        }
-        .main-nav{
-            float: right;
-            list-style: none;
-            margin-top: 30px;
-        }
-        .main-nav li{
-            display:inline-block;
-        }
-        .main-nav li a{
-            color: darkseagreen;
-            text-decoration: none;
-            padding: 5px 35px;
-            font-family: "Trebuchet MS","Helvetica", "Sans-serif";
-            font-size: 20px;
-        }
-        .main-nav li a:hover{
-            border: 1px goldenrod;
-        }
-        body{
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 8px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-        }
-        .button:hover {
-            background-color: #555;
-        }
-        body{
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-    </style>
 </head>
 
 <body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
 
 <header>
+    <div class="grid-container">
+        <div class="grid-50">
     <?php require 'PHP_database_insert/nav_bar.php';?>
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id02" class="modal">
@@ -109,10 +44,13 @@ if (!IsSet($_SESSION["name"]))
             </div>
         </form>
     </div>
+        </div>
+    </div>
 </header>
 <br><br><br><br><br><br><br><br>
 <main>
-
+<div class="grid-container">
+    <div class="grid-50">
     <div align="center">
         <h2 style="color:darkseagreen">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">
@@ -137,8 +75,8 @@ if (!IsSet($_SESSION["name"]))
                 <input type="submit" value="Search">
             </div>
         </form>
-
-
+    </div>
+    </div>
     </div>
 
 
