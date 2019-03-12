@@ -24,13 +24,14 @@ if (!IsSet($_SESSION["name"]))
 
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
     <?php include 'PHP_database_insert/nav_bar.php';?>
 </header>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <main>
+    <div class="grid-container" style="background-color:whitesmoke">
     <div>
         <form action ="PHP_database_insert/contract.php" method="post">
             <input type = "hidden" name = "cust_id" value="<?php echo $cust_id; ?>">
@@ -48,7 +49,7 @@ if (!IsSet($_SESSION["name"]))
     </div>
 
 
-
+    </div>
 </main>
 
 

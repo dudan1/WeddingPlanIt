@@ -10,13 +10,13 @@ if (!IsSet($_SESSION["name"]))
     <title>Customer Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
-    <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
     <div class="grid-container">
@@ -45,12 +45,12 @@ if (!IsSet($_SESSION["name"]))
         </form>
     </div>
         </div>
-    </div>
+
 </header>
-<br><br><br><br><br><br><br><br>
+<br><br><br>
 <main>
-<div class="grid-container">
-    <div class="grid-50">
+<div class="grid-container" style: "background-color=white">
+
     <div align="center">
         <h2 style="color:darkseagreen">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">
@@ -76,8 +76,8 @@ if (!IsSet($_SESSION["name"]))
             </div>
         </form>
     </div>
-    </div>
-    </div>
+
+<div>
 
 
 
@@ -99,7 +99,7 @@ if (!IsSet($_SESSION["name"]))
                         echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
                         echo "<p class=''>" . $row['description'] . "</p>";
-                        echo "<p><a href='service_providers.php?id={$row['SP_ID']}' class='button'>View Service Provider</a></p>";
+                        echo "<button><a href='service_providers.php?id={$row['SP_ID']}' >View Service Provider</a></button>";
                         echo "</div>" . "<br>";
                     }
 //free result set
@@ -109,8 +109,8 @@ if (!IsSet($_SESSION["name"]))
                 }
             }
             ?>
-
-
+</div>
+    </div>
 </main>
 
 

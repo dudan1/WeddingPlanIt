@@ -23,12 +23,12 @@ $category = $row['category'];
 <head>
     <meta charset="UTF-8">
     <title>Service Provider Homepage</title>
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/styles.css">
-    <link rel="stylesheet" type="text/css" href="20190308/CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
 
-    <link rel="shortcut icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="20190308/assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
     <style>
         .heading{
@@ -81,12 +81,12 @@ $category = $row['category'];
     </style>
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(20190308/assets/images/wed.jpg);">
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
     <div class="row">
     <div class="logo">
-<img src="20190308/assets/images/logo1.png" alt="wedding band">
+<img src="assets/images/logo1.png" alt="wedding band">
     </div>
     <nav>
         <ul class="main-nav">
@@ -94,7 +94,7 @@ $category = $row['category'];
             <li><a href="contact_us.php">CONTACT US</a></li>
             <li><a href="faq.php">FAQ</a></li>
             <li><a href="#">OUR CUSTOMERS</a></li>
-            <li><a href="20190308/PHP_database_insert/logout.php">LOG OUT</a></li>
+            <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
         </ul>
     </nav>
     </div>
@@ -135,7 +135,7 @@ $category = $row['category'];
 </header>
 
 <main>
-            <form name="search" method="get" action="20190308/Old versions/search.php">
+            <form name="search" method="get" action="Old versions/search.php">
             <h3>Service Provider</h3>
             <div class="heading">
         <label>What are you looking for?</label>

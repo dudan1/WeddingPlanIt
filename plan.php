@@ -5,13 +5,12 @@ if (!IsSet($_SESSION["name"]))
 
     require_once ('PHP_database_insert/db.php');
     //$sp_id = $_GET['id']; // assign variable for id
-    $sql = "SELECT C_ID FROM customer WHERE '$_SESSION[name]' = email";
+    $sql = "SELECT C_ID, first_name, surname FROM customer WHERE '$_SESSION[name]' = email";
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $cust_id = $row['C_ID'];
-
-
-
+    $cust_fname = $row['first_name'];
+    $cust_sname = $row['surname'];
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ if (!IsSet($_SESSION["name"]))
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <header>
     <?php include 'PHP_database_insert/nav_bar.php';?>
@@ -54,16 +53,18 @@ if (!IsSet($_SESSION["name"]))
         </form>
     </div>
 </header>
-<br>
+
 <main>
-
-
-
-
-<div class ="grid-container">
-    <div class = "grid-25"><h2>Dashboard</h2></div>
-    <div class = "grid-75">
+<div class ="grid-container" >
+    <div class = "grid-25" style="background-color:lightgoldenrodyellow"><h2>Dashboard</h2>
+        <p><?php
+            echo $cust_fname . " " . $cust_sname
+            ?></p>
+        <p>Wedding Date: php echo wdate here</p>
+    </div>
+    <div class = "grid-75" style="background-color:whitesmoke">
         <h2 style="color:darkseagreen">WEDDING PLAN</h2>
+        <hr>
         <?php
 echo "Your customer id is: " . $cust_id;
         // Join Contracts and Service_provider table

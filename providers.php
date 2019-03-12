@@ -24,7 +24,7 @@ $surname = $row['surname'];
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Customer Homepage - WeddingPlanIt</title>
+    <title>Service Providers - WeddingPlanIt</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
@@ -66,6 +66,11 @@ $surname = $row['surname'];
             background-position: center;
    }
     </style>-->
+   <style> }
+    form {
+    display: inline;
+    }
+   </style>
 </head>
 
 <body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
@@ -98,38 +103,68 @@ $surname = $row['surname'];
         </form>
     </div>
 </header>
-<br><br><br><br><br><br><br><br>
-<main>
 
-    <div align="center">
-        <h2 color="white">Search for Service Providers</h2>
-        <form method="GET" action="search_providers.php">
+<div class="grid-container">
+    <div class = "grid-25" style="background-color:lightgoldenrodyellow"><h2>Service Provider Categories</h2>
+    <div padding="3">
+        <p>Beautician</p>
+        <p>Caterer</p>
+        <p>Jeweller</p>
+        <p>Venue</p>
+        <p>Flowers</p>
+        <p>Photography</p>
+        <p>Music</p>
+        <p>Beauticians</p>
+        <p>Decor</p>
+        <p>Wedding Planners</p>
+        <p>Dresses</p>
+    </div>
+    </div>
+    <div class = "grid-75" style="background-color:whitesmoke">
+        <h2 style="color:darkseagreen">SERVICE PROVIDERS</h2>
+        <hr>
+
+
+        <form method="GET" action="providers.php?go">
             <div>
-
-                <select  name="search_value">
-
-                    <option value="">Select Service Provider category to search</option>
-                    <option value="beautician">Beautician</option>
-                    <option value="caterer">Caterer</option>
-                    <option value="jeweller">Jeweller</option>
-                    <option value="venue">Venue</option>
-                    <option value="flowers">Flowers </option>
-                    <option value="photography">Photography </option>
-                    <option value="music">Music</option>
-                    <option value=" Beauticians">Beauticians</option>
-                    <option value="decor">Decor</option>
-                    <option value="weddingplanners">Wedding Planners</option>
-                    <option value="dressers">Dresses</option>
-                </select>
-                &nbsp;
-                <input type="submit" value="Search">
+                <p><input type="text" name="search" placeholder="Search providers">
+                <input type="submit" value="Search"></p>
             </div>
         </form>
+        <?php
+        require_once('PHP_database_insert/db.php');
+
+        if (IsSET($_GET['go'])){
+
+            }
 
 
-    </div>
-</main>
+echo "PEOPLE WORKING AGEAD. trying to implement a search button here";
 
+        if ($connection === false) {
+            die("Error: could not connect to database. " . mysqli_connect_error());
+            }
+            $sql = "SELECT * FROM service_provider";
+            if ($result = mysqli_query($connection, $sql)){
+                if (mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<div class='container'>";
+                        echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
+                        echo "<p class='title'>" . $row['category'] . "</p>";
+                        #echo "<p class=''>" . $row['description'] . "</p>";
+                        echo "<p><a href='service_providers.php?id={$row['SP_ID']}' class='button'>View Service Provider</a></p>";
+                        echo "</div>" . "<br>";
+                    }
+                    //free result set
+                    mysqli_free_result($result);
+                }else {
+                    echo "No results matching your query were found.";
+                }
+            }
+        ?>
+
+
+</div>
 
 <footer>
 
