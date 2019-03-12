@@ -50,7 +50,6 @@ if (!IsSet($_SESSION["name"]))
 <br><br><br>
 <main>
 <div class="grid-container">
-
     <div align="center">
         <h2 style="color:darkseagreen">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">

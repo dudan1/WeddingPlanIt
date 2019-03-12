@@ -15,7 +15,6 @@ if (!IsSet($_SESSION["name"]))
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $_SESSION['cust_id'] = $row['C_ID'];
-
 ?>
 <!DOCTYPE html>
 <html>

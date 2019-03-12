@@ -77,7 +77,7 @@ td.calendar-day, td.calendar-day-np {
 }
 </style>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Booking calendar - DEMO</title>
+<title>Booking calendar</title>
 <link href="jquery-ui.css" rel="stylesheet">
 <script src="jquery-1.10.2.js"></script>
 <script src="jquery-ui.js"></script>

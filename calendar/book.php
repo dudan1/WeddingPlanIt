@@ -54,7 +54,6 @@ session_start();
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 		}
-		
 		end:
 		mysqli_close($connection);
 	}
