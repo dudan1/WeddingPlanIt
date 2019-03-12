@@ -12,59 +12,44 @@ session_start();
 <body>
 
 <?php
-// Captcha
-if(empty($_SESSION['captcha'] ) ||
-	strcasecmp($_SESSION['captcha'], $_POST['captcha']) != 0)
-	{
-		//Note: the captcha code is compared case insensitively.
-		//if you want case sensitive match, update the check above to
-		// strcmp()
-		$errors = "<h3><font color=\"red\">Wrong code!</font></h3>";
-		echo $errors;
-	}
 	
 	if(empty($errors))
 	{
-		include 'config.php';
-		
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $password,  $dbname);
+		include '../PHP_database_insert/db.php';
+
 		
 		// Check connection
-		if (!$conn) {
+		if (!$connection) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
 		
 		$start_day = intval(strtotime(htmlspecialchars($_POST["start_day"])));
-		$start_time = (60*60*intval(htmlspecialchars($_POST["start_hour"]))) + (60*intval(htmlspecialchars($_POST["start_minute"])));
 		$end_day = intval(strtotime(htmlspecialchars($_POST["end_day"])));
-		$end_time = (60*60*intval(htmlspecialchars($_POST["end_hour"]))) + (60*intval(htmlspecialchars($_POST["end_minute"])));
 		$name = htmlspecialchars($_POST["name"]);
-		$phone = htmlspecialchars($_POST["phone"]);
-		$item = htmlspecialchars($_POST["item"]);
+		$sp_id = $_SESSION['sp_id'];
 		
-		$start_epoch = $start_day + $start_time;
-		$end_epoch = $end_day + $end_time;
+		$start_epoch = $start_day;
+		$end_epoch = $end_day;
 		
 		// prevent double booking
-		$sql = "SELECT * FROM $tablename WHERE item='$item' AND (start_day>=$start_day OR end_day>=$start_day) AND canceled=0";
-		$result = mysqli_query($conn, $sql);
+		$sql = "SELECT * FROM bookings WHERE sp_id= $sp_id AND (start_day>=$start_day OR end_day>=$start_day) AND cancelled=0";
+		$result = mysqli_query($connection, $sql);
 		if (mysqli_num_rows($result) > 0) {
 			// handle every row
 			while($row = mysqli_fetch_assoc($result)) {
 				// check overlapping at 10 minutes interval
 				for ($i = $start_epoch; $i <= $end_epoch; $i=$i+600) {
-					if ($i>($row["start_day"]+$row["start_time"]) && $i<($row["end_day"]+$row["end_time"])) {
-						echo '<h3><font color="red">Unfortunately ' . $item . ' has already been booked for the time requested.</font></h3>';
+					if ($i>($row["start_day"]) && $i<($row["end_day"])) {
+						echo '<h3><font color="red">Unfortunately this service provider has already been booked for the time requested.</font></h3>';
 						goto end;
 					}
 				}
 			}				
 		}
 				
-		$sql = "INSERT INTO $tablename (name, phone, item, start_day, start_time, end_day, end_time, canceled)
-			VALUES ('$name','$phone', '$item', $start_day, $start_time, $end_day, $end_time, 0)";
-		if (mysqli_query($conn, $sql)) {
+		$sql = "INSERT INTO bookings (name, sp_id, cust_id, start_day, end_day, cancelled)
+			VALUES ('$name', $sp_id, $start_day, $end_day, 0)";
+		if (mysqli_query($connection, $sql)) {
 		    echo "<h3>Booking succeed.</h3>";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -75,7 +60,7 @@ if(empty($_SESSION['captcha'] ) ||
 	}
 ?>
 
-<a href="indexFormatted.php"><p>Back to the booking calendar</p></a>
+<a href="calendar.php"><p>Back to the booking calendar</p></a>
 
 </body>
 

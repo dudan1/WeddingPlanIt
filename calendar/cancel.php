@@ -12,44 +12,31 @@ session_start();
 <body>
 
 <?php
-// Captcha
-if(empty($_SESSION['captcha2'] ) ||
-	strcasecmp($_SESSION['captcha2'], $_POST['captcha2']) != 0)
-	{
-		//Note: the captcha code is compared case insensitively.
-		//if you want case sensitive match, update the check above to
-		// strcmp()
-		$errors = "<h3><font color=\"red\">Wrong code!</font></h3>";
-		echo $errors;
-	}
-	
+
 	if(empty($errors))
 	{
-		include 'config.php';
+		include '../PHP_database_insert/db.php';
 
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $password,  $dbname);
 
-		// Check connection
-		if (!$conn) {
+		if (!$connection) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
 
 		$id = intval(htmlspecialchars($_POST["id"]));
 
-		$sql = "UPDATE $tablename SET canceled=1 WHERE id = $id";
-		if (mysqli_query($conn, $sql)) {
+		$sql = "UPDATE bookings SET canceled=1 WHERE id = $id";
+		if (mysqli_query($connection, $sql)) {
 			echo "<h3>Booking cancelled.</h3>";
 		}
 		else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
 		
-		mysqli_close($conn);
+		mysqli_close($connection);
 	}
 ?>
 
-<a href="indexFormatted.php"><p>Back to the booking calendar</p></a>
+<a href="calendar.php"><p>Back to the booking calendar</p></a>
 
 </body>
 
