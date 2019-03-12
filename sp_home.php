@@ -135,7 +135,11 @@ $category = $row['category'];
 </header>
 
 <main>
+            <div class="heading">
+                <h1>Welcome to your Home Page!</h1>
 
+
+            </div>
 
 </main>
 
