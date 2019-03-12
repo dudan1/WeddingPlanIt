@@ -77,6 +77,12 @@ td.calendar-day, td.calendar-day-np {
 </style>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Booking calendar</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/unsemantic-grid-responsive-tablet.css">
+
+    <link rel="shortcut icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
 <link href="jquery-ui.css" rel="stylesheet">
 <script src="jquery-1.10.2.js"></script>
 <script src="jquery-ui.js"></script>

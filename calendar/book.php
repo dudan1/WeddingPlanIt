@@ -12,7 +12,7 @@ session_start();
 <body>
 
 <?php
-	
+	$cust_id = $_SESSION['cust_id'];
 	if(empty($errors))
 	{
 		include '../PHP_database_insert/db.php';
@@ -47,8 +47,8 @@ session_start();
 			}				
 		}
 				
-		$sql = "INSERT INTO bookings (name, sp_id, cust_id, start_day, end_day, cancelled)
-			VALUES ('$name', $sp_id, $start_day, $end_day, 0)";
+		$sql = "INSERT INTO bookings (name, sp_id, c_id, start_day, end_day, cancelled)
+			VALUES ('$name', $sp_id, $cust_id, $start_day, $end_day, 0)";
 		if (mysqli_query($connection, $sql)) {
 		    echo "<h3>Booking succeed.</h3>";
 		} else {
@@ -59,7 +59,7 @@ session_start();
 	}
 ?>
 
-<a href="calendar.php"><p>Back to the booking calendar</p></a>
+<a href="indexFormatted.php"><p>Back to the booking calendar</p></a>
 
 </body>
 

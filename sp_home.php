@@ -135,29 +135,7 @@ $category = $row['category'];
 </header>
 
 <main>
-            <form name="search" method="get" action="Old versions/search.php">
-            <h3>Service Provider</h3>
-            <div class="heading">
-        <label>What are you looking for?</label>
-                <select>
-                    <option value="">Select Service Provider category to search</option>
-                    <option value="beautician">Beautician</option>
-                    <option value="caterer">Caterer</option>
-                    <option value="jeweller">Jeweller</option>
-                    <option value="venue">Venue</option>
-                    <option value="flowers">Flowers </option>
-                    <option value="photography">Photography </option>
-                    <option value="music">Music</option>
-                    <option value="decor">Decor</option>
-                    <option value="weddingplanners">Wedding Planners</option>
-                    <option value="dressers">Dresses</option>
-        </select> &nbsp;
-            <button type="submit" class="b">Search Service Providers</button>
 
-
-            </div>
-
-    </form>
 
 </main>
 

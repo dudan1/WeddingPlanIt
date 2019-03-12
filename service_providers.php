@@ -39,7 +39,7 @@ if (!IsSet($_SESSION["name"]))
 <main>
     <div class="grid-container" style="background-color:whitesmoke">
     <div>
-        <form action ="calendar/calendar.php" method="post">
+        <form action ="calendar/indexFormatted.php" method="post">
             <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
             <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
             <button type="submit">BOOK THIS SERVICE PROVIDER</button>
