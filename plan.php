@@ -68,22 +68,31 @@ if (!IsSet($_SESSION["name"]))
         <h2 style="color:darkseagreen">WEDDING PLAN</h2>
         <hr>
         <?php
-echo "Your customer id is: " . $cust_id;
+echo "<br>";
         // Join Contracts and Service_provider table
         require_once ('PHP_database_insert/db.php');
         $sql2 = "SELECT business_name, category 
-            FROM contracts c, service_provider s
-            WHERE c.SP_ID = s.SP_ID AND Cust_ID = '$cust_id'";
-        $result2 = mysqli_query($connection, $sql2);
-        while ($row2 = mysqli_fetch_array($result2)) {
-            echo "<h3>" . $row2['category'] . "</h3>";
-            echo  "<p>" . $row2['business_name'] . "</p>";
+            FROM bookings c, service_provider s
+            WHERE c.SP_ID = s.SP_ID AND c.C_ID = '$cust_id'";
+        if ($result2 = mysqli_query($connection, $sql2)) {
+            if (mysqli_num_rows($result2) > 0) {
+                while ($row2 = mysqli_fetch_array($result2)) {
+                    echo "<h3>" . $row2['category'] . "</h3>";
+                    echo  "<p>" . $row2['business_name'] . "</p>";
+            }
+            //free result set
+                mysqli_free_result($result2);
+        }else{
+                echo "You have not started building your wedding plan. Search Service Providers to begin.";
+            }
+
 
         }
 
 
-        //Still working on the above
+        echo "<br>";
         ?>
+        <br>
     </div>
 </div>
 
