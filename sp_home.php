@@ -17,6 +17,7 @@ $address = $row['address'];
 $postcode = $row['postcode'];
 $business_name = $row['business_name'];
 $category = $row['category'];
+$description = $row['description]
 */?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +94,7 @@ $category = $row['category'];
             <li><a>HOME</a></li>
             <li><a href="contact_us.php">CONTACT US</a></li>
             <li><a href="faq.php">FAQ</a></li>
-            <li><a href="#">OUR CUSTOMERS</a></li>
+            <li><a href="my_calendar.php">MY CALENDAR</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
         </ul>
     </nav>
