@@ -1,12 +1,12 @@
 <?php
-/*session_start();
+session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:../index.html");
 require_once('PHP_database_insert/db.php');
 
 $email = $_SESSION['name'];
 
-$sql = "Select first_name, surname, address, postcode, business_name, category FROM service_provider WHERE email = '$email'";
+$sql = "Select first_name, surname, address, postcode, business_name, category, description FROM service_provider WHERE email = '$email'";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
@@ -17,8 +17,8 @@ $address = $row['address'];
 $postcode = $row['postcode'];
 $business_name = $row['business_name'];
 $category = $row['category'];
-$description = $row['description]
-*/?>
+$description = $row['description'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,6 +127,7 @@ $description = $row['description]
                         <option value="weddingplanners" <?php if($category =="weddingplanners") echo 'selected="selected"' ?>>Wedding Planners</option>
                         <option value="dressers" <?php if($category =="dressers") echo 'selected="selected"' ?>>Dresses</option>
                     </select></p>
+                <p>Say something about your business: <textarea required name="description" rows="7" cols="42"><?php echo $description; ?></textarea></p>
                 <button type="submit">Submit details</button>
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->

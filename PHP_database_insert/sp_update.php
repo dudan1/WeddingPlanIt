@@ -14,13 +14,15 @@ $new_address=$_POST['address'];
 $new_postcode=$_POST['postcode'];
 $new_business_name=$_POST['business_name'];
 $new_category=$_POST['category'];
+$new_description=$_POST['description'];
 
 // Attempt to insert into database
-$sql = "UPDATE service_provider SET first_name = '$new_firstname', surname = '$new_surname', business_name = '$new_business_name', address = '$new_address', postcode = '$new_postcode', category = '$new_category', 
+$sql = "UPDATE service_provider SET first_name = '$new_firstname', surname = '$new_surname', business_name = '$new_business_name', address = '$new_address',
+ postcode = '$new_postcode', category = '$new_category', description = '$new_description'
             WHERE (email = '$session_email')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registered.";
-    header('Location:../cust_home.php');
+    header('Location:../sp_home.php');
 }
 else {
     echo "Error: Could not execute." . mysqli_error($connection);
