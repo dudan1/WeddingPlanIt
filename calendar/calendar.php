@@ -1,3 +1,20 @@
+<?php
+session_start();
+$cust_id = $_SESSION['cust_id'];
+$sp_id = $_SESSION['sp_id'];
+
+require '../PHP_database_insert/db.php';
+$sql = "Select business_name FROM service_provider WHERE sp_id = $sp_id;";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$active = $row['active'];
+
+$count =mysqli_num_rows($result);
+
+if($count == 1) {
+    $business_name = $row['business_name'];
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -60,7 +77,7 @@
     </style>
 
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>My Booking Calendar</title>
+    <title>Booking Calendar for <?php echo $business_name; ?></title>
     <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="../CSS/unsemantic-grid-responsive-tablet.css">
@@ -97,28 +114,48 @@
 <body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(../assets/images/wed.jpg);">
 
 <header>
-    <div class="row">
-        <div class="logo">
-            <img src="../assets/images/logo1.png" alt="wedding band">
-        </div>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="../sp_home.php">HOME</a></li>
-                <li><a href="../contact_us.php">CONTACT US</a></li>
-                <li><a href="../faq.php">FAQ</a></li>
-                <li><a href="../my_calendar.php">MY CALENDAR</a></li>
-                <li><a href="../PHP_database_insert/logout.php">LOG OUT</a></li>
-            </ul>
-        </nav>
-    </div>
+    <?php include '../PHP_database_insert/nav_bar_calendar.php';
+
+    ?>
 </header>
 <br><br><br><br><br><br><br><br>
 <div class="bg-text2">
-    <h1>My Booking Calendar</h1>
+    <h1>Booking calendar for <?php echo $business_name; ?></h1>
+    <table border="1" cellpadding="5" width="800">
+        <tr>
+            <td valign="top">
+                <form action="book.php" method="post">
+                    <h3>Make booking</h3>
+                    <table style="width: 70%">
+                        <tr>
+                            <td>Name:</td>
+                            <td> <input maxlength="50" name="name" required="" type="text" /></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Reservation date:</td>
+                            <td>
+                                <input id="from" name="start_day" required="" type="text" /></td>
+                            <td>-</td>
+                            <td><input id="to" name="end_day" required="" type="text" /></td>
+                        </tr>
 
+                    </table>
+                    <input name="book" type="submit" value="Book" />
+                </form>
+            </td>
+            <td valign="top">
+                <h3>Cancel booking</h3>
+                <form action="cancel.php" method="post">
+                    <p></p>
+                    ID: <input name="id" required="" type="text" /><br />
+
+                    <p><input name="cancel" type="submit" value="Cancel" /></p>
+                </form></td>
+        </tr>
+    </table>
     <?php
-    session_start();
-
     /* draws a calendar */
     function draw_calendar($month,$year){
 
@@ -127,26 +164,13 @@
         $password = "1809591";
         $dbname = "db1809591_cmm007";
 
+        $months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
         $headings = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-        // Create connection
+
+        $sp_id = $_SESSION['sp_id'];
+
+// Create connection
         $connection = mysqli_connect($servername, $username, $password, $dbname);
-
-
-        $sql = "Select SP_ID FROM service_provider WHERE email = '$_SESSION[name]'";
-        $result =mysqli_query($connection,$sql);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
-
-        $count =mysqli_num_rows($result);
-
-        if($count == 1) {
-            $sp_id = $row['sp_id'];
-            $_SESSION['sp_id'] = $sp_id;
-        }
-        else{
-            echo'No user id found';
-        }
-
         // Check connection
         if (!$connection) {
             die("Connection failed: " . mysqli_connect_error());
@@ -250,4 +274,3 @@
 </body>
 
 </html>
-
