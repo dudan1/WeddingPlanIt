@@ -13,7 +13,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $firstname = $row['first_name'];
 $surname = $row['surname'];
-$phone_nuber = $row['phone_number'];
+$phone_number = $row['phone_number'];
 $wedding_date = $row['wedding_date'];
 ?>
 
@@ -75,7 +75,7 @@ $wedding_date = $row['wedding_date'];
 <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
 <div id="id02" class="modal">
 
-    <form class="modal-content animate" action="/PHP_database_insert/cust_update.php" method="post">
+    <form class="modal-content animate" action="PHP_database_insert/cust_update.php" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
             <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
