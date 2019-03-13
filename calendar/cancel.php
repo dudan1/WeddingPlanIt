@@ -36,7 +36,7 @@ session_start();
 	}
 ?>
 
-<a href="indexFormatted.php"><p>Back to the booking calendar</p></a>
+<a href="calendar.php"><p>Back to the booking calendar</p></a>
 
 </body>
 </html>
