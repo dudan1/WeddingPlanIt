@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:../index.html");
 require_once('db.php');
 
 // Check connection
@@ -32,11 +34,11 @@ else{
 
     //Redirect to correct additional details form
     if($_POST['user_type'] == 'Service Provider') {
-        header('Location:../SP_details.html');
+        header('Location:../SP_details.php');
     }
 
     else if($_POST['user_type'] == 'Customer'){
-        header('Location:../cust_details.html');
+        header('Location:../cust_details.php');
     }
     else{
         echo "User_type Invalid";

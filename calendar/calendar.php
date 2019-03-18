@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:../index.html");
 $cust_id = $_SESSION['cust_id'];
 $sp_id = $_SESSION['sp_id'];
 
@@ -7,7 +9,6 @@ require '../PHP_database_insert/db.php';
 $sql = "Select business_name FROM service_provider WHERE sp_id = $sp_id;";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-$active = $row['active'];
 
 $count =mysqli_num_rows($result);
 
@@ -149,13 +150,14 @@ if($count == 1) {
                 <h3>Cancel booking</h3>
                 <form action="cancel.php" method="post">
                     <p></p>
-                    ID: <input name="id" required="" type="text" /><br />
+                   Booking ID: <input name="id" required="" type="text" /><br />
 
                     <p><input name="cancel" type="submit" value="Cancel" /></p>
                 </form></td>
         </tr>
     </table>
     <?php
+
     /* draws a calendar */
     function draw_calendar($month,$year){
 
@@ -216,7 +218,7 @@ if($count == 1) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     if($row["cancelled"] == 1) $calendar .= "<font color=\"grey\"><s>";
-                    $calendar .= "BOOKED"."<b>" . $row["item"] . "</b><br>Booking ID: " . $row["id"] . "<br>" . $row["name"] . "<br>"  . "<br>";
+                    $calendar .= "BOOKED"."<b>" . "</b><br>Booking ID: " . $row["id"] . "<br>" . $row["name"] . "<br>"  . "<br>";
                     if($row["cancelled"] == 1) $calendar .= "</s></font>";
                 }
             } else {

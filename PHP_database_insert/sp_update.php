@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('db.php');
+if (!IsSet($_SESSION["name"]))
+    header("Location:../index.html");
 
 // Check connection
 if ($connection === false) {

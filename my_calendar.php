@@ -119,7 +119,8 @@ td.calendar-day, td.calendar-day-np {
 
     <?php
     session_start();
-
+    if (!IsSet($_SESSION["name"]))
+        header("Location:../index.html");
     /* draws a calendar */
     function draw_calendar($month,$year){
 
@@ -136,12 +137,11 @@ td.calendar-day, td.calendar-day-np {
         $sql = "Select SP_ID FROM service_provider WHERE email = '$_SESSION[name]'";
         $result =mysqli_query($connection,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
 
         $count =mysqli_num_rows($result);
 
         if($count == 1) {
-            $sp_id = $row['sp_id'];
+            $sp_id = $row['SP_ID'];
             $_SESSION['sp_id'] = $sp_id;
         }
         else{
@@ -193,7 +193,7 @@ td.calendar-day, td.calendar-day-np {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     if($row["cancelled"] == 1) $calendar .= "<font color=\"grey\"><s>";
-                    $calendar .= "BOOKED"."<b>" . $row["item"] . "</b><br>Booking ID: " . $row["id"] . "<br>" . $row["name"] . "<br>"  . "<br>";
+                    $calendar .= "BOOKED"."<b>" . "</b><br>Booking ID: " . $row["id"] . "<br>" . $row["name"] . "<br>"  . "<br>";
                     if($row["cancelled"] == 1) $calendar .= "</s></font>";
                 }
             } else {
