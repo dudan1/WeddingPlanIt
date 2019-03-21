@@ -25,7 +25,7 @@
                 </div>
                 <nav>
                     <ul class="main-nav">
-                        <li><a href="Old versions/contact_us_zz.php">CONTACT US</a></li>
+                        <li><a href="contact_us.php">CONTACT US</a></li>
                         <li><a href="faq.php">FAQ</a></li>
                     </ul>
                 </nav>
@@ -39,7 +39,6 @@
     <hr/>
     <p>Please submit a query:</p>
 
-<!--    <form action="PHP_database_insert?" method="post">-->
     <form id="myform" onsubmit="emailjs.sendForm('Outlook', 'Outlook_Contact_Us', this); return false;" method="post">
         <p align="left"><textarea rows="4" cols="47" required name="message_html" placeholder="Type your query here..."></textarea></p>
         <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>

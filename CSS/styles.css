@@ -321,7 +321,7 @@ body {
 /*STYLING FOR pic_upload.html*/
 
 
-/*code for mail form submission success messages*/
+/*code for mail form submission status messages*/
 form:after {
     content: '';
     position: absolute;

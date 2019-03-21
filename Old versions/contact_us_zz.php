@@ -82,7 +82,7 @@ if (!IsSet($_SESSION["name"]))
     <h1>Contact Us</h1>
     <hr/>
     <p>Please submit a query:</p>
-    <p></p>
+
 
         <form action="../PHP_database_insert?" method="post">
         <!--<p>Your email: <input type="email" required name="email"></p>-->
