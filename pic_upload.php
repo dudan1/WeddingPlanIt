@@ -49,11 +49,13 @@
     <div class="grid-container">
     <div align="center">
 
-<form method="" action="">
-    <input type="file" name="name" multiple> <br><br>
-  <h2 style="color:brown; font-family:Trebuchet MS, Helvetica, Sans-serif" >  Click button above to select Pictures you wish to upload </h2>
-</form>
-       <button class="block">Upload Picture</button>
+        <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <p>Name of photo:<input type="text" name="photo_name" id="photo_name"></p>
+            <p>Caption or description for the photo:<textarea name="caption" rows="4" cols="50"></textarea></p>
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
     </div>
     </div>
 </main>
