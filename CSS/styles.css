@@ -317,3 +317,42 @@ body {
 .button:hover {
     background-color: #555;
 }
+
+/*delete following bit if not working*/
+    form:after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        right: 3px;
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+        text-shadow: 1px 1px white;
+        font-size: 24px;
+        padding: 5px;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: -150px;
+        transition: all .3s;
+    }
+form.emailjs-success:after,
+form.emailjs-sending:after,
+form.emailjs-error:after {
+    margin-top: 0;
+    transition: all .3s;
+}
+form.emailjs-sending:after {
+    content: 'Sending query...';
+    background: #000000;
+}
+form.emailjs-success:after {
+    content: 'Query sent!';
+    background: #1B5E20;
+    color: white;
+    text-shadow: -1px -1px black;
+}
+form.emailjs-error:after {
+    content: 'Error sending query';
+    background: #B71C1C;
+    color: white;
+    text-shadow: -1px -1px black;
+}

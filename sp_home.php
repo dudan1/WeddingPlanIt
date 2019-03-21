@@ -92,7 +92,7 @@ $description = $row['description'];
     <nav>
         <ul class="main-nav">
             <li><a>HOME</a></li>
-            <li><a href="contact_us.php">CONTACT US</a></li>
+            <li><a href="Old versions/contact_us_zz.php">CONTACT US</a></li>
             <li><a href="faq.php">FAQ</a></li>
             <li><a href="my_calendar.php">MY CALENDAR</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
