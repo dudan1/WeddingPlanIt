@@ -36,7 +36,7 @@
         </div>
         <nav>
             <ul class="main-nav">
-                <li><a>HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="faq.php">FAQ</a></li>
                 <li><a href="my_calendar.php">MY CALENDAR</a></li>
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
