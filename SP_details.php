@@ -97,6 +97,7 @@
                 <option value="Weddingp Panners">Wedding Planners</option>
                 <option value="Dressers">Dresses</option>
             </select></p>
+            <p style="width:20%"> Price:<input type="text" required name="price" placeholder="£"></p>
             <p>Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea></p>
             <button type="submit">Submit details</button>
 
