@@ -2,6 +2,9 @@
 session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
+if (($_SESSION["user_type"]) != "Customer")
+    header("Location:sp_home.php");
+
 require_once('PHP_database_insert/db.php');
 
 $email = $_SESSION['name'];

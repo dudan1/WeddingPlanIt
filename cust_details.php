@@ -2,6 +2,9 @@
 session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
+#if (($_SESSION["user_type"]) != "Service Provider")
+ #   header("Location:sp_home.php");
+
 ?>
 <!DOCTYPE html>
 <html>

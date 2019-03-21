@@ -2,10 +2,13 @@
 session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
+if (($_SESSION["user_type"]) != "Customer")
+    header("Location:sp_home.php");
+
 
     require_once ('PHP_database_insert/db.php');
     //$sp_id = $_GET['id']; // assign variable for id
-    $sql = "SELECT C_ID, first_name, surname FROM customer WHERE '$_SESSION[name]' = email";
+    $sql = "SELECT C_ID, first_name, surname, wedding_date FROM customer WHERE '$_SESSION[name]' = email";
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $cust_id = $row['C_ID'];
