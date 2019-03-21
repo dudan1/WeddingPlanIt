@@ -47,10 +47,10 @@ if ($uploadOk == 0) {
             die("Error: Could not connect. " . mysqli_connect_error());
         }
         // create file path
-        $link = "uploads/".$_POST['fileToUpload'];
+        $link = "uploads/".$_POST['filename'];
 // Attempt to insert into database
         $sql = "INSERT INTO images (SP_ID, photo_name, caption, link) 
-            VALUES ($sp_id,'$_POST[photo_name]','$_POST[caption]','$link')";
+            VALUES ($sp_id,'$_POST[filename]','$_POST[caption]','$link')";
         if (mysqli_query($connection, $sql)){
             #echo "Successfully registred.";
             header('Location:../pic_upload.php');
