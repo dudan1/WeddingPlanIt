@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
-
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input[type="file"]').change(function(e){
+                var fileName = e.target.files[0].name;
+                document.getElementById('filename').value = fileName
+            });
+        });
+    </script>
 
     <title>Upload Picture</title>
     <style>
@@ -49,14 +57,17 @@
     <div class="grid-container">
     <div align="center">
 
-<form method="" action="">
-    <input type="file" name="name" multiple> <br><br>
-  <h2 style="color:brown; font-family:Trebuchet MS, Helvetica, Sans-serif" >  Click button above to select Pictures you wish to upload </h2>
-</form>
-       <button class="block">Upload Picture</button>
+        <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="hidden" name="filename" id="filename">
+            <p>Caption or description for the photo:<textarea name="caption" rows="4" cols="50"></textarea></p>
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
     </div>
     </div>
 </main>
+
 
 
 </body>

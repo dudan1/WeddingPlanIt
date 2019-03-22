@@ -1,15 +1,18 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:../index.html");
+    header("Location:index.html");
+if (($_SESSION["user_type"]) == "Service Provider") {
+    if (($_SESSION["user_type"]) != "Service Provider")
+        header("Location:../cust_home.php");
+
 require_once('PHP_database_insert/db.php');
 
 $email = $_SESSION['name'];
 
-$sql = "Select first_name, surname, address, postcode, business_name, category, description FROM service_provider WHERE email = '$email'";
+$sql = "SELECT * FROM service_provider WHERE email = '$email'";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
 
 $firstname = $row['first_name'];
 $surname = $row['surname'];
@@ -18,6 +21,9 @@ $postcode = $row['postcode'];
 $business_name = $row['business_name'];
 $category = $row['category'];
 $description = $row['description'];
+} else{
+    header("Location: cust_home.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,6 +102,7 @@ $description = $row['description'];
             <li><a href="faq.php">FAQ</a></li>
             <li><a href="my_calendar.php">MY CALENDAR</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
+            <li><a href="pic_upload.php">MY PHOTOS</a></li>
         </ul>
     </nav>
     </div>

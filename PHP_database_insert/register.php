@@ -4,6 +4,11 @@ if (!IsSet($_SESSION["name"]))
     header("Location:../index.html");
 require_once('db.php');
 
+$email = mysqli_real_escape_string($connection, $_POST['email']);
+$pwd1 = mysqli_real_escape_string($connection, $_POST['pwd1']);
+$pwd1 = password_hash($pwd1, PASSWORD_DEFAULT);
+$user_type = $_POST['user_type'];
+
 // Check connection
 if ($connection === false) {
     die("Error: Could not connect. " . mysqli_connect_error());
@@ -20,7 +25,7 @@ $_SESSION['user_type'] = $session_user_type;
 
 // Attempt to insert into database
 if($_POST['pwd1']== $_POST['pwd2']) {
-    $sql = "INSERT INTO users (email, password, user_type) VALUES ('$_POST[email]','$_POST[pwd1]','$_POST[user_type]')";
+    $sql = "INSERT INTO users (email, password, user_type) VALUES ('$email','$pwd1','$user_type')";
     if (mysqli_query($connection, $sql)) {
         #echo "Successfully registered.";
     } else {
@@ -33,11 +38,11 @@ else{
 
 
     //Redirect to correct additional details form
-    if($_POST['user_type'] == 'Service Provider') {
-        header('Location:../SP_details.php');
+    if($user_type == "Service Provider") {
+        header('Location:../sp_details.php');
     }
 
-    else if($_POST['user_type'] == 'Customer'){
+    else if($user_type == "Customer"){
         header('Location:../cust_details.php');
     }
     else{
