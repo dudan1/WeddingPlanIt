@@ -25,7 +25,7 @@
                 </div>
                 <nav>
                     <ul class="main-nav">
-                        <li><a href="contact_us.php">CONTACT US</a></li>
+                        <!--<li><a href="contact_us.php">CONTACT US</a></li>-->
                         <li><a href="faq.php">FAQ</a></li>
                     </ul>
                 </nav>
