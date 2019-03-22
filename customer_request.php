@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Contact Us Page</title>
+    <title>Request a Service</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
@@ -35,14 +35,16 @@
 <main>
 <div class = "bg-text1">
 
-    <h1>Contact Us</h1>
+    <h1>Request a Service</h1>
     <hr/>
     <p>Please submit a query:</p>
 
-    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Contact_Us', this); return false;" method="post">
+    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Customer_Request', this); return false;" method="post">
         <p align="left"><textarea rows="4" cols="47" required name="message_html" placeholder="Type your query here..."></textarea></p>
-        <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
-        <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60"></p>
+        <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30" placeholder="to fetch..."></textarea></p>
+        <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60" placeholder="to fetch..."></p>
+        <p align="left">Supplier name: <textarea rows="1" cols="23" required name="to_name" maxlength="30" placeholder="to fetch..."></textarea></p>
+        <p align="left">Supplier email <input type="email" required name="supplier_email" maxlength="60" placeholder="to fetch..."></p>
 
         <button type="submit">Submit details</button>
 

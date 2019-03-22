@@ -99,7 +99,9 @@ $wedding_date = $row['wedding_date'];
 </header>
 <br><br><br><br><br><br><br><br>
 <main>
-
+<!--<div class="grid-container">
+    <div class="grid-50">
+    <div class = "bg-text1">-->
     <div align="center">
         <h2 color="white">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">
@@ -123,6 +125,10 @@ $wedding_date = $row['wedding_date'];
                 &nbsp;
                 <input type="submit" value="Search">
             </div>
+    </div> <!--
+    </div>
+    </div>
+    </div>-->
         </form>
 
 
