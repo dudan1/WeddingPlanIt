@@ -137,7 +137,7 @@ $wedding_date = $row['wedding_date'];
 
 
 <footer>
-
+<p></p>
 </footer>
 
 </body>

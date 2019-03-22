@@ -39,7 +39,7 @@
     <hr/>
     <p>Please submit a query:</p>
 
-    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Customer_Request', this); return false;" method="post">
+    <form id="myform" onsubmit="emailjs.sendForm('Outlook', 'Outlook_Customer_Request', this); return false;" method="post">
         <p align="left"><textarea rows="4" cols="47" required name="message_html" placeholder="Type your query here..."></textarea></p>
         <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30" placeholder="to fetch..."></textarea></p>
         <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60" placeholder="to fetch..."></p>
@@ -48,7 +48,7 @@
 
         <button type="submit">Submit details</button>
 
-        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel and leave</button>
     </form>
 
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
