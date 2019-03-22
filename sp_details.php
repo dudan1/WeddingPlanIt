@@ -114,6 +114,7 @@ if (!IsSet($_SESSION["name"]))
 </div>
 
 
+
 <footer class="footer">
     <!--<p>DJNT (c) 2019</p>
     <p>Join us on</p>
