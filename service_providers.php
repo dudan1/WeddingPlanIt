@@ -56,6 +56,7 @@ if (!IsSet($_SESSION["name"]))
         $result2 = mysqli_query($connection, $sql2) or die ("Bad Query: $sql2");
         $row2 = ($row2 = mysqli_fetch_array($result2));
         echo "<h2>" . $row2['business_name'] . "</h2>";
+        echo "<p>". "£".$row2['price']. "</p>";
         echo "<h3>" . $row2['category'] . "</h3>";
         echo "<p>" . $row2['description'] . "</p>";
         ?>

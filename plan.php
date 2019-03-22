@@ -43,7 +43,7 @@ if (($_SESSION["user_type"]) != "Customer")
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
-                <h1>Update your customer details</h1>
+                <h1>Update your customer <br>details</h1>
                 <p>Please enter the following personal details<!-- for email address (email)-->.</p>
                 <!--<p>Your email: <input type="email" required name="email"></p>-->
                 <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>

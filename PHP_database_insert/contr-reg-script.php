@@ -13,8 +13,8 @@ $session_email = $_SESSION['name'];
 
 // Attempt to insert into database
 
-$sql = "INSERT INTO service_provider (email, first_name, surname, address, postcode, category, business_name, description) 
-            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]','$_POST[address]','$_POST[postcode]','$_POST[category]','$_POST[business_name]', '$_POST[description]')";
+$sql = "INSERT INTO service_provider (email, first_name, surname, address, postcode, category, price, business_name, description) 
+            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]','$_POST[address]','$_POST[postcode]','$_POST[category]','$_POST[price]','$_POST[business_name]', '$_POST[description]')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
     header('Location:../sp_home.php');

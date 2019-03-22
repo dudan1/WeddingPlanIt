@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
+
+
+    <title>Upload Picture</title>
+    <style>
+        .block {
+            display: block;
+            width: 80%;
+            border: none;
+            background-color:burlywood;
+            color:black;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-family: "Trebuchet MS", "Helvetica", "Sans-serif";
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .block:hover {
+            background-color:darkseagreen;
+            color: black;
+        }
+    </style>
+</head>
+
+<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
+<header>
+    <div class="row">
+        <div class="logo">
+            <img src="assets/images/logo1.png" alt="wedding band">
+        </div>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+                <li><a href="my_calendar.php">MY CALENDAR</a></li>
+                <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="grid-container">
+    <div align="center">
+
+<form method="" action="">
+    <input type="file" name="name" multiple> <br><br>
+  <h2 style="color:brown; font-family:Trebuchet MS, Helvetica, Sans-serif" >  Click button above to select Pictures you wish to upload </h2>
+</form>
+       <button class="block">Upload Picture</button>
+    </div>
+    </div>
+</main>
+
+
+</body>
+</html>
