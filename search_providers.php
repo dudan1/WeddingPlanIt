@@ -98,7 +98,9 @@ if (!IsSet($_SESSION["name"]))
                         echo "<div class='sp_card'>";
                         echo "<div class='container'>";
                         echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
+                        echo "<p>"."£".$row['price']."</p>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
+
                         echo "<p class=''>" . $row['description'] . "</p>";
                         echo "<form><button class='bt1' action = 'get'><input type ='hidden' name = 'sp_id' value = $sp_id>"
                               . "View Service Provider" . "</button></form>";

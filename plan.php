@@ -2,10 +2,13 @@
 session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
+if (($_SESSION["user_type"]) != "Customer")
+    header("Location:sp_home.php");
+
 
     require_once ('PHP_database_insert/db.php');
     //$sp_id = $_GET['id']; // assign variable for id
-    $sql = "SELECT C_ID, first_name, surname FROM customer WHERE '$_SESSION[name]' = email";
+    $sql = "SELECT C_ID, first_name, surname, wedding_date FROM customer WHERE '$_SESSION[name]' = email";
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $cust_id = $row['C_ID'];
@@ -40,7 +43,7 @@ if (!IsSet($_SESSION["name"]))
                 <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
-                <h1>Update your customer details</h1>
+                <h1>Update your customer <br>details</h1>
                 <p>Please enter the following personal details<!-- for email address (email)-->.</p>
                 <!--<p>Your email: <input type="email" required name="email"></p>-->
                 <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
