@@ -95,7 +95,7 @@ td.calendar-day, td.calendar-day-np {
     });
   });  </script>
 </head>
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
+<body><!-- style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);"-->
 
 <header>
     <div class="row">
@@ -105,7 +105,7 @@ td.calendar-day, td.calendar-day-np {
         <nav>
             <ul class="main-nav">
                 <li><a href="sp_home.php">HOME</a></li>
-                <li><a href="Old versions/contact_us_zz.php">CONTACT US</a></li>
+                <li><a href="contact_us.php">CONTACT US</a></li>
                 <li><a href="faq.php">FAQ</a></li>
                 <li><a href="my_calendar.php">MY CALENDAR</a></li>
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
