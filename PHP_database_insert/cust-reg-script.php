@@ -10,10 +10,14 @@ if ($connection === false) {
 
 //Retrieve email from Session
 $session_email = $_SESSION['name'];
-
+$first_name = mysqli_real_escape_string($connection, $_POST[first_name]);
+$surname = mysqli_real_escape_string($connection, $_POST[surname]);
+$phone_number = mysqli_real_escape_string($connection, $_POST[phone_number]);
+$wedding_date = mysqli_real_escape_string($connection, $_POST[wedding_date]');
+    
 // Attempt to insert into database
 $sql = "INSERT INTO customer (email, first_name, surname, phone_number, wedding_date) 
-            VALUES ('$session_email','$_POST[first_name]','$_POST[surname]', '$_POST[phone_number]', '$_POST[wedding_date]')";
+            VALUES ('$session_email','$first_name','$surname', '$phone_number', '$wedding_date')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
 
