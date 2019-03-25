@@ -217,11 +217,11 @@ html {
 .button:hover {
     background-color: #555;
 }
-body{
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
+/*body{*/
+    /*height: 100vh;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+/*}*/
 
 /*STYLE FOR search_providers.php*/
  .container {
@@ -263,11 +263,6 @@ body{
 .main-nav li a:hover{
     border: 1px goldenrod;
 }
-body{
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
 
 .button {
     border: none;
@@ -284,9 +279,12 @@ body{
     background-color: #555;
 }
 body {
-    height: 100vh;
+/*    height: 100vh;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
+    background-image:url(../assets/images/wed.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*STYLE FOR Service_providers.php*/
