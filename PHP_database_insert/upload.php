@@ -3,9 +3,9 @@ session_start();
 require_once('db.php');
 if (!IsSet($_SESSION["name"]))
     header("Location:../index.html");
-$session_email = $_SESSION['name'];
+$session_email = $_SESSION["name"];
 
-$sql = "Select SP_ID FROM Service_provider WHERE '$session_email' = email";
+$sql = "SELECT SP_ID FROM service_provider WHERE '$session_email' = email";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $sp_id = $row['SP_ID'];
@@ -50,7 +50,7 @@ if ($uploadOk == 0) {
         $link = "uploads/".$_POST['filename'];
 // Attempt to insert into database
         $sql = "INSERT INTO images (SP_ID, photo_name, caption, link) 
-            VALUES ($sp_id,'$_POST[filename]','$_POST[caption]','$link')";
+            VALUES ('$sp_id','$_POST[filename]','$_POST[caption]','$link')";
         if (mysqli_query($connection, $sql)){
             #echo "Successfully registred.";
             header('Location:../pic_upload.php');

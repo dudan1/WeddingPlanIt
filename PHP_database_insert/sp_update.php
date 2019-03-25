@@ -10,13 +10,13 @@ if ($connection === false) {
 }
 
 $session_email = $_SESSION['name'];
-$new_firstname=$_POST['first_name'];
-$new_surname=$_POST['surname'];
-$new_address=$_POST['address'];
-$new_postcode=$_POST['postcode'];
-$new_business_name=$_POST['business_name'];
-$new_category=$_POST['category'];
-$new_description=$_POST['description'];
+$new_firstname = mysqli_real_escape_string($connection, $_POST['first_name']);
+$new_surname = mysqli_real_escape_string($connection, $_POST['surname']);
+$new_address = mysqli_real_escape_string($connection, $_POST['address']);
+$new_postcode = mysqli_real_escape_string($connection, $_POST['postcode']);
+$new_business_name = mysqli_real_escape_string($connection, $_POST['business_name']);
+$new_category = $_POST['category'];
+$new_description = mysqli_real_escape_string($connection, $_POST['description']);
 
 // Attempt to insert into database
 $sql = "UPDATE service_provider SET first_name = '$new_firstname', surname = '$new_surname', business_name = '$new_business_name', address = '$new_address',
