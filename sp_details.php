@@ -65,6 +65,12 @@ if (!IsSet($_SESSION["name"]))
             background-size: cover;
             background-position: center;
         }
+        .tb table{
+            margin: 0 auto;
+        }
+        .tb input{
+            width: 180px;
+        }
 
 
     </style>
@@ -92,7 +98,7 @@ if (!IsSet($_SESSION["name"]))
         <p>Your personal surname: <input type="text" required name="surname" maxlength="20"></p>
         <p>Your personal address: <input type="text" required name="address" maxlength="60"></p>
         <p>Your personal postcode: <input type="text" required name="postcode" maxlength="8"></p>
-        <p>The category of your business:
+        The category of your business:
             <select name="category">
                 <option value="Beautician">Beautician</option>
                 <option value="Caterer">Caterer</option>
@@ -104,9 +110,16 @@ if (!IsSet($_SESSION["name"]))
                 <option value="Decor">Decor</option>
                 <option value="Weddingp Panners">Wedding Planners</option>
                 <option value="Dressers">Dresses</option>
-            </select></p>
-            <p style="width:20%"> Price:<input type="text" required name="price" placeholder="£"></p>
-            <p>Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea></p>
+            </select>
+            <div class="tb">
+                <table>
+                    <tr>
+                        <td> <label>Price:</label></td>
+                        <td><input type="text" required name="price" placeholder="£"></td>
+                    </tr>
+                </table>
+            </div>
+            Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea>
             <button type="submit">Submit details</button>
 
             <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>

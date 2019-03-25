@@ -103,6 +103,7 @@ $description = $row['description'];
             <li><a href="my_calendar.php">MY CALENDAR</a></li>
             <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
             <li><a href="pic_upload.php">MY PHOTOS</a></li>
+            <li><a href="sp_profile.php">MY PROFILE</a></li>
         </ul>
     </nav>
     </div>

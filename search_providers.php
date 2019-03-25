@@ -89,7 +89,7 @@ if (!IsSet($_SESSION["name"]))
             //assign search variable
             $search_value = $_GET['search_value'];
             //run query
-            $sql = "SELECT * from service_provider WHERE category = '$search_value'";
+            $sql = "SELECT * from service_provider WHERE category = '$search_value' ORDER BY price ASC";
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     echo "<div class='sp-row'>";
@@ -115,7 +115,22 @@ if (!IsSet($_SESSION["name"]))
                     echo "No records matching your query were found.";
                 }
             }
+
+     // to sort price in ascending order
+          if(isset($_GET['cost'])) {
+
+                $cost = $_GET['cost'];
+
+                $sql2 = "SELECT * FROM service_provider WHERE category = '$search_value' ORDER BY price ASC";
+                $result2 = mysqli_query($connection, $sql2) or die ("Bad Query: $sql2");
+                while ($row = mysqli_fetch_array($result2)) {
+                    $row2 = ($row2 = mysqli_fetch_array($result2));
+                    echo "<h2>" . $row2['business_name'] . "</h2>";
+                    echo "<p>" . "£" . $row2['price'] . "</p>";
+                }
+            }
             ?>
+
 </div>
     </div>
 </main>
