@@ -317,7 +317,21 @@ body {
     background-color: #555;
 }
 
-/*STYLING FOR pic_upload.php*/
+/*STYLING FOR sp_profile.php*/
+.profile{
+    max-width:500px;
+    font-family: "Trebuchet MS","Helvetica", "Sans-serif";
+    font-size: 18px;
+    position: relative;
+    left: 50%;
+
+
+
+
+
+}
+
+
 
 
 /*code for mail form submission status messages*/
