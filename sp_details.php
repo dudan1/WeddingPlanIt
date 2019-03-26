@@ -108,7 +108,7 @@ if (!IsSet($_SESSION["name"]))
                 <option value="Photography">Photography </option>
                 <option value="Music">Music</option>
                 <option value="Decor">Decor</option>
-                <option value="Weddingp Panners">Wedding Planners</option>
+                <option value="Wedding Planners">Wedding Planners</option>
                 <option value="Dressers">Dresses</option>
             </select>
             <div class="tb">

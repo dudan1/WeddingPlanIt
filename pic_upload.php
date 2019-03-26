@@ -70,17 +70,19 @@ session_start()
     </div>
         <div class="grid-50" name="delete_form" id="delete_form">
             <h3>Delete Images</h3>
-            <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
+            <form action="PHP_database_insert/delete.php" method="post">
                 Select image to delete:
                 <select name="fileToDelete" id="fileToDelete">
                     <?php
-                    require_once ('PHP_database insert/db.php');
-                    $sql = "SELECT photo_name FROM images WHERE SP_ID = '$_SESSION[SP_ID]'";
-
+                    require_once ('PHP_database_insert/db.php');
+                    $sql = "SELECT photo_name, link FROM images WHERE SP_ID = '$_SESSION[SP_ID]'";
+                    $result=mysqli_query($connection,$sql) or die(mysqli_error($connection));
+                    while($row =mysqli_fetch_array($result)){
+                        echo "<option value='{$row['link']}'>{$row['photo_name']}</option>";
+                    }
                     ?>
                 </select>
-                <input type="hidden" name="filename" id="filename">
-                <input type="submit" value="Upload Image" name="submit">
+                <input type="submit" value="Delete" name="submit">
             </form>
         </div>
     </div>
