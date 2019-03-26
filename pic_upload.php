@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +47,7 @@
         </div>
         <nav>
             <ul class="main-nav">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="sp_home.php">HOME</a></li>
                 <li><a href="faq.php">FAQ</a></li>
                 <li><a href="my_calendar.php">MY CALENDAR</a></li>
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
@@ -55,16 +58,31 @@
 
 <main>
     <div class="grid-container">
-    <div align="center">
-
+    <div class="grid-50" name="upload_form" id="upload_form">
+        <h3>Upload Images</h3>
         <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
             Select image to upload:
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="hidden" name="filename" id="filename">
-            <p>Caption or description for the photo:<textarea name="caption" rows="4" cols="50"></textarea></p>
+            <p>Caption or description for the photo:<textarea name="caption" rows="3" cols="50" maxlength="45" ></textarea></p>
             <input type="submit" value="Upload Image" name="submit">
         </form>
     </div>
+        <div class="grid-50" name="delete_form" id="delete_form">
+            <h3>Delete Images</h3>
+            <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
+                Select image to delete:
+                <select name="fileToDelete" id="fileToDelete">
+                    <?php
+                    require_once ('PHP_database insert/db.php');
+                    $sql = "SELECT photo_name FROM images WHERE SP_ID = '$_SESSION[SP_ID]'";
+
+                    ?>
+                </select>
+                <input type="hidden" name="filename" id="filename">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+        </div>
     </div>
 </main>
 
