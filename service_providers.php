@@ -62,7 +62,7 @@ if (!IsSet($_SESSION["name"]))
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='200' style='margin: 30px'></a>";
+                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='150' style='margin: 30px'></a>";
                     }
 //free result set
                     mysqli_free_result($result);
@@ -75,7 +75,7 @@ if (!IsSet($_SESSION["name"]))
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='200' style='margin: 30px'></a>";
+                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='150' style='margin: 30px'></a>";
                         echo "</div>";
                     }
 //free result set
