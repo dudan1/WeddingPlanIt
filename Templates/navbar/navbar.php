@@ -8,7 +8,7 @@
 <body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <div class="logo">
-    <a href="index.php"><img height="100px" src="../assets/images/logo1.png" alt="wedding band" title="wedding band"></a>
+    <a href="index.php"><img height="100px" src="assets/images/logo1.png" alt="wedding band" title="wedding band"></a>
 
 <div class="topnav" id="myTopnav">
 
