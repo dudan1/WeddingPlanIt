@@ -86,6 +86,7 @@ session_start()
             <input type="submit" value="Upload Image" name="submit">
         </form>
         </article>
+        <br>
         <article name="profile_pic" id="profile_pic">
                 <h3>Profile Picture</h3>
                 <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data">
@@ -96,6 +97,21 @@ session_start()
                     <input type="hidden" name="caption" id="caption" value="Profile Picture">
                     <input type="submit" value="Upload Image" name="submit">
                 </form>
+           <?php
+           require 'PHP_database_insert/db.php';
+            $sql = "SELECT photo_id, link, image_type FROM images WHERE SP_ID = '$_SESSION[SP_ID]' AND image_type = 'profile'";
+            $result =mysqli_query($connection,$sql);
+            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+           $count = mysqli_num_rows($result);
+            if($count > 0) {
+                $profile = $row['link'];
+            }
+            else{
+                $profile = 'No Profile Picture Selected';
+            }
+            echo '<p>Current Profile Picture:</p>';
+            echo "<img src ='{$profile}' alt='Profile Picture' width='150' height ='100'>"
+            ?>
             </article>
     </section>
         <section class="grid-50" name="right" id="right">
@@ -116,6 +132,7 @@ session_start()
                 <input type="submit" value="Delete" name="submit">
             </form>
             </article>
+            <br><br><br><br><br><br><br><br>
             <article name="logo" id="logo">
                 <h3>Business Logo</h3>
                 <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data">
@@ -126,6 +143,21 @@ session_start()
                     <input type="hidden" name="caption" id="caption" value="Business Logo">
                     <input type="submit" value="Upload Image" name="submit">
                 </form>
+                <?php
+                require 'PHP_database_insert/db.php';
+                $sql = "SELECT photo_id, link, image_type FROM images WHERE SP_ID = '$_SESSION[SP_ID]' AND image_type = 'logo'";
+                $result =mysqli_query($connection,$sql);
+                $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+                $count = mysqli_num_rows($result);
+                if($count > 0) {
+                    $logo = $row['link'];
+                }
+                else{
+                    $logo = 'No Logo Selected';
+                }
+                echo '<p>Current Business Logo:</p>';
+                echo "<img src ='{$logo}' alt='Business Logo' width='200' height ='100'>"
+                ?>
             </article>
         </section>
     </div>
