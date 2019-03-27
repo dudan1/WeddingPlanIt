@@ -30,10 +30,11 @@ if (!IsSet($_SESSION["name"]))
 
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <?php include 'PHP_database_insert/nav_bar.php';?>
+    <?php require '/Templates/navbar/navbar_cust.php';?>
+
 </header>
 <br><br><br><br><br>
 <main>

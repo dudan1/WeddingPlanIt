@@ -98,7 +98,8 @@ td.calendar-day, td.calendar-day-np {
 <body><!-- style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);"-->
 
 <header>
-    <div class="row">
+    <?php require '/Templates/navbar/navbar_sp.php';?>
+<!--    <div class="row">
         <div class="logo">
             <img src="assets/images/logo1.png" alt="wedding band">
         </div>
@@ -111,7 +112,7 @@ td.calendar-day, td.calendar-day-np {
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
             </ul>
         </nav>
-    </div>
+    </div>-->
 </header>
 <br><br><br><br><br><br><br><br>
 <div class="bg-text2">

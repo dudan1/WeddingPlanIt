@@ -5,7 +5,12 @@
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 
 </head>
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)),url(assets/images/wed.jpg);">
+<!--<body style=" background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)),url(assets/images/wed.jpg);">-->
+<body>
+<header>
+    <?php require '/Templates/navbar/navbar_sp.php';?>
+
+</header>
 
 <h2>Service Providers</h2>
 <p>All current (insert service provider)</p>

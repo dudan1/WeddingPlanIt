@@ -55,9 +55,11 @@ session_start()
     </style>
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <div class="row">
+    <?php require '/Templates/navbar/navbar_sp.php';?>
+<!--    <div class="row">
         <div class="logo">
             <img src="assets/images/logo1.png" alt="wedding band">
         </div>
@@ -69,7 +71,7 @@ session_start()
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
             </ul>
         </nav>
-    </div>
+    </div>-->
 </header>
 
 <main>

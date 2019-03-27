@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 if (($_SESSION["user_type"]) != "Customer")
     header("Location:sp_home.php");
 
@@ -68,12 +68,10 @@ $wedding_date = $row['wedding_date'];
     </style>-->
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <?php include 'PHP_database_insert/nav_bar.php';
-
-?>
+    <?php require '/Templates/navbar/navbar_cust.php';?>
 
 <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
 <div id="id02" class="modal">

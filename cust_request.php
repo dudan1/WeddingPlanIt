@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 require_once 'PHP_database_insert/db.php';
 $sql = "Select email, business_name FROM service_provider WHERE SP_ID = '$_SESSION[sp_id]'";
 $result =mysqli_query($connection,$sql);
@@ -51,7 +51,7 @@ $c_name = $row['first_name']." ".$row['surname'];
             </div>
         </div>
     </div>-->
-    <?php require '/Templates/navbar/navbar.php';?>
+    <?php require '/Templates/navbar/navbar_cust.php';?>
 </header>
 
 <main>

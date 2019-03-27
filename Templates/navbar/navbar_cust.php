@@ -15,6 +15,7 @@
     <a href="cust_home.php">Homepage</a>
     <a href="faq.php">FAQs</a><!-- class="active"-->
     <a href="contact_us.php">Contact Us</a>
+    <a href="plan.php">My Plan</a>
     <a href="PHP_database_insert/logout.php">Logout</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>

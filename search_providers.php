@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,15 +16,10 @@ if (!IsSet($_SESSION["name"]))
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <div class="grid-container">
-        <div class="grid-50">
-    <?php require 'PHP_database_insert/nav_bar.php';?>
-
-    </div>
-        </div>
+    <?php require '/Templates/navbar/navbar_cust.php';?>
 
 </header>
 <br><br><br>

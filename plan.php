@@ -30,10 +30,12 @@ if (($_SESSION["user_type"]) != "Customer")
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 
 <header>
-    <?php include 'PHP_database_insert/nav_bar.php';?>
+    <?php require '/Templates/navbar/navbar_cust.php';?>
+
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
     <div id="id02" class="modal">
 
@@ -86,7 +88,7 @@ echo "<br>";
             //free result set
                 mysqli_free_result($result2);
         }else{
-                echo "You have not started building your wedding plan. Search Service Providers to begin.";
+                echo "You have not started building your wedding plan. Go to your Homepage to select provider(s).";
             }
 
 

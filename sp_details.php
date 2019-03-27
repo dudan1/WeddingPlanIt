@@ -76,14 +76,15 @@ if (!IsSet($_SESSION["name"]))
     </style>
 </head>
 
-<body style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);">
+<body<!-- style=" background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(assets/images/wed.jpg);"-->>
 
 <header>
-    <div class="row">
+    <?php require '/Templates/navbar/navbar_sp.php';?>
+<!--    <div class="row">
         <div class="logo">
             <img src="assets/images/logo1.png" alt="wedding band">
         </div>
-    </div>
+    </div>-->
 </header>
 
 <div class = "bg-text1">

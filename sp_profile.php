@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 
 require_once('PHP_database_insert/db.php');
 if(isset ($_SESSION['sp_id'])) {
@@ -43,16 +43,16 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <?php require 'PHP_database_insert/nav_bar.php';?>
+    <?php require '/Templates/navbar/navbar_sp.php';?>
 
 </header>
 
 <main>
     <div class="grid-container">
-        <div class="grid-75">
+        <div class="grid-50">
     <div class="profile">
 
    <div style="background-color: #fef1ec">

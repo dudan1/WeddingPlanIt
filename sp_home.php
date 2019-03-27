@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 if (($_SESSION["user_type"]) == "Service Provider") {
     if (($_SESSION["user_type"]) != "Service Provider")
         header("Location:../cust_home.php");
@@ -90,10 +90,11 @@ $description = $row['description'];
     </style>
 </head>
 
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <div class="row">
+    <?php require '/Templates/navbar/navbar_sp.php';?>
+   <!-- <div class="row">
     <div class="logo">
 <img src="assets/images/logo1.png" alt="wedding band">
     </div>
@@ -108,7 +109,7 @@ $description = $row['description'];
             <li><a href="sp_profile.php">MY PROFILE</a></li>
         </ul>
     </nav>
-    </div>
+    </div>-->
 </header>
 
 <main>
