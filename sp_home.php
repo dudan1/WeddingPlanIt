@@ -155,7 +155,7 @@ $description = $row['description'];
 
 
         <?php
-        $sql = "select link, photo_name, caption from images where SP_ID = $sp_id";
+        $sql = "select link, photo_name, caption from images where SP_ID = $sp_id AND image_type = 'image'";
 
         if ($result = mysqli_query($connection, $sql)) {
             if (mysqli_num_rows($result) > 0) {
