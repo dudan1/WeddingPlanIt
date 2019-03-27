@@ -83,7 +83,7 @@ if (!IsSet($_SESSION["name"]))
                         echo "<p class='title'>" . $row['category'] . "</p>";
 
                         echo "<p class=''>" . $row['description'] . "</p>";
-                        echo "<form><button class='bt1' action = 'get'><input type ='hidden' name = 'sp_id' value = $sp_id>"
+                        echo "<form><button class='bt1' action = 'get'><input type ='hidden' name = 'sp_id' value = '{$row['SP_ID']}'>"
                               . "View Service Provider" . "</button></form>";
                         echo "</div>" . "<br>";
                         echo "</div>";

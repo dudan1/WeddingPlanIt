@@ -38,8 +38,8 @@ if (!IsSet($_SESSION["name"]))
 <br><br><br><br><br>
 <main>
     <div class="grid-container">
-        <div class="grid-25"><a href="javascript:history.go(-1)">Return to search results</a>
-        </div>
+        <div class="grid-70"><a href="javascript:history.go(-1)">Return to search results</a>
+
 
 
         <br>
@@ -51,18 +51,50 @@ if (!IsSet($_SESSION["name"]))
         $result2 = mysqli_query($connection, $sql2) or die ("Bad Query: $sql2");
         $row2 = ($row2 = mysqli_fetch_array($result2));
         echo "<h2>" . $row2['business_name'] . "</h2>";
-        echo "<p>". "£".$row2['price']. "</p>";
-        echo "<h3>" . $row2['category'] . "</h3>";
+        echo "<p>". "Standard price per day: £".$row2['price']. "</p>";
         echo "<p>" . $row2['description'] . "</p>";
         ?>
-
-
     </div>
+        <div class ='grid-30'>
+            <?php
+            $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='profile'";
+
+            if ($result = mysqli_query($connection, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='200' style='margin: 30px'></a>";
+                    }
+//free result set
+                    mysqli_free_result($result);
+                }else{
+                    echo "";
+                }
+            }
+            $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='logo'";
+
+            if ($result = mysqli_query($connection, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}', height='200' style='margin: 30px'></a>";
+                        echo "</div>";
+                    }
+//free result set
+                    mysqli_free_result($result);
+                }else{
+                    echo "";
+                }
+            }
+            ?>
+
+        </div>
+    </div>
+    <div class = grid-container>
+    <div class = 'grid-100'>
         <div class="gallery_container">
 
 
             <?php
-            $sql = "select link, photo_name, caption from images where SP_ID = $_SESSION[sp_id]";
+            $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='image'";
 
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
@@ -79,15 +111,23 @@ if (!IsSet($_SESSION["name"]))
             }
             ?>
         </div>
-
-
     </div>
-    <div class="grid-75" style="background-color:whitesmoke">
-        <form action ="calendar/calendar.php" method="post">
-            <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
-            <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
-            <button type="submit">BOOK THIS SERVICE PROVIDER</button>
-        </form>
+    </div>
+    <div class="grid-container">
+            <div class="grid-50" style="background-color:whitesmoke">
+                <form action ="calendar/calendar.php" method="post">
+                    <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
+                    <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
+                    <button type="submit" style="width: 300px; margin-left: 180px;">BOOK THIS SERVICE PROVIDER</button>
+                </form>
+            </div>
+            <div class="grid-50" style="background-color:whitesmoke">
+                <form action ='cust_request.php'>
+                    <button type="submit" onclick="" style="width: 300px; margin-left: 110px;">CONTACT THIS SERVICE PROVIDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </main>
 
 

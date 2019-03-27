@@ -57,10 +57,10 @@ session_start();
 		end:
 		mysqli_close($connection);
 	}
+	header('Location:calendar.php')
 ?>
 
-<a href="calendar.php"><p>Back to the booking calendar</p></a>
-<a href="cust_home.php"><p>Back to my home page</p></a>
+
 
 </body>
 

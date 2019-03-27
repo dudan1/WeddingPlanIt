@@ -55,7 +55,7 @@ body {font-family: Arial, Helvetica, sans-serif;
     width: 400px;
     padding: 20px;
     text-align: center;
-    z-index: -2;
+    z-index: 0;
 }
 
 .bg-text4 {
@@ -400,10 +400,10 @@ div.gallery_container {
     font-weight: bold;
     border: 2px solid #f1f1f1;
     position: relative;
-    width:66%;
+    width:80%;
     height: auto;
     padding: 20px;
-    left: 20%;
+    left: 10%;
     overflow: hidden;
 }
 

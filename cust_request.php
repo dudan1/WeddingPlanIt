@@ -1,3 +1,21 @@
+<?php
+session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:index.html");
+require_once 'PHP_database_insert/db.php';
+$sql = "Select email, business_name FROM service_provider WHERE SP_ID = '$_SESSION[sp_id]'";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$sp_email = $row['email'];
+$sp_name = $row['business_name'];
+
+$sql = "Select first_name, surname FROM customer WHERE email = '$_SESSION[name]'";
+$result =mysqli_query($connection,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$c_email = $_SESSION['name'];
+$c_name = $row['first_name']." ".$row['surname'];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,19 +60,20 @@
 
     <h3>Request a Service</h3>
 <!--    <hr/>-->
-    <p>Please submit your request to {{get SP name}}:</p>
-
+    <p>Please submit your request to <?php echo $sp_name ?></p>
+<div class="">
     <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Customer_Request', this); return false;" method="post">
         <p align="centre"><textarea rows="4" cols="40" required name="message_html" placeholder="Type your service request here..."></textarea></p>
-        <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30" placeholder="get cust name..."></textarea></p>
-        <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60" placeholder="get cust email..."></p>
-        <p align="left">SP name: <textarea rows="1" cols="23" required name="to_name" maxlength="30" placeholder="get SP name..."></textarea></p>
-        <p align="left">SP email: <input type="email" required name="supplier_email" maxlength="60" placeholder="get SP email..."></p>
+        <input type="hidden" name="supplier_email" id="SP_email" value='<?php echo $sp_email ?>'>
+        <input type="hidden" name="reply_to" id="Cust_email" value='<?php echo $c_email ?>'>
+        <input type="hidden" name="to_name" id="SP_name" value='<?php echo $sp_name ?>'>
+        <input type="hidden" name="from_name" id="Cust_name" value='<?php echo $c_name ?>'>
 
         <button type="submit">Submit details</button>
 
         <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel and leave</button>
     </form>
+</div>
 
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">

@@ -110,7 +110,7 @@ session_start()
                 $profile = 'No Profile Picture Selected';
             }
             echo '<p>Current Profile Picture:</p>';
-            echo "<img src ='{$profile}' alt='Profile Picture' width='150' height ='100'>"
+            echo "<img src ='{$profile}' alt='Profile Picture' height ='180'>"
             ?>
             </article>
     </section>
@@ -156,7 +156,7 @@ session_start()
                     $logo = 'No Logo Selected';
                 }
                 echo '<p>Current Business Logo:</p>';
-                echo "<img src ='{$logo}' alt='Business Logo' width='200' height ='100'>"
+                echo "<img src ='{$logo}' alt='Business Logo' height='180'>"
                 ?>
             </article>
         </section>
