@@ -14,10 +14,10 @@
 
 </head>
 
-<body link="#C0C0C0" vlink="#808080" alink="#FF0000"> <!-- style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);" -->
+<body link="#C0C0C0" vlink="#808080" alink="#FF0000"> <!--style=" background-image:linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),url(assets/images/wed.jpg);"-->
 
 <header>
-    <div class="grid-container">
+<!--    <div class="grid-container">
         <div class="grid-50">
             <div class="row">
                 <div class="logo">
@@ -25,22 +25,27 @@
                 </div>
                 <nav>
                     <ul class="main-nav">
-                        <!--<li><a href="contact_us.php">CONTACT US</a></li>-->
+                        <li><a href="contact_us.php">CONTACT US</a></li>
                         <li><a href="faq.php">FAQ</a></li>
                     </ul>
                 </nav>
             </div>
+        </div>
+    </div>-->
+    <?php include 'Templates/navbar/navbar_out.php';
+
+    ?>
 </header>
 <br><br><br><br><br><br><br><br>
 <main>
-<div class = "bg-text1">
+<div class = "bg-text3">
 
     <h1>Contact Us</h1>
     <hr/>
     <p>Please submit a query:</p>
 
-    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Contact_Us', this); return false;" method="post">
-        <p align="left"><textarea rows="4" cols="47" required name="message_html" placeholder="Type your query here..."></textarea></p>
+    <form id="myform" onsubmit="emailjs.sendForm('Outlook', 'Outlook_Contact_Us', this); return false;" method="post">
+        <p align="left"><textarea rows="4" cols="40" required name="message_html" placeholder="Type your query here..."></textarea></p>
         <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
         <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60"></p>
 

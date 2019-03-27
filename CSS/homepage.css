@@ -60,10 +60,10 @@ body,html{
     padding: 14px 14px;
     font-size: 20px;
     cursor: pointer;
-
     position: absolute;
-    top: 25px;
-    right: 140px;
+    top: 60px;
+    right: 70px;
+
 }
 .info2 {
     border-color:darkseagreen;
@@ -82,10 +82,10 @@ body,html{
     padding: 14px 14px;
     font-size: 20px;
     cursor: pointer;
-
     position: absolute;
-    top: 25px;
-    right: 270px;
+    top: 60px;
+    right: 200px;
+
 }
 
 .btn4 {
@@ -163,7 +163,7 @@ body,html{
     /**#63A0CC;**/
 }
 .logo img {
-    width: 200px;
+    width: 150px;
     height: auto;
     float: left;
 }

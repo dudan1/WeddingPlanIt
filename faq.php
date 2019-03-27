@@ -1,8 +1,8 @@
 <?php
-session_start();
+/*session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
-?>
+*/?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,10 +65,10 @@ if (!IsSet($_SESSION["name"]))
 
 
     </style>-->
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
-
+<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+<body>
 <header>
-    <?php include 'PHP_database_insert/nav_bar.php';
+    <?php include 'Templates/navbar/navbar_out.php';
 
     ?>
 
@@ -76,7 +76,7 @@ if (!IsSet($_SESSION["name"]))
 </header>
 <br><br><br><br><br><br><br><br>
 <main>
-<div class = "bg-text1">
+<div class = "bg-text3">
 
     <h1>FAQs</h1>
     <hr/>
