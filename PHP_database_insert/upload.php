@@ -10,7 +10,12 @@ $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $sp_id = $row['SP_ID'];
 
-$target_dir = "../uploads/";
+if(!is_dir('../uploads/'.$sp_id)){
+    $new_dir = "../uploads/".$sp_id;
+    mkdir($new_dir, 0777);
+
+}
+$target_dir = "../uploads/".$sp_id."/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -47,21 +52,80 @@ if ($uploadOk == 0) {
             die("Error: Could not connect. " . mysqli_connect_error());
         }
         // create file path
-        $link = "uploads/".$_POST['filename'];
+        if (isset($_POST['filename1'])) {
+            $file_name = $_POST['filename1'];
+        } elseif (isset($_POST['filename2'])) {
+            $file_name = $_POST['filename2'];
+        } elseif (isset($_POST['filename3'])) {
+            $file_name = $_POST['filename3'];
+        }
+        $link = "uploads/" . $sp_id . "/" . $file_name;
+
+        $sql = "SELECT photo_id, link, image_type FROM images WHERE SP_ID = $sp_id AND image_type = 'profile'";
+        $result =mysqli_query($connection,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $count = mysqli_num_rows($result);
+        if($count > 0){
+            $old_profile = $row['link'];
+        }
+        else{
+            $old_profile ='';
+        }
+        $sql = "SELECT photo_id, link, image_type FROM images WHERE SP_ID = $sp_id AND image_type = 'logo'";
+        $result =mysqli_query($connection,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $count = mysqli_num_rows($result);
+        if($count > 0){
+            $old_logo = $row['link'];
+        }
+        else{
+            $old_logo ='';
+        }
 // Attempt to insert into database
-        $sql = "INSERT INTO images (SP_ID, photo_name, caption, link) 
-            VALUES ('$sp_id','$_POST[filename]','$_POST[caption]','$link')";
-        if (mysqli_query($connection, $sql)){
-            #echo "Successfully registred.";
-            header('Location:../pic_upload.php');
+        $sql = "INSERT INTO images (SP_ID, photo_name, caption, link, image_type) 
+            VALUES ('$sp_id','$file_name','$_POST[caption]','$link', '$_POST[image_type]')";
+        if (mysqli_query($connection, $sql)) {
         } else {
             echo "Error: Could not execute." . mysqli_error($connection);
         }
         mysqli_close($connection);
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
-    } else {
+    }
+    else {
         echo "Sorry, there was an error uploading your file.";
+    }
+    //DELETE OLD PROFILE PIC
+    require 'db.php';
+    $sql = "SELECT photo_id, image_type FROM images WHERE SP_ID = $sp_id AND image_type = 'profile'";
+    $result = mysqli_query($connection, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
+    if ($count > 1) {
+        unlink('../'.$old_profile);
+        $sql = "DELETE FROM images WHERE link='$old_profile' AND SP_ID = '$sp_id'";
+        if (mysqli_query($connection, $sql) or die(mysqli_error($connection))) {
+            echo "Old profile picture deleted";
+        }
+    }
+    // DELETE OLD LOGO
+    $sql = "SELECT photo_id, image_type FROM images WHERE SP_ID = $sp_id AND image_type = 'logo'";
+    $result = mysqli_query($connection, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
+    if ($count > 1) {
+        unlink('../'.$old_logo);
+        $sql = "DELETE FROM images WHERE link='$old_logo' AND SP_ID = '$sp_id'";
+        if (mysqli_query($connection, $sql) or die(mysqli_error($connection))) {
+            echo "Old logo deleted";
+            header('Location:../pic_upload.php');
+        }
+        else{
+            header('Location:../pic_upload.php');
+        }
+    }
+    else{
+        header('Location:../pic_upload.php');
     }
 }
 ?>

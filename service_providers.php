@@ -40,12 +40,7 @@ if (!IsSet($_SESSION["name"]))
     <div class="grid-container">
         <div class="grid-25"><a href="javascript:history.go(-1)">Return to search results</a>
         </div>
-    <div class="grid-75" style="background-color:whitesmoke">
-        <form action ="calendar/calendar.php" method="post">
-            <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
-            <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
-            <button type="submit">BOOK THIS SERVICE PROVIDER</button>
-        </form>
+
 
         <br>
 
@@ -87,6 +82,12 @@ if (!IsSet($_SESSION["name"]))
 
 
     </div>
+    <div class="grid-75" style="background-color:whitesmoke">
+        <form action ="calendar/calendar.php" method="post">
+            <input type = "hidden" name = "c" value="<?php echo $cust_id; ?>">
+            <input type = "hidden" name = "sp" value="<?php echo $sp_id; ?>">
+            <button type="submit">BOOK THIS SERVICE PROVIDER</button>
+        </form>
 </main>
 
 

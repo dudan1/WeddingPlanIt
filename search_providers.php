@@ -22,27 +22,7 @@ if (!IsSet($_SESSION["name"]))
     <div class="grid-container">
         <div class="grid-50">
     <?php require 'PHP_database_insert/nav_bar.php';?>
-    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
-    <div id="id02" class="modal">
 
-        <form class="modal-content animate" action="php" method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
-            </div>
-            <div class="container">
-                <h1>Update your customer details</h1>
-                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
-                <!--<p>Your email: <input type="email" required name="email"></p>-->
-                <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
-
-                <button type="submit">Submit details</button>
-
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-            </div>
-        </form>
     </div>
         </div>
 
@@ -89,7 +69,8 @@ if (!IsSet($_SESSION["name"]))
             //assign search variable
             $search_value = $_GET['search_value'];
             //run query
-            $sql = "SELECT * from service_provider WHERE category = '$search_value' ORDER BY price ASC";
+            $sql = "SELECT s.SP_ID, i.SP_ID, s.category, s.business_name, s.price, s.description, i.image_type, i.photo_name, i.link
+            from service_provider s, images i WHERE s.SP_ID = i.SP_ID AND s.category = '$search_value' AND i.image_type = 'logo' ORDER BY price ASC";
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     echo "<div class='sp-row'>";
@@ -97,7 +78,7 @@ if (!IsSet($_SESSION["name"]))
                         echo "<div class='sp_column'>";
                         echo "<div class='sp_card'>";
                         echo "<div class='container'>";
-                        echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>";
+                        echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>"."<img src='{$row['link']}' alt='{$row['photo_name']}' width='250', height='100'>";
                         echo "<p>"."£".$row['price']."</p>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
 
