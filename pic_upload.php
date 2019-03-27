@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,23 @@
         $(document).ready(function(){
             $('input[type="file"]').change(function(e){
                 var fileName = e.target.files[0].name;
-                document.getElementById('filename').value = fileName
+                document.getElementById('filename1').value = fileName
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input[type="file"]').change(function(e){
+                var fileName = e.target.files[0].name;
+                document.getElementById('filename2').value = fileName
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input[type="file"]').change(function(e){
+                var fileName = e.target.files[0].name;
+                document.getElementById('filename3').value = fileName
             });
         });
     </script>
@@ -44,7 +63,7 @@
         </div>
         <nav>
             <ul class="main-nav">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="sp_home.php">HOME</a></li>
                 <li><a href="faq.php">FAQ</a></li>
                 <li><a href="my_calendar.php">MY CALENDAR</a></li>
                 <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
@@ -55,16 +74,60 @@
 
 <main>
     <div class="grid-container">
-    <div align="center">
-
+    <section class="grid-50" name="left" id="left">
+        <article name="upload_form" id="upload_form">
+        <h3>Upload Images</h3>
         <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data" >
             Select image to upload:
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="hidden" name="filename" id="filename">
-            <p>Caption or description for the photo:<textarea name="caption" rows="4" cols="50"></textarea></p>
+            <input type="hidden" name="filename1" id="filename1">
+            <input type="hidden" name="image_type" id="image_type" value="image">
+            <p>Caption or description for the photo:<textarea name="caption" rows="3" cols="50" maxlength="45" ></textarea></p>
             <input type="submit" value="Upload Image" name="submit">
         </form>
-    </div>
+        </article>
+        <article name="profile_pic" id="profile_pic">
+                <h3>Profile Picture</h3>
+                <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data">
+                    Select image to be your profile picture:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="hidden" name="filename2" id="filename2">
+                    <input type="hidden" name="image_type" id="image_type" value="profile">
+                    <input type="hidden" name="caption" id="caption" value="Profile Picture">
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
+            </article>
+    </section>
+        <section class="grid-50" name="right" id="right">
+            <article name="delete_form" id="delete_form">
+            <h3>Delete Images</h3>
+            <form action="PHP_database_insert/delete.php" method="post">
+                Select image to delete:
+                <select name="fileToDelete" id="fileToDelete">
+                    <?php
+                    require_once ('PHP_database_insert/db.php');
+                    $sql = "SELECT photo_name, link FROM images WHERE SP_ID = '$_SESSION[SP_ID]'";
+                    $result=mysqli_query($connection,$sql) or die(mysqli_error($connection));
+                    while($row =mysqli_fetch_array($result)){
+                        echo "<option value='{$row['link']}'>{$row['photo_name']}</option>";
+                    }
+                    ?>
+                </select>
+                <input type="submit" value="Delete" name="submit">
+            </form>
+            </article>
+            <article name="logo" id="logo">
+                <h3>Business Logo</h3>
+                <form action="PHP_database_insert/upload.php" method="post" enctype="multipart/form-data">
+                    Select image to be your business logo:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="hidden" name="filename3" id="filename3">
+                    <input type="hidden" name="image_type" id="image_type" value="logo">
+                    <input type="hidden" name="caption" id="caption" value="Business Logo">
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
+            </article>
+        </section>
     </div>
 </main>
 

@@ -14,6 +14,8 @@ $sql = "SELECT * FROM service_provider WHERE email = '$email'";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
+$sp_id = $row['SP_ID'];
+$_SESSION['SP_ID']= $sp_id;
 $firstname = $row['first_name'];
 $surname = $row['surname'];
 $address = $row['address'];
@@ -145,9 +147,32 @@ $description = $row['description'];
 </header>
 
 <main>
-            <div class="heading">
-                <h1>Welcome to your Home Page!</h1>
-            </div>
+    <div class="gallery_header">
+        <h1>Welcome to your Home Page!</h1>
+        <h2>Your Images</h2>
+    </div>
+    <div class="gallery_container">
+
+
+        <?php
+        $sql = "select link, photo_name, caption from images where SP_ID = $sp_id AND image_type = 'image'";
+
+        if ($result = mysqli_query($connection, $sql)) {
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<div class='gallery'>";
+                    echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}' width='150', height='100'></a>";
+                    echo "<div class='caption'>{$row['caption']}</div> </div>";
+                }
+//free result set
+                mysqli_free_result($result);
+            }else{
+                echo "No records matching your query were found.";
+            }
+        }
+        ?>
+    </div>
+
 
 </main>
 

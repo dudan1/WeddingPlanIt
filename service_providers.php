@@ -61,7 +61,29 @@ if (!IsSet($_SESSION["name"]))
         echo "<p>" . $row2['description'] . "</p>";
         ?>
 
+
     </div>
+        <div class="gallery_container">
+
+
+            <?php
+            $sql = "select link, photo_name, caption from images where SP_ID = $_SESSION[sp_id]";
+
+            if ($result = mysqli_query($connection, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<div class='gallery'>";
+                        echo "<a target='_blank' href={$row['link']} ><img src='{$row['link']}' alt='{$row['photo_name']}' width='150', height='100'></a>";
+                        echo "<div class='caption'>{$row['caption']}</div> </div>";
+                    }
+//free result set
+                    mysqli_free_result($result);
+                }else{
+                    echo "No records matching your query were found.";
+                }
+            }
+            ?>
+        </div>
 
 
     </div>
