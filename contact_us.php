@@ -51,7 +51,7 @@
 
         <button type="submit">Submit details</button>
 
-        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>
     </form>
 
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>

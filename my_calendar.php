@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -119,7 +121,7 @@ td.calendar-day, td.calendar-day-np {
 <h1>My Booking Calendar</h1>
 
     <?php
-    session_start();
+
     if (!IsSet($_SESSION["name"]))
         header("Location:../index.html");
     /* draws a calendar */

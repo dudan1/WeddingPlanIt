@@ -4,13 +4,7 @@ if (!IsSet($_SESSION["name"]))
     header("Location:index.php");
 
 require_once('PHP_database_insert/db.php');
-if(isset ($_SESSION['sp_id'])) {
-    unset ($_SESSION['sp_id']);
-    $_SESSION['sp_id'] = $_GET['id']; // assign variable for id
-}
-else{
-   // $_SESSION['sp_id'] = $_GET['id'];
-}
+
 $email = $_SESSION['name'];
 $sql = "SELECT * FROM service_provider WHERE email = '$email'";
 $result =mysqli_query($connection,$sql);
@@ -126,7 +120,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     </div>
     <div class="gallery_container">
         <?php
-        $sql = "select link, photo_name, caption from images where SP_ID = $sp_id AND image_type = 'image'";
+        $sql = "select link, photo_name, caption from images where SP_ID = $sp_id";
 
         if ($result = mysqli_query($connection, $sql)) {
             if (mysqli_num_rows($result) > 0) {
