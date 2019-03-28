@@ -44,7 +44,7 @@
     <hr/>
     <p>Please submit a query:</p>
 
-    <form id="myform" onsubmit="emailjs.sendForm('Outlook', 'Outlook_Contact_Us', this); return false;" method="post">
+    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Contact_Us', this); return false;" method="post">
         <p align="left"><textarea rows="4" cols="40" required name="message_html" placeholder="Type your query here..."></textarea></p>
         <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
         <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60"></p>
