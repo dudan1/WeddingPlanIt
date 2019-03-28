@@ -39,13 +39,14 @@ if($count > 0){
         } else {
             session_destroy();
             $error = 'Your login email or password is invalid';
-            header('Location:../index.html');
+            header('Location:../index.php');
 
         }
             }
     }else{
+    session_destroy();
        $error = 'Your login email or password is invalid';
-    header('Location:../index.html');
+    header('Location:../index.php');
 }
 
 

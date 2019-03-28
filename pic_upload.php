@@ -1,5 +1,13 @@
 <?php
-session_start()
+session_start();
+if (!IsSet($_SESSION["name"]))
+    header("Location:index.php");
+if (($_SESSION["user_type"]) == "Service Provider") {
+}
+if (($_SESSION["user_type"]) != "Service Provider") {
+    header("Location:../cust_home.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
