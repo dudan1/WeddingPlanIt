@@ -350,10 +350,9 @@ body {
 
 /*STYLING FOR pic_upload.php*/
 
-
-/*code for mail form submission status messages*/
-form:after {
-    content: '';
+/*below code for mail form submission status messages - Courtesy EmailJS mail handler, http://www.emailjs.com */
+form:after {  
+    content: '';       
     position: absolute;
     left: 3px;
     top: 3px;
@@ -387,8 +386,9 @@ form.emailjs-error:after {
     content: 'Error : Try later';
     background: #B71C1C;
     color: white;
-    text-shadow: -1px -1px black;
-}
+    text-shadow: -1px -1px black; 
+}           /*above code for mail form submission status messages - Courtesy EmailJS mail handler, http://www.emailjs.com */
+
 /* Style for image gallery */
 div.gallery_header{
     position: relative;
