@@ -37,6 +37,9 @@
     ?>
 </header>
 <br><br><br><br><br><br><br><br>
+
+<!-- *** PLease note that javaScript herein was supplied by EmailJS mail handler, http;??www.emailjs.com *** -->
+    
 <main>
 <div class = "bg-text3">
 
