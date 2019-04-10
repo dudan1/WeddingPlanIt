@@ -8,13 +8,14 @@ if (($_SESSION["user_type"]) != "Customer")
 
     require_once ('PHP_database_insert/db.php');
     //$sp_id = $_GET['id']; // assign variable for id
-    $sql = "SELECT C_ID, first_name, surname, wedding_date FROM customer WHERE '$_SESSION[name]' = email";
+    $sql = "SELECT C_ID, first_name, surname, wedding_date, budget FROM customer WHERE '$_SESSION[name]' = email";
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $cust_id = $row['C_ID'];
     $cust_fname = $row['first_name'];
     $cust_sname = $row['surname'];
     $wed_date = $row['wedding_date'];
+    $budget = $row['budget'];
 
 ?>
 <!DOCTYPE html>
@@ -44,6 +45,7 @@ if (($_SESSION["user_type"]) != "Customer")
         <?php
             echo "<p>" . $cust_fname . " " . $cust_sname . "</p>";
             echo "<p>" . "Wedding Date: " . $wed_date . "</p>";
+            echo "<p>" . "Your budget is £" . "$budget" . "</p>";
             ?>
 
     </div>
@@ -54,14 +56,23 @@ if (($_SESSION["user_type"]) != "Customer")
 echo "<br>";
         // Join Contracts and Service_provider table
         require_once ('PHP_database_insert/db.php');
-        $sql2 = "SELECT business_name, category 
+        $sql2 = "SELECT business_name, category, price 
             FROM bookings c, service_provider s
             WHERE c.SP_ID = s.SP_ID AND c.C_ID = '$cust_id'";
         if ($result2 = mysqli_query($connection, $sql2)) {
             if (mysqli_num_rows($result2) > 0) {
+                $allexpense = 0;
                 while ($row2 = mysqli_fetch_array($result2)) {
+
+                   /* $sp_price = array($row2['price']);
+                    foreach ($sp_price as $expense)  {
+                        $allexpense = $expense++;
+                    }*/
+
                     echo "<h3>" . $row2['category'] . "</h3>";
-                    echo  "<p>" . $row2['business_name'] . "</p>";
+                    echo  "<p>" . $row2['business_name'] . " £" . $row2['price'] . "</p>";
+                    $allexpense +=$row2['price'];
+
             }
             //free result set
                 mysqli_free_result($result2);
@@ -72,8 +83,10 @@ echo "<br>";
 
         }
 
-
+//calculate budget remainder
+        $remaider = $budget - $allexpense;
         echo "<br>";
+        echo "Total expenditure is £" . $allexpense . " and your remaining budget is £" . $remaider ;
         ?>
         <br>
     </div>

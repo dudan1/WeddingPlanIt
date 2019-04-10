@@ -14,10 +14,11 @@ $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
 $surname = mysqli_real_escape_string($connection, $_POST['surname']);
 $phone_number = mysqli_real_escape_string($connection, $_POST['phone_number']);
 $wedding_date = mysqli_real_escape_string($connection, $_POST['wedding_date']);
+$budget = mysqli_real_escape_string($connection, $_POST['budget']);
     
 // Attempt to insert into database
-$sql = "INSERT INTO customer (email, first_name, surname, phone_number, wedding_date) 
-            VALUES ('$session_email','$first_name','$surname', '$phone_number', '$wedding_date')";
+$sql = "INSERT INTO customer (email, first_name, surname, phone_number, wedding_date, budget) 
+            VALUES ('$session_email','$first_name','$surname', '$phone_number', '$wedding_date', '$budget')";
 if (mysqli_query($connection, $sql)){
     #echo "Successfully registred.";
 

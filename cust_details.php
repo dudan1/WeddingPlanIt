@@ -92,6 +92,8 @@ if (!IsSet($_SESSION["name"]))
         <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
         <p>Phone number : <input type="text" required name="phone_number" maxlength="14"></p>
         <p>Wedding date: <input type="date" required name="wedding_date"></p>
+        <p>Wedding budget: <input type="text" placeholder="£" required name="budget"></p>
+
         <button type="submit">Submit details</button>
 
         <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
