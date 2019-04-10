@@ -3,7 +3,7 @@ session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.html");
 if (($_SESSION["user_type"]) != "Customer")
-    header("Location:sp_home.php");
+    header("Location:index.php");
 
 
     require_once ('PHP_database_insert/db.php');
@@ -36,28 +36,6 @@ if (($_SESSION["user_type"]) != "Customer")
 <header>
     <?php require '/Templates/navbar/navbar_cust.php';?>
 
-    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
-    <div id="id02" class="modal">
-
-        <form class="modal-content animate" action="php" method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
-            </div>
-            <div class="container">
-                <h1>Update your customer <br>details</h1>
-                <p>Please enter the following personal details<!-- for email address (email)-->.</p>
-                <!--<p>Your email: <input type="email" required name="email"></p>-->
-                <p>Your first name: <input type="text" required name="first_name" maxlength="20"></p>
-                <p>Your surname: <input type="text" required name="surname" maxlength="20"></p>
-
-                <button type="submit">Submit details</button>
-
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-            </div>
-        </form>
-    </div>
 </header>
 
 <main>
