@@ -1,7 +1,7 @@
 body,html{
     height: 100%;
     margin: 0;
-    font-family:"Trebuchet MS",Helvetica, "Sans-serif";;
+    font-family:"Trebuchet MS",Helvetica, "Sans-serif";
 }
 *{
     box-sizing: border-box;
@@ -9,7 +9,9 @@ body,html{
 
 /* Position text in the middle of the page/imagee */
 
-
+.topnav {
+    z-index: 1;
+}
 .btn {
     border: 2px solid black;
     background-color: gainsboro;
