@@ -146,8 +146,27 @@ if (!IsSet($_SESSION["name"]))
 
     <div class = grid-container>
         <div class = 'grid-100'>
-            <div class ="review container">
+            <div class ="review-container">
+                <?php
+                $sql = "select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
+                        from reviews r, customer c where c.C_ID = $_SESSION[cust_id] AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";
 
+                if ($result = mysqli_query($connection, $sql)) {
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<div class='review'>";
+                            echo "<h3>{$row['review_score']} &nbsp;&nbsp;&nbsp;&nbsp; {$row['review_title']} </h3>";;
+                            echo "<p>{$row['review_text']}</p>";
+                            echo "<p>{$row['first_name']} {$row['surname']}<br>{$row['review_date']}</p></div>";
+                        }
+//free result set
+                        mysqli_free_result($result);
+                    }else{
+                        echo "No records matching your query were found.";
+                    }
+                }
+                ?>
+                <p><a href="more_reviews.php">More Reviews</a></p>
             </div>
         </div>
     </div>

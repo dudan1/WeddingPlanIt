@@ -429,7 +429,27 @@ div.caption {
     padding: 15px;
     text-align: center;
 }
-
+.review-container{
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    position: relative;
+    width:80%;
+    height: auto;
+    padding: 20px;
+    left: 10%;
+    overflow: hidden;
+    margin: 30px;
+}
+.review{
+    background-color: white;
+    color: rgba(0,0,0, 0.7);
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    padding: 4px;
+    margin: 10px;
+}
 
 
 
