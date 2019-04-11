@@ -15,6 +15,11 @@ if (!IsSet($_SESSION["name"]))
     $result =mysqli_query($connection,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $_SESSION['cust_id'] = $row['C_ID'];
+
+    $id = $_GET['id']; // assign variable for id
+    $sql2 = "SELECT * from service_provider WHERE sp_id = '$id'"; //run query
+    $result2 = mysqli_query($connection, $sql2) or die ("Bad Query: $sql2");
+    $row2 = ($row2 = mysqli_fetch_array($result2));
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +39,30 @@ if (!IsSet($_SESSION["name"]))
 <body>
 <header>
     <?php require '/Templates/navbar/navbar_cust.php';?>
+    <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Leave a Review</button></p>
+    <div id="id02" class="modal">
 
+        <form class="modal-content animate" action="PHP_database_insert/post_review.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
+            </div>
+            <div class="container">
+                <h1>Review for <?php echo $row2['business_name']; ?></h1>
+                <p>Please enter your review here<!-- for email address (email)-->.</p>
+                <!--<p>Your email: <input type="email" required name="email"></p>-->
+                <p>Header for your Review: <input type="text" required name="review_title" maxlength="100"></p>
+                <p>Review:</p>
+                <p><textarea required name="review_text" rows="9" cols="42"></textarea></p>
+                <p>Review Score : <input type="text" required name="review_score" maxlength="3""></p>
+
+                <button type="submit">Submit details</button>
+
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
 </header>
 <br><br><br><br><br>
 <main>
@@ -89,6 +117,7 @@ if (!IsSet($_SESSION["name"]))
 
         </div>
     </div>
+
     <div class = grid-container>
     <div class = 'grid-100'>
         <div class="gallery_container">
@@ -114,6 +143,15 @@ if (!IsSet($_SESSION["name"]))
         </div>
     </div>
     </div>
+
+    <div class = grid-container>
+        <div class = 'grid-100'>
+            <div class ="review container">
+
+            </div>
+        </div>
+    </div>
+
     <div class="grid-container">
             <div class="grid-50" style="background-color:whitesmoke">
                 <form action ="calendar/calendar.php" method="post">
