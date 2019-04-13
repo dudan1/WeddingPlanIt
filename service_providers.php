@@ -74,12 +74,35 @@ if (!IsSet($_SESSION["name"]))
         <br>
 
         <?php
+// average score for service provider reviews
+        $sid  =$_SESSION['sp_id'];
 
+        $query = "SELECT SP_ID, review_score FROM reviews WHERE SP_ID = '$sid'";
+        $result3 = mysqli_query($connection,$query);
+
+        $row3 = mysqli_num_rows($result3);
+        $score = 0;
+        $counter = 0;
+        while ($row3 = mysqli_fetch_array($result3)) {
+            $score += $row3['review_score'];
+            $counter++;
+
+        }
+        $average = $score/$counter;
+
+       //echo "<p>"."counter ".$counter."</p>";
+      //  echo "<p>". "score ".$score."<p>";
+        echo "<p><i STYLE='color: goldenrod'>". "Average ".$average. " based on ".$counter. " reviews"."</i></p>";
+///end
+
+
+        // display service provider details
         $id = $_GET['id']; // assign variable for id
         $sql2 = "SELECT * from service_provider WHERE sp_id = '$id'"; //run query
         $result2 = mysqli_query($connection, $sql2) or die ("Bad Query: $sql2");
         $row2 = ($row2 = mysqli_fetch_array($result2));
         echo "<h2>" . $row2['business_name'] . "</h2>";
+       //  echo "<p>". "average ".$average. "</p>";
         echo "<p>". "Standard price per day: £".$row2['price']. "</p>";
         echo "<p>" . $row2['description'] . "</p>";
         ?>
@@ -148,8 +171,12 @@ if (!IsSet($_SESSION["name"]))
         <div class = 'grid-100'>
             <div class ="review-container">
                 <?php
-                $sql = "select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
-                        from reviews r, customer c where c.C_ID = $_SESSION[cust_id] AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";
+                // to display reviews
+              $sql =  " select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
+                        from reviews r JOIN customer c ON r.SP_ID = 23 AND c.C_ID = r.C_ID ORDER BY RAND()";
+
+                /*$sql = "select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname
+                        from reviews r, customer c where c.C_ID = $_SESSION[cust_id] AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";*/
 
                 if ($result = mysqli_query($connection, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
