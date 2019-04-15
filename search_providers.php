@@ -90,7 +90,31 @@ if (!IsSet($_SESSION["name"]))
                 }else{
                     echo "No records matching your query were found.";
                 }
+            } //end
+
+            //to display average of reviews made by customers
+        /*    $sid  =$_SESSION['sp_id'];
+
+            $query = "SELECT SP_ID, review_score FROM reviews WHERE SP_ID = '$sid'";
+            $result3 = mysqli_query($connection,$query);
+
+            $row3 = mysqli_num_rows($result3);
+            $score = 0;
+            $counter = 0;
+            while ($row3 = mysqli_fetch_array($result3)) {
+                $score += $row3['review_score'];
+                $counter++;
+
             }
+            if($counter !=0){
+
+                $average = $score/$counter;
+
+                echo "<p><i STYLE='color: goldenrod'>". "Average ".$average. " based on ".$counter. " reviews"."</i></p>";
+            } else{
+                echo "There are no reviews for this Service Provider";
+            }*/
+            //end
 
      // to sort price in ascending order
           if(isset($_GET['cost'])) {

@@ -54,12 +54,22 @@ if (!IsSet($_SESSION["name"]))
                 <p>Header for your Review: <input type="text" required name="review_title" maxlength="100"></p>
                 <p>Review:</p>
                 <p><textarea required name="review_text" rows="9" cols="42"></textarea></p>
-                <p>Review Score : <input type="text" required name="review_score" maxlength="3""></p>
+                <p>Review Score : <select name="review_score">
+                    <option></option>
+                        <option value="1.0">1</option>
+                        <option value="2.0">2</option>
+                        <option value="3.0">3</option>
+                        <option value="4.0">4</option>
+                        <option value="5.0">5</option>
+                    </select>
+
+                    <!--required name="review_score" maxlength="3""></p> -->
 
                 <button type="submit">Submit details</button>
 
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
                 <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+
             </div>
         </form>
     </div>
