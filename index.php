@@ -14,7 +14,7 @@
 <!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
-<?php require '/Templates/navbar/navbar_out.php';?>
+<?php require 'Templates/navbar/navbar_out.php';?>
 <header>
 <!--    <div class="grid-container">
         <div class="grid-50">

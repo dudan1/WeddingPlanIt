@@ -72,7 +72,7 @@ $budget = $row['budget'];
 <!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
-    <?php require '/Templates/navbar/navbar_cust.php';?>
+    <?php require 'Templates/navbar/navbar_cust.php';?>
 
 <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
 <div id="id02" class="modal">

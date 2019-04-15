@@ -38,7 +38,7 @@ if (!IsSet($_SESSION["name"]))
 <!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
-    <?php require '/Templates/navbar/navbar_cust.php';?>
+    <?php require 'Templates/navbar/navbar_cust.php';?>
     <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Leave a Review</button></p>
     <div id="id02" class="modal">
 
@@ -88,11 +88,18 @@ if (!IsSet($_SESSION["name"]))
             $counter++;
 
         }
+        if($counter !=0){
+
+
         $average = $score/$counter;
 
        //echo "<p>"."counter ".$counter."</p>";
       //  echo "<p>". "score ".$score."<p>";
         echo "<p><i STYLE='color: goldenrod'>". "Average ".$average. " based on ".$counter. " reviews"."</i></p>";
+        } else{
+            echo "There are no reviews for this Service Provider";
+        }
+
 ///end
 
 
@@ -173,7 +180,7 @@ if (!IsSet($_SESSION["name"]))
                 <?php
                 // to display reviews
               $sql =  " select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
-                        from reviews r JOIN customer c ON r.SP_ID = 23 AND c.C_ID = r.C_ID ORDER BY RAND()";
+                        from reviews r JOIN customer c ON r.SP_ID = '$id' AND c.C_ID = r.C_ID ORDER BY RAND()";
 
                 /*$sql = "select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname
                         from reviews r, customer c where c.C_ID = $_SESSION[cust_id] AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";*/
@@ -189,7 +196,7 @@ if (!IsSet($_SESSION["name"]))
 //free result set
                         mysqli_free_result($result);
                     }else{
-                        echo "No records matching your query were found.";
+                        echo "No reviews have been submitted for this Service Provider.";
                     }
                 }
                 ?>
