@@ -164,23 +164,20 @@ body,html{
     color:#1685A6;
     /**#63A0CC;**/
 }
-.logo img {
-    width: 150px;
-    height: auto;
-    float: left;
-}
+/*.logo img {*/
+    /*!*position: absolute;*!*/
+    /*!*top: 50px;*!*/
+    /*height: min-content;*/
+    /*float: right;*/
+    /*z-index: 1000;*/
+/*}*/
 
 /*STYLING FOR index.html*/
  .row{
      max-width: 1200px;
      margin: auto;
  }
-.logo img{
-    max-width: 200px;
-    width: 100%;
-    height:auto;
-    float: left;
-}
+
 .main-nav{
     float:right;
     list-style: none;

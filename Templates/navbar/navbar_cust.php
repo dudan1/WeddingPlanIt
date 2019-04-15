@@ -5,10 +5,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/navbar.css">
 </head>
-<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">
 
 <div class="logo">
-    <a href="index.php"><img height="100px" src="assets/images/logo1.png" alt="wedding band" title="wedding band"></a>
+    <a href="index.php"><img src="assets/images/logo1.png" alt="Image link back to Portal" title="Image link back to Portal"></a>
 
 <div class="topnav" id="myTopnav">
 
@@ -22,10 +21,6 @@
     </a>
 </div>
 </div>
-
-<!--<div class="logo" style="padding-left:10%"; padding-right: 0%"; padding-left:10%">
-    <img align="left" height="100px" src="../assets/images/logo1.png" alt="wedding band" title="wedding band">
-</div>-->
 
 <script>
     function myFunction() {

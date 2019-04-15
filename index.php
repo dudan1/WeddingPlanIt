@@ -11,7 +11,7 @@
 
 
 </head>
-<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
+
 <body>
 <header>
 <?php require '/Templates/navbar/navbar_out.php';?>
@@ -37,7 +37,6 @@
         <form class="modal-content animate" action="PHP_database_insert/login.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50">-->
             </div>
             <div class="container">
                 <h2>LOGIN</h2>
@@ -62,7 +61,6 @@
         <form class="modal-content animate" action="PHP_database_insert/register.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!--<img src="assets/images/avatar.png" alt="Avatar" height="50" width="50px">-->
             </div>
             <div class="container">
                 <h2>REGISTER</h2>
@@ -93,6 +91,7 @@
         <div class = "bg-text4">
             <h1 style="font-size:50px">Wedding Plan<font color="red">I</font>t</h1>
             <p>Everything you need to plan your wedding</p>
+
         </div>
     </div>
 </div>
