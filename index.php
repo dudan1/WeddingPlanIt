@@ -14,7 +14,7 @@
 
 <body>
 <header>
-<?php require '/Templates/navbar/navbar_out.php';?>
+<?php require 'Templates/navbar/navbar_out.php';?>
 <header>
 <!--    <div class="grid-container">
         <div class="grid-50">

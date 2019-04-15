@@ -9,7 +9,7 @@ require_once('PHP_database_insert/db.php');
 
 $email = $_SESSION['name'];
 
-$sql = "Select first_name, surname, phone_number, wedding_date FROM customer WHERE email = '$email'";
+$sql = "Select first_name, surname, phone_number, wedding_date, budget FROM customer WHERE email = '$email'";
 $result =mysqli_query($connection,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
@@ -18,6 +18,7 @@ $firstname = $row['first_name'];
 $surname = $row['surname'];
 $phone_number = $row['phone_number'];
 $wedding_date = $row['wedding_date'];
+$budget = $row['budget'];
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ $wedding_date = $row['wedding_date'];
 <!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
-    <?php require '/Templates/navbar/navbar_cust.php';?>
+    <?php require 'Templates/navbar/navbar_cust.php';?>
 
 <p><button class="btn3 info3" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Profile</button></p>
 <div id="id02" class="modal">
@@ -89,6 +90,7 @@ $wedding_date = $row['wedding_date'];
             <p>Your surname: <input type="text" required name="surname" maxlength="20" value ="<?php echo $surname ?>"/></p>
             <p>Phone number : <input type="text" required name="phone_number" maxlength="14" value ="<?php echo $phone_number ?>"></p>
             <p>Wedding date: <input type="date" required name="wedding_date" value ="<?php echo $wedding_date ?>"></p>
+            <p>Wedding budget £: <input type="text" required name="budget" value ="<?php echo $budget ?>"></p>
 
             <button type="submit">Submit details</button>
 
