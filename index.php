@@ -15,22 +15,8 @@
 <body>
 <header>
 <?php require 'Templates/navbar/navbar_out.php';?>
-<header>
-<!--    <div class="grid-container">
-        <div class="grid-50">
-            <div class="row">
-    <div class="logo">
-<img src="assets/images/logo1.png" alt="wedding band">
-    </div>
-    <nav>
-        <ul class="main-nav">
-            <li><a href="contact_us.php">CONTACT US</a></li>
-            <li><a href="faq.php">FAQ</a></li>
-        </ul>
-    </nav>
-    </div>-->
 
-    <p><button class="btn2 info2" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Log In</button></p>
+    <p><button class="btn5 info5" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Log In</button></p>
 
     <div id="id02" class="modal">
 
@@ -54,7 +40,7 @@
         </form>
     </div>
 
-    <p><button class="btn3 info3" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Sign up</button></p>
+    <p><button class="btn6 info6" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Sign up</button></p>
 
     <div id="id01" class="modal">
 
@@ -89,8 +75,8 @@
 <div class="grid-container2">
     <div class="grid-50">
         <div class = "bg-text4">
-            <h1 style="font-size:50px">Wedding Plan<font color="red">I</font>t</h1>
-            <p>Everything you need to plan your wedding</p>
+
+            <h1>Everything you need to plan your wedding</h1>
 
         </div>
     </div>

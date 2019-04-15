@@ -1,0 +1,21 @@
+.footer {
+    overflow: no-content;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.alignleft {
+    float: left;
+
+}
+.alignright {
+    float: right;
+
+}

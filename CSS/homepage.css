@@ -63,7 +63,7 @@ body,html{
     font-size: 20px;
     cursor: pointer;
     position: absolute;
-    top: 60px;
+    top: 90px;
     right: 70px;
 
 }
@@ -85,23 +85,10 @@ body,html{
     font-size: 20px;
     cursor: pointer;
     position: absolute;
-    top: 60px;
-    right: 200px;
-
+    top: 120px;
+    right: 60px;
 }
 
-.btn4 {
-    border: 2px solid black;
-    background-color: lightgoldenrodyellow;
-    color: black;
-    padding: 14px 14px;
-    font-size: 20px;
-    cursor: pointer;
-
-    position: relative;
-    left: 80px;
-    top: 70px;
-}
 .info3 {
     border-color: darkseagreen;
     color: darkseagreen;
@@ -112,6 +99,18 @@ body,html{
     background: darkseagreen;
     color: white;
 }
+.btn4 {
+    border: 2px solid black;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    padding: 14px 14px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    left: 80px;
+    top: 70px;
+}
+
 .info4 {
     border-color: darkseagreen;
     color: darkseagreen;
@@ -119,6 +118,54 @@ body,html{
 }
 
 .info4:hover {
+    background: darkseagreen;
+    color: white;
+}
+
+.btn5 {
+    border: 2px solid black;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    padding: 14px 14px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    right: 80px;
+    top: 90px;
+    z-index: 50;
+}
+
+.info5 {
+    border-color: darkseagreen;
+    color: darkseagreen;
+
+}
+
+.info5:hover {
+    background: darkseagreen;
+    color: white;
+}
+
+.btn6 {
+    border: 2px solid black;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    padding: 14px 14px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    right:100px;
+    top: 90px;
+    z-index: 50;
+}
+
+.info6 {
+    border-color: darkseagreen;
+    color: darkseagreen;
+
+}
+
+.info6:hover {
     background: darkseagreen;
     color: white;
 }

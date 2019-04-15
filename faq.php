@@ -1,8 +1,3 @@
-<?php
-/*session_start();
-if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
-*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,93 +12,74 @@ if (!IsSet($_SESSION["name"]))
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
+</head>
 <body>
-
-
 <header>
-    <?php include 'Templates/navbar/navbar_out.php';
+    <?php require 'Templates/navbar/navbar_out.php';
     ?>
+
+    <p><button class="btn5 info5" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Log In</button></p>
+
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="PHP_database_insert/login.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <h2>LOGIN</h2>
+
+                <p>Your email:</p>
+                <p><input type="email" required name="email"></p>
+                <p>Your Password:</p>
+                <p><input type="password" required name="pwd1"></p>
+
+                <button type="submit">Log in</button>
+
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
+
+    <p><button class="btn6 info6" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Sign up</button></p>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="PHP_database_insert/register.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <h2>REGISTER</h2>
+                <p>User type: You are a:
+                    <select id="UserType" name="user_type">
+                        <option>Service Provider</option>
+                        <option>Customer</option>
+                    </select>
+                <p>Your email:</p>
+                <p><input type="email" required name="email"></p>
+                <p>Password: <input type="password" required name="pwd1"></p>
+                <p>Confirm Password: <input type="password" required name="pwd2"></p>
+
+                <button type="submit">Sign Up!</button>
+
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
 
 </header>
 <main>
+    <?php require 'Templates/about_us/faq_text.php';?>
 
-            <div class="bg-text2">
-                <h1>Wedding Plan<font color="red">I</font>t<br/>FAQs</h1>
-                <hr/>
-                <div class="accordion-bral">
-
-                    <!-- accordion item 1 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-1" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-1">How do i join Wedding Plan<font color="red">I</font>t?<i></i></label>
-                        <div class="article ac-content">
-                            <p>Easy, just click the "Sign Up" Button above.</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 1 -- end -->
-
-                    <!-- accordion item 2 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-2" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-2">How can I change my password?<i></i></label>
-                        <div class="article ac-content">
-                            <p>After login, go to your profile and select "Change Password".</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 2 -- end -->
-
-                    <!-- accordion item 3 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-3" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-3">Who runs Wedding Plan<font
-                                    color="red">I</font>t?<i></i></label>
-                        <div class="article ac-content">
-                            <p>"JDTN" Group D.</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 3 -- end -->
-
-                    <!-- accordion item 4 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-4" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-4">How can I contact Wedding Plan<font
-                                    color="red">I</font>t?<i></i></label>
-                        <div class="article ac-content">
-                            <p>Select "Contact Us" from the Navigation Bar above.</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 4 -- end -->
-
-                    <!-- accordion item 5 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-5" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-5">Will I have a happy marriage?<i></i></label>
-                        <div class="article ac-content">
-                            <p>We give you a "25 Years of Happiness" warranty. Warranty can be extended in 5 year blocks
-                                thereafter.</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 5 -- end -->
-
-                    <!-- accordion item 6 -- start -->
-                    <div>
-                        <input class="ac-input" id="ac-6" name="accordion-1" type="checkbox"/>
-                        <label class="ac-label" for="ac-6">How much is the extended warranty?<i></i></label>
-                        <div class="article ac-content">
-                            <p>For each 5 year extension, we merely ask for 10% of your soul.</p>
-                        </div>
-                    </div>
-                    <!-- accordion item 6 -- end -->
-                </div>
-            </div>
-
-
-</form>
-</div>
 </main>
 
 <footer class="footer">
+    <?php require 'Templates/footer/footer.php';
 
+    ?>
 </footer>
 
 </body>

@@ -100,11 +100,11 @@ $budget = $row['budget'];
     </form>
 </div>
 </header>
-<br><br><br><br><br><br><br><br>
+<!--<br><br><br><br><br><br><br><br>-->
 <main>
 <!--<div class="grid-container">
-    <div class="grid-50">
-    <div class = "bg-text1">-->
+    <div class="grid-50">-->
+    <div class = "bg-text">
     <div align="center">
         <h2 color="white">Search for Service Providers</h2>
         <form method="GET" action="search_providers.php">
@@ -128,9 +128,9 @@ $budget = $row['budget'];
                 &nbsp;
                 <input type="submit" value="Search">
             </div>
-    </div> <!--
     </div>
     </div>
+<!--    </div>
     </div>-->
         </form>
 
@@ -139,8 +139,10 @@ $budget = $row['budget'];
 </main>
 
 
-<footer>
-<p></p>
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';
+
+    ?>
 </footer>
 
 </body>

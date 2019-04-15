@@ -11,50 +11,70 @@
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
-
 </head>
 
+<body>
 <header>
+    <?php require 'Templates/navbar/navbar_out.php';?>
 
-<?php include 'Templates/navbar/navbar_out.php';
- ?>
+    <p><button class="btn5 info5" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Log In</button></p>
+
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="PHP_database_insert/login.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <h2>LOGIN</h2>
+
+                <p>Your email:</p>
+                <p><input type="email" required name="email"></p>
+                <p>Your Password:</p>
+                <p><input type="password" required name="pwd1"></p>
+
+                <button type="submit">Log in</button>
+
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
+
+    <p><button class="btn6 info6" onclick="document.getElementById('id01').style.display='block'" style="width:110px;height:auto;float:right">Sign up</button></p>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="PHP_database_insert/register.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <h2>REGISTER</h2>
+                <p>User type: You are a:
+                    <select id="UserType" name="user_type">
+                        <option>Service Provider</option>
+                        <option>Customer</option>
+                    </select>
+                <p>Your email:</p>
+                <p><input type="email" required name="email"></p>
+                <p>Password: <input type="password" required name="pwd1"></p>
+                <p>Confirm Password: <input type="password" required name="pwd2"></p>
+
+                <button type="submit">Sign Up!</button>
+
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
+
 </header>
-<!-- *** PLease note that javaScript herein was supplied by EmailJS mail handler, http;??www.emailjs.com *** -->
-    
-<main>
+<?php require 'Templates/contact_us/cu_text.php';?>
 
-<div class = "bg-text3">
-
-    <H2>Please submit a query:</H2>
-
-    <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Contact_Us', this); return false;" method="post">
-        <p align="left"><textarea rows="4" cols="40" required name="message_html" placeholder="Type your query here..."></textarea></p>
-        <p align="left">Your name: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
-        <p align="left">Your email: <input type="email" required name="reply_to" maxlength="60"></p>
-
-        <button type="submit">Submit details</button>
-
-        <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>
-    </form>
-    <hr/>
-    <p>Or via email:</p>
-    <p><a href="mailto:0006664@rgu.ac.uk?subject="Wedding PlanIt Customer Query">Email: WPSupport@rgu.ac.uk</a></p>
-
-</div>
-</main>
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("user_LFwLsmo7J3ufzDn6n6g3j");
-        })();
-    </script>
-
-
-<!--<footer class="footer">-->
-<!---->
-<!---->
-<!--</footer>-->
-
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
+</footer>
 </body>
 
 

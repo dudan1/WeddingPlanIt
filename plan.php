@@ -40,7 +40,7 @@ if (($_SESSION["user_type"]) != "Customer")
 </header>
 
 <main>
-<div class ="grid-container" >
+<div class ="grid-container" style="padding-top: 120px">
     <div class = "grid-25" style="background-color:lightgoldenrodyellow"><h2>Dashboard</h2>
         <?php
             echo "<p>" . $cust_fname . " " . $cust_sname . "</p>";
@@ -99,9 +99,12 @@ echo "<br>";
 
 
 </main>
-<footer>
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';
 
+    ?>
 </footer>
+
 
 </body>
 </html>

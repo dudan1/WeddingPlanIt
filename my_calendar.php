@@ -8,12 +8,12 @@ if (($_SESSION["user_type"]) != "Service Provider") {
     header("Location:../cust_home.php");
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!DOCTYPE html>
 <head>
 <style>
-html *
+/*html **/
 {
    font-family: Arial !important;
 }
@@ -74,6 +74,7 @@ td.calendar-day, td.calendar-day-np {
 <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
 <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
@@ -104,33 +105,22 @@ td.calendar-day, td.calendar-day-np {
     });
   });  </script>
 </head>
-<body><!-- style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);"-->
+<body>
 
 <header>
-    <?php require '/Templates/navbar/navbar_sp.php';?>
-<!--    <div class="row">
-        <div class="logo">
-            <img src="assets/images/logo1.png" alt="wedding band">
-        </div>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="sp_home.php">HOME</a></li>
-                <li><a href="contact_us.php">CONTACT US</a></li>
-                <li><a href="faq.php">FAQ</a></li>
-                <li><a href="my_calendar.php">MY CALENDAR</a></li>
-                <li><a href="PHP_database_insert/logout.php">LOG OUT</a></li>
-            </ul>
-        </nav>
-    </div>-->
+    <?php require 'Templates/navbar/navbar_cal.php';
+    ?>
+
 </header>
-<br><br><br><br><br><br><br><br>
+<main>
+<!--<br><br><br><br><br><br><br><br>-->
 <div class="bg-text2">
 <h1>My Booking Calendar</h1>
 
     <?php
 
     if (!IsSet($_SESSION["name"]))
-        header("Location:../index.html");
+        header("Location:../index.php");
     /* draws a calendar */
     function draw_calendar($month,$year){
 
@@ -258,6 +248,13 @@ td.calendar-day, td.calendar-day-np {
     ?>
 
 </div>
+</main>
+
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';
+
+    ?>
+</footer>
 </body>
 
 </html>

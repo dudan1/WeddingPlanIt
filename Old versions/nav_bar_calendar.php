@@ -8,7 +8,7 @@
                 <ul class="main-nav">
                     <li><a href="../cust_home.php">HOME</a></li>
                     <li><a href="../plan.php">MY PLAN</a></li>
-                    <li><a href="../Old%20versions/contact_us_zz.php">CONTACT US</a></li>
+                    <li><a href="contact_us_zz.php">CONTACT US</a></li>
                     <li><a href="../faq.php">FAQ</a></li>
                     <li><a href="#">MY PROFILE</a></li>
                     <li><a href="../PHP_database_insert/logout.php">LOG OUT</a></li>
