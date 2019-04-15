@@ -14,38 +14,18 @@
 
 </head>
 
-<body link="#C0C0C0" vlink="#808080" alink="#FF0000"> <!--style=" background-image:linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),url(assets/images/wed.jpg);"-->
-
 <header>
-<!--    <div class="grid-container">
-        <div class="grid-50">
-            <div class="row">
-                <div class="logo">
-                    <img src="assets/images/logo1.png" alt="wedding band">
-                </div>
-                <nav>
-                    <ul class="main-nav">
-                        <li><a href="contact_us.php">CONTACT US</a></li>
-                        <li><a href="faq.php">FAQ</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>-->
-    <?php include 'Templates/navbar/navbar_out.php';
 
-    ?>
+<?php include 'Templates/navbar/navbar_out.php';
+ ?>
 </header>
-<br><br><br><br><br><br><br><br>
-
 <!-- *** PLease note that javaScript herein was supplied by EmailJS mail handler, http;??www.emailjs.com *** -->
     
 <main>
+
 <div class = "bg-text3">
 
-    <h1>Contact Us</h1>
-    <hr/>
-    <p>Please submit a query:</p>
+    <H2>Please submit a query:</H2>
 
     <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Outlook_Contact_Us', this); return false;" method="post">
         <p align="left"><textarea rows="4" cols="40" required name="message_html" placeholder="Type your query here..."></textarea></p>
@@ -56,26 +36,27 @@
 
         <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>
     </form>
-
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("user_LFwLsmo7J3ufzDn6n6g3j");
-        })();
-    </script>
     <hr/>
     <p>Or via email:</p>
     <p><a href="mailto:0006664@rgu.ac.uk?subject="Wedding PlanIt Customer Query">Email: WPSupport@rgu.ac.uk</a></p>
 
 </div>
 </main>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_LFwLsmo7J3ufzDn6n6g3j");
+        })();
+    </script>
 
-<footer class="footer">
 
-
-</footer>
+<!--<footer class="footer">-->
+<!---->
+<!---->
+<!--</footer>-->
 
 </body>
 
 
 </html>
+

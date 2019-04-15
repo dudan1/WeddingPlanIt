@@ -43,10 +43,10 @@
     display: none;
 }
 .accordion-bral .article {
-    background: lightyellow;
+    background: #d4d315;
     overflow: hidden;
     height: 0px;
-    max-height: auto;
+    max-height: border-box;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -54,7 +54,7 @@
     transition: all 0.3s ease-in-out;
 }
 .accordion-bral .article p {
-    color: #777;
+    color: #005382;
     line-height: 100%;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -123,9 +123,11 @@ table.ac-table th{
         background: #EFEFEF;
         border: 1px solid #CCC;
     }
+
     .accordion-bral i {
         position: absolute;
         transform: translate(-30px, 0);
         margin-top: 2%;
         right: 0;
     }
+}

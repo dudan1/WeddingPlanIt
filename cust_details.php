@@ -1,7 +1,7 @@
 <?php
-session_start();
-if (!IsSet($_SESSION["name"]))
-    header("Location:index.php");
+//session_start();
+//if (!IsSet($_SESSION["name"]))
+//    header("Location:index.php");
 #if (($_SESSION["user_type"]) != "Service Provider")
  #   header("Location:sp_home.php");
 
