@@ -73,6 +73,28 @@ if (!IsSet($_SESSION["name"]))
                         echo "<div class='sp_column'>";
                         echo "<div class='sp_card'>";
                         echo "<div class='container'>";
+                        //to display average of reviews made by customers
+               /*        $sid  =$_SESSION['sp_id'];
+
+                        $query = "SELECT SP_ID, review_score FROM reviews WHERE SP_ID = '$sid'";
+                        $result3 = mysqli_query($connection,$query);
+
+                        $row3 = mysqli_num_rows($result3);
+                        $score = 0;
+                        $counter = 0;
+                        while ($row3 = mysqli_fetch_array($result3)) {
+                            $score += $row3['review_score'];
+                            $counter++;
+
+                        }
+                        if($counter !=0){
+
+                            $average = $score/$counter;
+                            echo "<p><b><i STYLE='color: goldenrod'>". "Overall rating: ".$average. " based on ".$counter. " reviews"."</i></b></p>";
+                        } else{
+                            echo "There are no reviews for this Service Provider";
+                        }*/
+                        //end
                         echo "<h2>" . "<a href ='service_providers.php?id={$row['SP_ID']}'>" . $row['business_name'] . "</a>" . "</h2>"."<img src='{$row['link']}' alt='{$row['photo_name']}' width='250', height='100'>";
                         echo "<p>"."£".$row['price']."</p>";
                         echo "<p class='title'>" . $row['category'] . "</p>";
@@ -91,30 +113,6 @@ if (!IsSet($_SESSION["name"]))
                     echo "No records matching your query were found.";
                 }
             } //end
-
-            //to display average of reviews made by customers
-        /*    $sid  =$_SESSION['sp_id'];
-
-            $query = "SELECT SP_ID, review_score FROM reviews WHERE SP_ID = '$sid'";
-            $result3 = mysqli_query($connection,$query);
-
-            $row3 = mysqli_num_rows($result3);
-            $score = 0;
-            $counter = 0;
-            while ($row3 = mysqli_fetch_array($result3)) {
-                $score += $row3['review_score'];
-                $counter++;
-
-            }
-            if($counter !=0){
-
-                $average = $score/$counter;
-
-                echo "<p><i STYLE='color: goldenrod'>". "Average ".$average. " based on ".$counter. " reviews"."</i></p>";
-            } else{
-                echo "There are no reviews for this Service Provider";
-            }*/
-            //end
 
      // to sort price in ascending order
           if(isset($_GET['cost'])) {

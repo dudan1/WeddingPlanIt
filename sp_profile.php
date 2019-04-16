@@ -20,6 +20,7 @@ $business_name = $row['business_name'];
 $category = $row['category'];
 $description = $row['description'];
 $price = $row['price'];
+
 // display service provider details
 $sql = "Select * FROM service_provider WHERE '$_SESSION[name]' = email";
 $result =mysqli_query($connection,$sql);
@@ -55,14 +56,14 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
      echo "<h2 style='text-align: center; padding-top: 13px;color: #4CAF50'>". $row['business_name']."</h2>";
      echo "<hr>";
-     echo "<p style='padding-left: 25px'>". "First Name"." : ".$row['first_name']."</p>";
-     echo "<p style='padding-left: 25px'>". "Surname"." : ".$row['surname']."</p>";
-     echo "<p style='padding-left: 25px'>". "Address"." : ".$row['address']."</p>";
-     echo "<p style='padding-left: 25px'>". "Post Code"." : ".$row['postcode']."</p>";
-     echo "<p style='padding-left: 25px'>". "Service Category"." : ".$row['category']."</p>";
-     echo "<p style='padding-left: 25px'>". "Price"." : "."£".$row['price']."</p>";
-     echo "<p style='padding-left: 25px'>". "Business Name"." : ".$row['business_name']."</p>";
-     echo "<p style='padding-left: 25px;padding-bottom: 13px'>". "Description"." : ".$row['description']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>First Name</b>"." : ".$row['first_name']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Surname</b>"." : ".$row['surname']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Address</b>"." : ".$row['address']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Post Code</b>"." : ".$row['postcode']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Service Category</b>"." : ".$row['category']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Price</b>"." : "."£".$row['price']."</p>";
+     echo "<p style='padding-left: 25px'>". "<b>Business Name</b>"." : ".$row['business_name']."</p>";
+     echo "<p style='padding-left: 25px;padding-bottom: 13px'>". "<b>Description</b>"." : ".$row['description']."</p>";
 
        ?>
 
