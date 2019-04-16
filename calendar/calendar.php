@@ -86,8 +86,8 @@ if($count == 1) {
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/unsemantic-grid-responsive-tablet.css">
 
-    <link rel="shortcut icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicons/superceded/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicons/superceded/favicon1.ico" type="image/x-icon">
     <link href="jquery-ui.css" rel="stylesheet">
     <script src="jquery-1.10.2.js"></script>
     <script src="jquery-ui.js"></script>
@@ -124,12 +124,12 @@ if($count == 1) {
 <main>
 <div class="bg-text2">
     <h1>Booking calendar for <?php echo $business_name; ?></h1>
-    <table border="1" cellpadding="5" width="800">
+    <table border="1" cellpadding="5" width="700">
         <tr>
             <td valign="top">
                 <form action="book.php" method="post">
                     <h3>Make booking</h3>
-                    <table style="width: 70%">
+                    <table style="width: 70%; ">
                         <tr>
                             <td>Name:</td>
                             <td> <input maxlength="50" name="name" required="" type="text" /></td>
@@ -273,7 +273,8 @@ if($count == 1) {
     echo draw_calendar($d->format('m'),$d->format('Y'));
 
     ?>
-
+    <!--  line breaks are to provide padding to ensure viewability on portable devices   -->
+    <br><br><br><br><br>
 </div>
 </main>
 

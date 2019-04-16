@@ -78,8 +78,8 @@ td.calendar-day, td.calendar-day-np {
 <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicons/superceded/favicon1.ico" type="image/x-icon">
+<link rel="icon" href="assets/favicons/superceded/favicon1.ico" type="image/x-icon">
 <link href="calendar/jquery-ui.css" rel="stylesheet">
 <script src="calendar/jquery-1.10.2.js"></script>
 <script src="calendar/jquery-ui.js"></script>
@@ -248,8 +248,11 @@ td.calendar-day, td.calendar-day-np {
     echo draw_calendar($d->format('m'),$d->format('Y'));
 
     ?>
-
+<!-- line breaks are to provide packing to ensure viewability on portable devices   -->
+    <br><br><br><br><br>
 </div>
+
+
 </main>
 
 <footer class="footer">

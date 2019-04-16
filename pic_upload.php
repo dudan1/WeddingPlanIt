@@ -18,8 +18,8 @@ if (($_SESSION["user_type"]) != "Service Provider") {
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/superceded/favicon1.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
