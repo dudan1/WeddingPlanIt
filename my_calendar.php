@@ -73,6 +73,8 @@ td.calendar-day, td.calendar-day-np {
 <title>My Booking Calendar</title>
 <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+<link rel="stylesheet" type="text/css" href="CSS/footbar.css">
+<link rel="stylesheet" type="text/css" href="CSS/navbar.css">
 <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -108,7 +110,7 @@ td.calendar-day, td.calendar-day-np {
 <body>
 
 <header>
-    <?php require 'Templates/navbar/navbar_cal.php';
+    <?php require 'Templates/navbar/navbar_sp_cal.php';
     ?>
 
 </header>

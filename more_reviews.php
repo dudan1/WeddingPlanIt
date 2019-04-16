@@ -122,5 +122,6 @@ $row = ($row = mysqli_fetch_array($result));
     <?php require 'Templates/footer/footer.php';?>
 </footer>
 
+
 </body>
 </html>

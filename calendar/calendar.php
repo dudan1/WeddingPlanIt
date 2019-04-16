@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:../index.html");
+    header("Location:../index.php");
 $cust_id = $_SESSION['cust_id'];
 $sp_id = $_SESSION['sp_id'];
 
@@ -18,12 +18,11 @@ if($count == 1) {
 
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 
 <head>
     <style>
-        html *
+        /*html **/
         {
             font-family: Arial !important;
         }
@@ -83,6 +82,8 @@ if($count == 1) {
     <title>Booking Calendar for <?php echo $business_name; ?></title>
     <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/footbar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/unsemantic-grid-responsive-tablet.css">
 
     <link rel="shortcut icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
@@ -117,11 +118,10 @@ if($count == 1) {
 <body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(../assets/images/wed.jpg);">
 
 <header>
-    <?php include '../PHP_database_insert/nav_bar_calendar.php';
-
-    ?>
+    <?php require '../Templates/navbar/navbar_cust_cal.php';?>
 </header>
-<br><br><br><br><br><br><br><br>
+
+<main>
 <div class="bg-text2">
     <h1>Booking calendar for <?php echo $business_name; ?></h1>
     <table border="1" cellpadding="5" width="800">
@@ -275,6 +275,12 @@ if($count == 1) {
     ?>
 
 </div>
+</main>
+
+<footer class="footer">
+    <?php require '../Templates/footer/footer.php';
+    ?>
+</footer>
 </body>
 
 </html>

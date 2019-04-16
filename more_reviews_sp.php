@@ -79,9 +79,11 @@ require_once('PHP_database_insert/db.php');
 </main>
 
 
-<footer>
 
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
+
 
 </body>
 </html>
