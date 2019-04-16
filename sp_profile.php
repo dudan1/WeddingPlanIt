@@ -144,7 +144,6 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 </main>
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';
-
     ?>
 </footer>
 

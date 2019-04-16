@@ -222,9 +222,8 @@ if (!IsSet($_SESSION["name"]))
     </div>
 </main>
 
-
-<footer>
-
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>

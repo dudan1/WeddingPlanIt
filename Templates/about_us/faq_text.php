@@ -13,9 +13,9 @@
         <!-- accordion item 1 -- start -->
         <div>
             <input class="ac-input" id="ac-1" name="accordion-1" type="checkbox"/>
-            <label class="ac-label" for="ac-1">How do i join Wedding Plan<font color="red">I</font>t?<i></i></label>
+            <label class="ac-label" for="ac-1">How do I join Wedding Plan<font color="red">I</font>t?<i></i></label>
             <div class="article ac-content">
-                <p>Easy, just click the "Sign Up" Button above.</p>
+                <p>This is really quick and easy, just click the "Sign Up" button and you can register and enter your profile details.</p>
             </div>
         </div>
         <!-- accordion item 1 -- end -->
@@ -36,7 +36,7 @@
             <label class="ac-label" for="ac-3">Who runs Wedding Plan<font
                         color="red">I</font>t?<i></i></label>
             <div class="article ac-content">
-                <p>"JDTN" Group D.</p>
+                <p>"JDTN" (CMM007, Group D).</p>
             </div>
         </div>
         <!-- accordion item 3 -- end -->

@@ -69,7 +69,6 @@ $budget = $row['budget'];
     </style>-->
 </head>
 
-<!--<body style=" background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
     <?php require 'Templates/navbar/navbar_cust.php';?>

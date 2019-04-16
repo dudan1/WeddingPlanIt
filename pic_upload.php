@@ -180,7 +180,6 @@ if (($_SESSION["user_type"]) != "Service Provider") {
 </main>
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';
-
     ?>
 </footer>
 

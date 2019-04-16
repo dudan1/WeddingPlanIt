@@ -252,10 +252,10 @@ td.calendar-day, td.calendar-day-np {
 
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';
-
     ?>
 </footer>
+
 </body>
 
-</html>
+
 

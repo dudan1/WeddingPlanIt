@@ -101,7 +101,6 @@ echo "<br>";
 </main>
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';
-
     ?>
 </footer>
 

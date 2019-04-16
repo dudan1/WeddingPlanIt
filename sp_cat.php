@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
@@ -56,5 +55,9 @@
     </div>
 </div>
 
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
+</footer>
+
 </body>
-</html>
+

@@ -35,22 +35,6 @@ $c_name = $row['first_name']." ".$row['surname'];
 <!--<body style="background-image:/*linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),*/url(assets/images/wed.jpg);">-->
 <body>
 <header>
-
-<!--    <div class="grid-container">
-        <div class="grid-50">
-            <div class="row">
-                <div class="logo">
-                    <img src="assets/images/logo1.png" alt="wedding band">
-                </div>
-                <nav>
-                    <ul class="main-nav">
-                        <li><a href="contact_us.php">CONTACT US</a></li>
-                        <li><a href="faq.php">FAQ</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>-->
     <?php require '/Templates/navbar/navbar_cust.php';?>
 </header>
 
@@ -88,8 +72,7 @@ $c_name = $row['first_name']." ".$row['surname'];
 </main>
 
 <footer class="footer">
-
-
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>

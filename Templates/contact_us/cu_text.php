@@ -17,7 +17,7 @@
         </form>
         <hr/>
         <p>Or via email:</p>
-        <p><a href="mailto:0006664@rgu.ac.uk?subject="Wedding PlanIt Customer Query">Email: WPSupport@rgu.ac.uk</a></p>
+        <p><a style="background-color: blanchedalmond" href="mailto:0006664@rgu.ac.uk?subject=Wedding PlanIt Customer Query">Email: WPSupport@rgu.ac.uk</a></p>
 
     </div>
 </main>

@@ -87,6 +87,5 @@ if (($_SESSION["user_type"]) != "Customer")
     ?>
 </footer>
 
-
 </body>
 </html>

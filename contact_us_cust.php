@@ -21,12 +21,9 @@
 
 <?php require 'Templates/contact_us/cu_text.php';?>
 
-<footer class="footer">
-    <?php require 'Templates/footer/footer.php';?>
-</footer>
+
 
 </body>
-
 
 </html>
 

@@ -67,8 +67,7 @@
             </div>
         </form>
     </div>
-        </div>
-    </div>
+
 </header>
 
 <main>
@@ -84,9 +83,9 @@
 
 </main>
 
-<footer>
-
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>
-</html>
+
