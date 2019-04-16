@@ -80,11 +80,7 @@ if (!IsSet($_SESSION["name"]))
 
 <header>
     <?php require '/Templates/navbar/navbar_sp.php';?>
-<!--    <div class="row">
-        <div class="logo">
-            <img src="assets/images/logo1.png" alt="wedding band">
-        </div>
-    </div>-->
+
 </header>
 
 <div class = "bg-text1">
@@ -131,15 +127,7 @@ if (!IsSet($_SESSION["name"]))
 
 
 <footer class="footer">
-    <!--<p>DJNT (c) 2019</p>
-    <p>Join us on</p>
-    <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-twitter"></a>
-    <a href="#" class="fa fa-google"></a>
-    <a href="#" class="fa fa-instagram"></a>
-    <a href="#" class="fa fa-youtube"></a>
-    -->
-
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>

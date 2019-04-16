@@ -1,6 +1,9 @@
 body {font-family: Arial, Helvetica, sans-serif;
     background-size: cover;
-    background: url("../assets/images/wed.jpg") center;
+    background: url("../assets/images/wed.jpg");
+    background-repeat: space;
+    background-color: rgba(255, 244, 196, 0.51);
+    min-height: 1000px;
 }
 /* image source https://www.freeimages.com/photo/wedding-1310947 */
 
@@ -77,6 +80,26 @@ body {font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     text-align: center;
     z-index: -2;
+}
+
+.bg-text5 {
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through - For Details Forms */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    z-index: -2;
+}
+main {
+    padding: 16px;
+    margin-bottom: 150px;
+    min-height: 1000px;
 }
 
 /* Full-width input fields */
@@ -448,6 +471,7 @@ div.caption {
     padding: 4px;
     margin: 10px;
 }
+
 
 
 

@@ -101,17 +101,8 @@
 
 </div>
 
-
 <footer class="footer">
-    <!-- <p>DJNT (c) 2019</p>
-    <p>Join us on</p>
-    <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-twitter"></a>
-    <a href="#" class="fa fa-google"></a>
-    <a href="#" class="fa fa-instagram"></a>
-    <a href="#" class="fa fa-youtube"></a>
-    -->
-
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>

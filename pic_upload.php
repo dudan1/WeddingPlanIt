@@ -13,8 +13,14 @@ if (($_SESSION["user_type"]) != "Service Provider") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Contact Us Page</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
+
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -83,7 +89,7 @@ if (($_SESSION["user_type"]) != "Service Provider") {
 </header>
 
 <main>
-    <div class="grid-container">
+    <div class="grid-container" style="padding-top: 120px">
     <section class="grid-50" name="left" id="left">
         <article name="upload_form" id="upload_form">
         <h3>Upload Images</h3>
@@ -172,7 +178,10 @@ if (($_SESSION["user_type"]) != "Service Provider") {
         </section>
     </div>
 </main>
-
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';
+    ?>
+</footer>
 
 
 </body>
