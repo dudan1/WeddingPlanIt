@@ -105,7 +105,7 @@ if (!IsSet($_SESSION["name"]))
 
        //echo "<p>"."counter ".$counter."</p>";
       //  echo "<p>". "score ".$score."<p>";
-        echo "<p><i STYLE='color: goldenrod'>". "Average ".$average. " based on ".$counter. " reviews"."</i></p>";
+        echo "<p><b><i STYLE='color: goldenrod'>". "Overall rating: ".$average. " based on ".$counter. " reviews"."</i></b></p>";
         } else{
             echo "There are no reviews for this Service Provider";
         }
@@ -126,6 +126,7 @@ if (!IsSet($_SESSION["name"]))
     </div>
         <div class ='grid-30'>
             <?php
+            // to display profile photo
             $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='profile'";
 
             if ($result = mysqli_query($connection, $sql)) {
@@ -139,6 +140,7 @@ if (!IsSet($_SESSION["name"]))
                     echo "";
                 }
             }
+            // to display logo
             $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='logo'";
 
             if ($result = mysqli_query($connection, $sql)) {
@@ -164,6 +166,7 @@ if (!IsSet($_SESSION["name"]))
 
 
             <?php
+            // to display image
             $sql = "select link, photo_name, caption, image_type from images where SP_ID = $_SESSION[sp_id] AND image_type ='image'";
 
             if ($result = mysqli_query($connection, $sql)) {
