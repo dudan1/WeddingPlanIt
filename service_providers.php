@@ -54,12 +54,22 @@ if (!IsSet($_SESSION["name"]))
                 <p>Header for your Review: <input type="text" required name="review_title" maxlength="100"></p>
                 <p>Review:</p>
                 <p><textarea required name="review_text" rows="9" cols="42"></textarea></p>
-                <p>Review Score : <input type="text" required name="review_score" maxlength="3""></p>
+                <p>Review Score : <select name="review_score">
+                    <option></option>
+                        <option value="1.0">1</option>
+                        <option value="2.0">2</option>
+                        <option value="3.0">3</option>
+                        <option value="4.0">4</option>
+                        <option value="5.0">5</option>
+                    </select>
+
+                    <!--required name="review_score" maxlength="3""></p> -->
 
                 <button type="submit">Submit details</button>
 
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
                 <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+
             </div>
         </form>
     </div>
@@ -188,8 +198,24 @@ if (!IsSet($_SESSION["name"]))
                 if ($result = mysqli_query($connection, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
+                            $score = $row['review_score'];
+                            if($score ==1){
+                                $image = "<img src = 'assets/images/1_star.PNG' alt = '1_star' height = '15px'>";
+                            }
+                            elseif($score ==2){
+                                $image = "<img src = 'assets/images/2_stars.PNG' alt = '2_star' height = '15px'>";
+                            }
+                            elseif($score ==3){
+                                $image = "<img src = 'assets/images/3_stars.PNG' alt = '3_star' height = '15px'>";
+                            }
+                            elseif($score ==4){
+                                $image = "<img src = 'assets/images/4_stars.PNG' alt = '4_star' height = '15px'>";
+                            }
+                            elseif($score ==5){
+                                $image = "<img src = 'assets/images/5_stars.PNG' alt = '5_star' height = '15px'>";
+                            }
                             echo "<div class='review'>";
-                            echo "<h3>{$row['review_score']} &nbsp;&nbsp;&nbsp;&nbsp; {$row['review_title']} </h3>";;
+                            echo "<h3>{$row['review_title']} &nbsp;&nbsp;&nbsp;&nbsp; {$image} </h3>";;
                             echo "<p>{$row['review_text']}</p>";
                             echo "<p>{$row['first_name']} {$row['surname']}<br>{$row['review_date']}</p></div>";
                         }

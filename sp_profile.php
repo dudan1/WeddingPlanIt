@@ -122,6 +122,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         <h2>Your Images</h2>
     </div>
     <div class="gallery_container">
+        <div class="grid-100">
         <?php
         $sql = "select link, photo_name, caption from images where SP_ID = $sp_id";
 
@@ -139,7 +140,54 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
             }
         }
         ?>
+        </div>
     </div>
+    <div class = grid-container>
+        <div class = 'grid-100'>
+            <div class ="review-container">
+                <h2>Your Reviews</h2>
+                <?php
+                $sql =  " select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
+                        from reviews r JOIN customer c ON r.SP_ID = '$_SESSION[SP_ID]' AND c.C_ID = r.C_ID ORDER BY RAND()";
+
+
+                if ($result = mysqli_query($connection, $sql)) {
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            $score = $row['review_score'];
+                            if($score ==1){
+                                $image = "<img src = 'assets/images/1_star.PNG' alt = '1_star' height = '15px'>";
+                            }
+                            elseif($score ==2){
+                                $image = "<img src = 'assets/images/2_stars.PNG' alt = '2_star' height = '15px'>";
+                            }
+                            elseif($score ==3){
+                                $image = "<img src = 'assets/images/3_stars.PNG' alt = '3_star' height = '15px'>";
+                            }
+                            elseif($score ==4){
+                                $image = "<img src = 'assets/images/4_stars.PNG' alt = '4_star' height = '15px'>";
+                            }
+                            elseif($score ==5){
+                                $image = "<img src = 'assets/images/5_stars.PNG' alt = '5_star' height = '15px'>";
+                            }
+
+                            echo "<div class='review'>";
+                            echo "<h3>{$row['review_title']} &nbsp;&nbsp;&nbsp;&nbsp; {$image} </h3>";;
+                            echo "<p>{$row['review_text']}</p>";
+                            echo "<p>{$row['first_name']} {$row['surname']}<br>{$row['review_date']}</p></div>";
+                        }
+//free result set
+                        mysqli_free_result($result);
+                    }else{
+                        echo "No records matching your query were found.";
+                    }
+                }
+                ?>
+                <p><a href="more_reviews_sp.php">More Reviews</a></p>
+            </div>
+        </div>
+    </div>
+
 
 </main>
 <footer class="footer">
