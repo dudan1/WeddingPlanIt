@@ -36,7 +36,7 @@
             <label class="ac-label" for="ac-3">Who runs Wedding Plan<font
                         color="red">I</font>t?<i></i></label>
             <div class="article ac-content">
-                <p>"JDTN" (CMM007, Group D).</p>
+                <p>"JDTN" (CMM004, Group D).</p>
             </div>
         </div>
         <!-- accordion item 3 -- end -->
