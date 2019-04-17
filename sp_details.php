@@ -16,8 +16,8 @@ if (!IsSet($_SESSION["name"]))
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
 
-<link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicons/superceded/favicon1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
     <style>
         .heading{

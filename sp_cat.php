@@ -3,6 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+
 </head>
 <!--<body style=" background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)),url(assets/images/wed.jpg);">-->
 <body>
