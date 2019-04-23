@@ -23,7 +23,7 @@
 
     <h1>Wedding Planit<br/></h1>
 
-    <H2>Change password (you will receive an email containing a token to reset your password):</H2>
+    <H2>You will receive an email containing a token to reset your password.</H2>
 
     <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Reset', this); return false;" method="post">
 
@@ -31,10 +31,14 @@
         <input type="hidden" name="from_name" value="Mr Pickle">
         <input type="hidden" name="insert_token_var" value="R2D2C3P0">
 
-        <button type="submit">Reset</button>
+        <button type="submit">Request Token</button>
 
-        <!--            <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>-->
-        <!--        </form>-->
+        </form>
+<hr>
+    <form id="another form">
+        <p align="left">Enter Token: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
+        <button type="submit">Submit Token</button>
+    </form>
 
 </div>
 
@@ -44,6 +48,7 @@
         emailjs.init("user_ckWAao4PCR1a26IP36zAp");
     })();
 </script>
+
 
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';?>
