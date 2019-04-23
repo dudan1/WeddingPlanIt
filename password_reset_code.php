@@ -45,7 +45,6 @@
     })();
 </script>
 
-
 <footer class="footer">
     <?php require 'Templates/footer/footer.php';?>
 </footer>
