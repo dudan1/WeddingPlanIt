@@ -3,11 +3,12 @@ session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:../index.php");
 require_once('db.php');
-
+$user_type = $_POST['user_type'];
+if($user_type == "Service Provider" OR $user_type == "Customer"){
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $pwd1 = mysqli_real_escape_string($connection, $_POST['pwd1']);
 $pwd1 = password_hash($pwd1, PASSWORD_DEFAULT);
-$user_type = $_POST['user_type'];
+
 
 // Check connection
 if ($connection === false) {
@@ -48,9 +49,10 @@ else{
     else{
         echo "User_type Invalid";
     }
-
-
-
+}
+else { echo "You hacker you";
+header('Location:../index.php');
+}
 
 mysqli_close($connection);
 ?>

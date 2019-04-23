@@ -33,7 +33,11 @@ if($count > 0){
             } elseif ($row['user_type'] == 'Service Provider') {
                 $_SESSION['user_type'] = $row['user_type'];
                 header('Location:../sp_home.php');
-            } else {
+            }
+            elseif ($row['user_type'] == 'Admin') {
+                $_SESSION['user_type'] = $row['user_type'];
+                header('Location:../admin_manage_accounts.php');
+            }else {
                 echo "User details are wrong";
             }
         } else {
