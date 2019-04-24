@@ -48,7 +48,10 @@ if($_SESSION['user_type'] != 'Admin'){
     <?php require 'Templates/navbar/navbar_admin.php';?>
 </header>
 <main>
-    <div style="padding-top: 200px">
+    <div class = grid-container>
+         <div class = 'grid-100'>
+            <div class ='review-container'>
+    <div style="padding-top: 50px">
     <form action="PHP_database_insert/admin_view_reviews.php">
         <h3>Select which service provider's reviews you want to display</h3>
         Time Period: <select id="sp_id" name="sp_id" onchange="getReviews(this.value)">
@@ -64,6 +67,9 @@ if($_SESSION['user_type'] != 'Admin'){
     </form>
     </div>
     <div id="reviewTable"><b>Reviews will be listed here.</b></div>
+            </div>
+         </div>
+    </div>
 </main>
 
 

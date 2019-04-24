@@ -3,9 +3,7 @@ session_start();
 require 'db.php';
 $sp_id= mysqli_real_escape_string($connection,$_GET['sp_id']);
 
-echo"<div class = grid-container>";
-      echo" <div class = 'grid-100'>";
-           echo "<div class ='review-container'>";
+
 
                 $sql = " select r.review_id, r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
                         from reviews r JOIN customer c ON r.SP_ID = '$sp_id' AND c.C_ID = r.C_ID";
@@ -44,7 +42,5 @@ echo"<div class = grid-container>";
                     }
                 }
 
-            echo"  </div>";
-        echo"  </div>";
-  echo"  </div>";
+
 ?>
