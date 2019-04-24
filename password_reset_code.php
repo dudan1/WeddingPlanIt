@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+$token = $_SESSION['token'];
+$email = $_SESSION['email'];
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,14 +36,15 @@
 
     <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Reset', this); return false;" method="post">
 
-        <input type="hidden" name="reply_to" value="ncfbuy@gmail.com">
-        <input type="hidden" name="from_name" value="Mr Pickle">
-        <input type="hidden" name="insert_token_var" value="R2D2C3P0">
+        <input type="hidden" name="reply_to" value="<?php echo $email ?>">
+        <input type="hidden" name="from_name" value="User password change request">
+        <input type="hidden" name="insert_token_var" value="<?php echo $token ?>">
 
         <button type="submit">Request Token</button>
 
         </form>
 <hr>
+
     <form id="another form">
         <p align="left">Enter Token: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
         <button type="submit">Submit Token</button>
