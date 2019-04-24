@@ -3,7 +3,7 @@ session_start();
 if (!IsSet($_SESSION["name"]))
     header("Location:index.php");
 if (($_SESSION["user_type"]) != "Customer")
-    header("Location:sp_home.php");
+    header("Location:index.php");
 
 require_once('PHP_database_insert/db.php');
 

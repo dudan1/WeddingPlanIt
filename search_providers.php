@@ -64,8 +64,9 @@ if (!IsSet($_SESSION["name"]))
             //assign search variable
             $search_value = $_GET['search_value'];
             //run query
-            $sql = "SELECT s.SP_ID, i.SP_ID, s.category, s.business_name, s.price, s.description, i.image_type, i.photo_name, i.link
-            from service_provider s, images i WHERE s.SP_ID = i.SP_ID AND s.category = '$search_value' AND i.image_type = 'logo' ORDER BY price ASC";
+            $sql = "SELECT s.SP_ID, i.SP_ID, s.category, s.business_name, s.price, s.description, s.IsVetted, i.image_type, i.photo_name, i.link
+            from service_provider s, images i WHERE s.SP_ID = i.SP_ID AND s.category = '$search_value'  AND i.image_type = 'logo'
+             AND s.IsVetted = '1' ORDER BY price ASC";
             if ($result = mysqli_query($connection, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     echo "<div class='sp-row'>";
@@ -112,7 +113,10 @@ if (!IsSet($_SESSION["name"]))
                 }else{
                     echo "No records matching your query were found.";
                 }
-            } //end
+            }
+            $sql = "SELECT SP_ID, category, business_name, price, description, IsVetted
+            from service_provider WHERE category = '$search_value'  AND i.image_type = 'logo'
+             AND s.IsVetted = '1' ORDER BY price ASC";
 
      // to sort price in ascending order
           if(isset($_GET['cost'])) {

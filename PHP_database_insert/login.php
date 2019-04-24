@@ -21,10 +21,11 @@ $count =mysqli_num_rows($result);
 if($count > 0){
 
     while($row = mysqli_fetch_array($result)) {
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['password']) AND $row['IsSuspended'] == 0) {
 
             $_SESSION['name'] = $email;
             $_SESSION['password'] = $password;
+            $response = array('success' => true, 'message' => 'Login successful');
 
             if ($row['user_type'] == 'Customer') {
                 $_SESSION['user_type'] = $row['user_type'];
@@ -33,20 +34,26 @@ if($count > 0){
             } elseif ($row['user_type'] == 'Service Provider') {
                 $_SESSION['user_type'] = $row['user_type'];
                 header('Location:../sp_home.php');
-            } else {
+            }
+            elseif ($row['user_type'] == 'Admin') {
+                $_SESSION['user_type'] = $row['user_type'];
+                header('Location:../admin_manage_accounts.php');
+            }else {
                 echo "User details are wrong";
             }
         } else {
             session_destroy();
             $error = 'Your login email or password is invalid';
             header('Location:../index.php');
+            $response = array('success' => false, 'message' => 'Login fail');
 
         }
             }
     }else{
     session_destroy();
        $error = 'Your login email or password is invalid';
-    header('Location:../index.php');
+    $response = array('success' => false, 'message' => 'Login fail');
+   header('Location:../index.php');
 }
 
 
