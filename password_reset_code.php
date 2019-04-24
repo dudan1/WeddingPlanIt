@@ -34,22 +34,24 @@ $email = $_SESSION['email'];
 
     <h1>Wedding Planit<br/></h1>
 
-    <H2>You will receive an email containing a token to reset your password.</H2>
+    <H3>In order to complete your password reset, we will email you a verification code token.  Please click the blue "GET TOKEN" button below and wait for your email to arrive.</H3>
 
     <form id="myform" onsubmit="emailjs.sendForm('outlook', 'Reset', this); return false;" method="post">
 
         <input type="hidden" name="reply_to" value="<?php echo $email ?>">
-        <input type="hidden" name="from_name" value="User password change request">
+<!--        <input type="hidden" name="from_name" value="User password change request">-->
         <input type="hidden" name="insert_token_var" value="<?php echo $token ?>">
 
-        <button type="submit">Request Token</button>
+        <button class="button1" type="submit">GET TOKEN</button>
 
         </form>
 <hr>
+    <H3>When you have received your code, type it in the box below and click the green "Submit Token" button.</H3>
+    <form id="another form" action="new_password.php" method="GET">
+<!--        <p align="left">Enter Token: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>-->
+        <p align="left">Enter Token:<input type="text" required name="token"></p>
 
-    <form id="another form">
-        <p align="left">Enter Token: <textarea rows="1" cols="23" required name="from_name" maxlength="30"></textarea></p>
-        <button type="submit">Submit Token</button>
+        <button class="button2" type="submit" name="new_password">Submit Token</button>
     </form>
 
 </div>

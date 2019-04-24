@@ -55,7 +55,7 @@ if (isset($_POST['reset-password'])) {
     }
     // generate a unique random token of length 100
     //$token = bin2hex(random_bytes(50));
-    $token = bin2hex(openssl_random_pseudo_bytes(5));
+    $token = bin2hex(openssl_random_pseudo_bytes(3));
 
     if (count($errors) == 0) {
         // store token in the password-reset database table against the user's email
@@ -97,7 +97,7 @@ if (isset($_POST['new_password'])) {
             $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);
             $sql = "UPDATE users SET password='$new_pass' WHERE email='$email'";
             $results = mysqli_query($connection, $sql);
-            header('location: ../index.php');
+            header('location: ../success.php');
         }
 //    }
 }

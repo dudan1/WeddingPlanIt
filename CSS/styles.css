@@ -99,6 +99,21 @@ body {font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     z-index: -2;
 }
+
+.bg-text6 {
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity/see-through - For Details Forms */
+    color: green;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    z-index: -2;
+}
 .admin {
     background-color: rgba(255,255,255, 0.9); /* Black w/opacity/see-through - For Details Forms */
     /*color: white;*/
@@ -173,7 +188,7 @@ span.psw {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 2;
+    z-index: 10000;
     left: 2px;
     top: 0;
     width: 100%; /* Full width */
@@ -200,6 +215,7 @@ span.psw {
     color: #000;
     font-size: 35px;
     font-weight: bold;
+    z-index: 9999;
 }
 
 .close:hover,
@@ -282,10 +298,38 @@ html {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color:darkseagreen;
+    background-color: #b76dbc;
     text-align: center;
     cursor: pointer;
     width: 100%;
+}
+.button1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #2579bc;
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+
+}
+
+.success {
+    color: #009200;
+}
+.button2 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #218b26;
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+
 }
 .bt1 a{
     text-decoration: none;

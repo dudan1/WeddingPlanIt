@@ -25,7 +25,7 @@
 <form class="login-form" action="PHP_database_insert/app_logic.php" method="post">
     <h2 class="form-title">Reset password</h2>
     <!-- form validation messages -->
-    <?php include('messages.php'); ?>
+<!--    --><?php //include('messages.php'); ?>
     <div class="form-group">
         <label>Your email address</label>
         <input required type="email" name="email">

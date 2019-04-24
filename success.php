@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
 <head>
-
     <meta charset="UTF-8">
-    <title>FAQs</title>
+    <title>Wedding PlanIt</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
-    <link rel="stylesheet" type="text/css" href="CSS/accordion.css">
 
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
 
+
 </head>
+
 <body>
 <header>
-    <?php require 'Templates/navbar/navbar_out.php';
-    ?>
+<?php require 'Templates/navbar/navbar_out.php';?>
 
     <p><button class="btn5 info5" onclick="document.getElementById('id02').style.display='block'" style="width:110px;height:auto;float:right">Log In</button></p>
 
@@ -30,7 +28,7 @@
                 <h2>LOGIN</h2>
 
                 <p>Your email:</p>
-                <p><input type="email" required name="email"></p>
+                <p><input type="email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
                 <p>Your Password:</p>
                 <p><input type="password" required name="pwd1"></p>
 
@@ -58,7 +56,7 @@
                         <option>Customer</option>
                     </select>
                 <p>Your email:</p>
-                <p><input type="email" required name="email"></p>
+                <p><input type="email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
                 <p>Password: <input type="password" required name="pwd1"></p>
                 <p>Confirm Password: <input type="password" required name="pwd2"></p>
 
@@ -71,17 +69,23 @@
     </div>
 
 </header>
+
 <main>
-    <?php require 'Templates/about_us/faq_text.php';?>
+<div class="grid-container2">
+    <div class="grid-50">
+        <div class = "bg-text6">
+
+            <h1>You have successfully changed your password.<br>Please log in above.</h1>
+
+        </div>
+    </div>
+</div>
 
 </main>
 
 <footer class="footer">
-    <?php require 'Templates/footer/footer.php';
-
-    ?>
+    <?php require 'Templates/footer/footer.php';?>
 </footer>
 
 </body>
 
-</html>
