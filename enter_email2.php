@@ -15,6 +15,7 @@
 
 </head>
 
+
 <body>
 <header>
     <?php require 'Templates/navbar/navbar_cust.php';?>

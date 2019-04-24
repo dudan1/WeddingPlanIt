@@ -28,6 +28,8 @@ $email = $_SESSION['email'];
 
 <div class = "bg-text3">
 
+
+
     <!-- Main -->
 
     <h1>Wedding Planit<br/></h1>

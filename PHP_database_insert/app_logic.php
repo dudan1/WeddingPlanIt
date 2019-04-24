@@ -37,6 +37,7 @@ if (isset($_POST['login_user'])) {
     }
 }
 
+
 /*
   Accept email of user whose password is to be reset
   Send email to user to reset their password
