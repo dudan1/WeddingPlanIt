@@ -25,6 +25,7 @@ if($count > 0){
 
             $_SESSION['name'] = $email;
             $_SESSION['password'] = $password;
+            $response = array('success' => true, 'message' => 'Login successful');
 
             if ($row['user_type'] == 'Customer') {
                 $_SESSION['user_type'] = $row['user_type'];
@@ -44,13 +45,15 @@ if($count > 0){
             session_destroy();
             $error = 'Your login email or password is invalid';
             header('Location:../index.php');
+            $response = array('success' => false, 'message' => 'Login fail');
 
         }
             }
     }else{
     session_destroy();
        $error = 'Your login email or password is invalid';
-    header('Location:../index.php');
+    $response = array('success' => false, 'message' => 'Login fail');
+   header('Location:../index.php');
 }
 
 

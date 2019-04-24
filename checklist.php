@@ -61,20 +61,115 @@ if (($_SESSION["user_type"]) != "Customer")
 
 <div id="checklist">
     <p>This checklist helps you build your wedding plan. WeddingPlanIt helps you choose and book providers in the following categories:</p>
-
-    <p>Beautician</p>
-
-    <p>Caterer</p>
-    <p>Decor</p>
-    <p>Dresses</p>
-    <p>Flowers </p>
-    <p>Jeweller</p>
-    <p>Music</p>
-    <p>Photography </p>
-    <p>Venue</p>
-    <p>Wedding Planners</p>
+<?php
+require 'PHP_database_insert/db.php';
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+$count=mysqli_num_rows($result);
 
 
+   echo"<p>Beautician: ";
+   while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if($row['category'] =='Beautician' OR $row['category'] == 'beautician' ){
+    echo "Booked {$business}";
+}
+ }
+    echo"</p><p>Caterer: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+   while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if($row['category'] =='Caterer' OR $row['category'] == 'caterer')
+{ echo "Booked {$business}";
+        }
+    }
+
+   echo" </p><p>Decor: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)) {
+    $business = $row['business_name'];
+    if ($row['category'] == 'Decor' OR $row['category'] == 'decor') {
+        echo "Booked {$business}";
+        }
+    }
+  echo"  </p><p>Dresses:";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)) {
+    $business = $row['business_name'];
+    if($row['category'] == 'Dresses' OR $row['category'] == 'dresses'){
+        echo "Booked {$business}";
+}
+}
+  echo" </p><p>Flowers: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if ($row['category'] == 'Flowers' OR $row['category'] == 'flowers') {
+    echo "Booked {$business}";
+}
+}
+   echo"  </p><p>Jeweller: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+    $category = $row['category'];
+if ($category = 'Jeweller' OR $category = 'jeweller') {
+    echo "Booked {$business}";
+}
+}
+ echo"  </p> <p>Music: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while ($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if ($row['category'] == 'Music' OR $row['category'] == 'music') {
+    echo "Booked {$business}";
+}
+}
+  echo"  </p><p>Photography: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if ($row['category'] == 'Photography' OR $row['category'] == 'photographer') {
+    echo "Booked {$business}";
+}
+}
+   echo"</p> <p>Venue: </p>";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if ($row['category'] == 'Venue' OR $row['category'] == 'venue') {
+    echo "Booked {$business}";
+}
+}
+ echo"  </p> <p>Wedding Planners: ";
+$sql ="select b.C_ID, b.cancelled, b.SP_ID, s.SP_ID, s.business_name, s.category from bookings b, service_provider s 
+where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_array($result)){
+    $business = $row['business_name'];
+if ($row['category'] == 'Wedding Planner' OR $row['category'] == 'wedding planner') {
+    echo "Booked {$business}";
+}
+}
+
+?>
 </div>
     </div>
 </div>

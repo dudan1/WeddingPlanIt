@@ -116,7 +116,7 @@ if (!IsSet($_SESSION["name"]))
                     </tr>
                 </table>
             </div>
-            Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea>
+            <p>Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea></p>
             <button type="submit">Submit details</button>
 
             <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>

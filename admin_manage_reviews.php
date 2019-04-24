@@ -54,7 +54,7 @@ if($_SESSION['user_type'] != 'Admin'){
     <div style="padding-top: 50px">
     <form action="PHP_database_insert/admin_view_reviews.php">
         <h3>Select which service provider's reviews you want to display</h3>
-        Time Period: <select id="sp_id" name="sp_id" onchange="getReviews(this.value)">
+        Serivce Provider: <select id="sp_id" name="sp_id" onchange="getReviews(this.value)">
             <option value =""></option>
            <?php require_once ('PHP_database_insert/db.php');
             $sql = "SELECT SP_ID, business_name FROM service_provider";
