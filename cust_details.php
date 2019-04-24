@@ -74,7 +74,7 @@
 <body>
 
 <header>
-    <?php require '/Templates/navbar/navbar_cust.php';?>
+    <?php require 'Templates/navbar/navbar_cust.php';?>
 <!--    <div class="row">
         <div class="logo">
             <img src="assets/images/logo1.png" alt="wedding band">

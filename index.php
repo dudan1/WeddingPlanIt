@@ -35,7 +35,7 @@
                 <button type="submit">Log in</button>
 
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+                <p>&#128533; Forgot your password? <a href="enter_email.php">Reset Password</a> &#128578;</p>
             </div>
         </form>
     </div>

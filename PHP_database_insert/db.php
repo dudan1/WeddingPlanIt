@@ -1,7 +1,12 @@
 <?php
-$servername = "CSDM-WEBDEV";
+/*$servername = "CSDM-WEBDEV";
 $username = "1809591";
 $password = "1809591";
+$dbname = "db1809591_cmm007";*/
+
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "db1809591_cmm007";
 
 // Create connection
