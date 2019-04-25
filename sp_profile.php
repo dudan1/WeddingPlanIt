@@ -32,7 +32,6 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 <!DOCTYPE html>
 <head>
     <title>Service Provider Profile Page</title>
-    <title>Contact Us Page</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">

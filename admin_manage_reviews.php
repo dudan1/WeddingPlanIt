@@ -6,6 +6,7 @@ if($_SESSION['user_type'] != 'Admin'){
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
@@ -71,7 +72,9 @@ if($_SESSION['user_type'] != 'Admin'){
          </div>
     </div>
 </main>
-
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
+</footer>
 
 </body>
 

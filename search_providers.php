@@ -5,9 +5,10 @@ if (!IsSet($_SESSION["name"]))
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
     <meta charset="UTF-8">
-    <title>Customer Homepage</title>
+    <title>Search Service Providers</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">

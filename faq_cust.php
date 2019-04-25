@@ -1,14 +1,15 @@
 <?php
 /*session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 */ ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
-    <title>FAQs</title>
+    <title>About Us / FAQs</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">

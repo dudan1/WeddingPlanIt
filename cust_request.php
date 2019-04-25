@@ -18,6 +18,7 @@ $c_name = $row['first_name']." ".$row['surname'];
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">

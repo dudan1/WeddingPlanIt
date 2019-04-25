@@ -2,7 +2,7 @@
 session_start();
 require_once('db.php');
 if (!IsSet($_SESSION["name"]))
-    header("Location:../index.html");
+    header("Location:../index.php");
 $session_email = $_SESSION["name"];
 
 $sql = "SELECT SP_ID FROM service_provider WHERE '$session_email' = email";

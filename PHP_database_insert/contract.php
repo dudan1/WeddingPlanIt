@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:../index.html");
+    header("Location:../index.php");
 require_once('db.php');
 
 $cust_id = $_POST['cust_id'];

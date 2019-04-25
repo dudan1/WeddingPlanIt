@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 if (($_SESSION["user_type"]) != "Customer")
     header("Location:index.php");
 
@@ -20,6 +20,7 @@ if (($_SESSION["user_type"]) != "Customer")
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
     <meta charset="UTF-8">
     <title>Wedding Plan</title>
@@ -79,7 +80,7 @@ echo "<br>";
             //free result set
                 mysqli_free_result($result2);
         }else{
-                echo "You have not started building your wedding plan. Look at our Checklist help you through out the process, then Go to your Homepage to select provider(s).";
+                echo "You have not started building your wedding plan. Look at our Checklist to help you through out the process, then Go to your Homepage to select provider(s).";
             }
 
 

@@ -6,7 +6,7 @@ session_start();
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Peru varaus</title>
+<title>Calendar Delete</title>
 </head>
 
 <body>

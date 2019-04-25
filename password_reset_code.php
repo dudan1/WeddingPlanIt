@@ -1,13 +1,21 @@
 <?php
+//session_start();
+//$token = $_SESSION['token'];
+//$email = $_SESSION['email'];
+//
+//?>
+<?php
 session_start();
-$token = $_SESSION['token'];
-$email = $_SESSION['email'];
+if (!IsSet($_SESSION["name"]))
+    header("Location:index.php");
+    $token = $_SESSION['token'];
+    $email = $_SESSION['email'];
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
