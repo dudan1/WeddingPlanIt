@@ -55,7 +55,7 @@ $c_name = $row['first_name']." ".$row['surname'];
 
         <button type="submit">Submit details</button>
 
-        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel and leave</button>
+        <button type="button" onclick="location.href='cust_home.php';" class="cancelbtn">Cancel and leave</button>
     </form>
 </div>
 

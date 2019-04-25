@@ -13,7 +13,7 @@
 
             <button type="submit">Submit details</button>
 
-            <button type="button" onclick="location.href='cust_home.php';" class="cancelbtn">Cancel</button>
+            <button type="button" onclick="location.href='sp_home.php';" class="cancelbtn">Cancel</button>
         </form>
         <hr/>
         <p>Or via email:</p>
