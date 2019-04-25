@@ -30,7 +30,7 @@
                 <h2>LOGIN</h2>
 
                 <p>Your email:</p>
-                <p><input type="email" required name="email"></p>
+                <p><input type="email" required name="email" autofocus="autofocus"></p>
                 <p>Your Password:</p>
                 <p><input type="password" required name="pwd1"></p>
 

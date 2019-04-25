@@ -8,15 +8,14 @@ body {
     overflow: no-content;
     /*background-color: #eee;*/
     background: rgba(255, 255, 255, 0.8);
-    position: fixed; /* Set the navbar to fixed position */
+    position: fixed;
     top: 0;
     left: 3%;
     right: 3%;
-    /*width: 100%; !* Full width *!*/
     z-index: 99;
 }
 
-.topnav img{
+.topnav img {
     max-height: 60px;
     max-width: 480px;
 }
@@ -30,7 +29,7 @@ body {
     font-size: 17px;
     margin: 0 auto;
     display: block;
-    }
+}
 
 .topnav a:hover {
     background-color: #4CAF50;
@@ -47,7 +46,10 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    .topnav a:not(:first-child) {display: none;}
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
     .topnav a.icon {
         float: left;
         display: block;
@@ -55,13 +57,17 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    .topnav.responsive {position: absolute;}
+    .topnav.responsive {
+        position: absolute;
+    }
+
     .topnav.responsive .icon {
         position: relative;
         left: 0;
         top: 0;
 
     }
+
     .topnav.responsive a {
         float: none;
         display: block;
@@ -72,7 +78,6 @@ body {
 .responsive {
     width: 100%;
     height: 100%;
-    /*max-height: 60px;*/
-    /*max-width: 480px;*/
+
 }
 
