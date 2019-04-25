@@ -22,7 +22,7 @@ include('PHP_database_insert/app_logic.php');
 
 <body>
 <header>
-    <?php require 'Templates/navbar/navbar_cust.php';?>
+    <?php require 'Templates/navbar/navbar_out.php';?>
 </header>
 <main>
     <div class="bg-text3">
