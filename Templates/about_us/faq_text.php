@@ -68,7 +68,7 @@
             <input class="ac-input" id="ac-6" name="accordion-1" type="checkbox"/>
             <label class="ac-label" for="ac-6">How much is the extended warranty?<i></i></label>
             <div class="article ac-content">
-                <p>For each 5 year extension, we merely ask for 10% of your soul.</p>
+                <p>For each 5 year extension, we merely ask for all your money and possessions.</p>
             </div>
         </div>
         <!-- accordion item 6 -- end -->

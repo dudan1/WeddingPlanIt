@@ -28,7 +28,7 @@
                 <h2>LOGIN</h2>
 
                 <p>Your email:</p>
-                <p><input type="email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
+                <p><input type="email" required name="email" autofocus="autofocus" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
                 <p>Your Password:</p>
                 <p><input type="password" required name="pwd1"></p>
 
