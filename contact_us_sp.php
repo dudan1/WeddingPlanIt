@@ -20,7 +20,7 @@
     <?php require 'Templates/navbar/navbar_sp.php';?>
 </header>
 
-<?php require 'Templates/contact_us/cu_text.php';?>
+<?php require 'Templates/contact_us/sp_text.php';?>
 
 
 <footer class="footer">

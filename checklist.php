@@ -123,8 +123,8 @@ where b.C_ID = '$cust_id' AND b.cancelled = '0' AND s.SP_ID = b.SP_ID";
 $result = mysqli_query($connection, $sql);
 while($row = mysqli_fetch_array($result)){
     $business = $row['business_name'];
-    $category = $row['category'];
-if ($category = 'Jeweller' OR $category = 'jeweller') {
+
+if ($row['category'] == 'Jeweller' OR $row['category'] == 'jeweller') {
     echo "Booked {$business}";
 }
 }
