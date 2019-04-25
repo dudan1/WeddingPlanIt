@@ -1,17 +1,17 @@
 <?php
-//session_start();
-//$token = $_SESSION['token'];
-//$email = $_SESSION['email'];
-//
-//?>
-<?php
 session_start();
-if (!IsSet($_SESSION["name"]))
-    header("Location:index.php");
-    $token = $_SESSION['token'];
-    $email = $_SESSION['email'];
+$token = $_SESSION['token'];
+$email = $_SESSION['email'];
 
 ?>
+<?php
+//session_start();
+//if (!IsSet($_SESSION["name"]))
+//    header("Location:index.php");
+//    $token = $_SESSION['token'];
+//    $email = $_SESSION['email'];
+//
+//?>
 
 <!DOCTYPE html>
 <html>
