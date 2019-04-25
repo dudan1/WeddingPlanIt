@@ -52,6 +52,7 @@ if (isset($_POST['reset-password'])) {
         array_push($errors, "Your email is required");
     }else if(mysqli_num_rows($results) <= 0) {
         array_push($errors, "Sorry, no user exists on our system with that email");
+       header('location:../enter_email2.php');
     }
     // generate a unique random token of length 100
     //$token = bin2hex(random_bytes(50));
