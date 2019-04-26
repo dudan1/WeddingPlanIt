@@ -31,7 +31,6 @@ session_start();
 		else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 		}
-		
 		mysqli_close($connection);
 	}
 ?>
