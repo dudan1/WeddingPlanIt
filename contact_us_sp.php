@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
+
 <head>
 
     <meta charset="UTF-8">

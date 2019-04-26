@@ -1,6 +1,7 @@
-<?php include('PHP_database_insert/app_logic.php'); ?>
+<?php include('PHP_database_insert/password_reset.php'); ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
@@ -22,13 +23,13 @@
 </header>
 <main>
 <div class="bg-text3">
-<form class="login-form" action="PHP_database_insert/app_logic.php" method="post">
+<form class="login-form" action="PHP_database_insert/password_reset.php" method="post">
     <h2 class="form-title">Reset password</h2>
     <!-- form validation messages -->
 <!--    --><?php //include('messages.php'); ?>
     <div class="form-group">
-        <label>Your email address</label>
-        <input required type="email" name="email">
+        <label>To reset your password, please enter the email address associated with your account.<br><p>&nbsp;</p></label>
+        <input required type="email" name="email" size="30" placeholder="Insert email here">
     </div>
     <div class="form-group">
         <button type="submit" name="reset-password" class="login-btn">Submit</button>
@@ -37,6 +38,10 @@
 </div>
 </main>
 </body>
+
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php'; ?>
+</footer>
 
 </html>
 

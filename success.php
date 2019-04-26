@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Wedding PlanIt</title>
+    <title>Password has been reset</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">

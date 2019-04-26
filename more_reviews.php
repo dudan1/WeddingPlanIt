@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 
 require_once('PHP_database_insert/db.php');
 
@@ -12,6 +12,7 @@ $row = ($row = mysqli_fetch_array($result));
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
     <meta charset="UTF-8">
     <title>More Reviews</title>

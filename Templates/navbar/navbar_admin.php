@@ -3,7 +3,7 @@
 
 <div class="topnav" id="myTopnav">
     <div>
-        <a href="index.php"><img src="assets/images/logo1.png" alt="image link back to portal"
+        <a href="admin_manage_accounts.php"><img src="assets/images/logo1.png" alt="image link back to portal"
                                  title="image link back to portal" class="responsive"></a>
     </div>
     <a href="admin_manage_reviews.php">Manage Reviews</a>

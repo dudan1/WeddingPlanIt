@@ -112,6 +112,9 @@ if($_SESSION['user_type'] != 'Admin'){
     </div>
 </main>
 
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php';?>
+</footer>
 
 </body>
 

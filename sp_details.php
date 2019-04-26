@@ -1,17 +1,18 @@
 <?php
 session_start();
 if (!IsSet($_SESSION["name"]))
-    header("Location:index.html");
+    header("Location:index.php");
 
 ?>
 
 
     <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
-    <title>Service Provider Search Page</title>
+    <title>Service Provider Profile</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <!--<link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">-->
@@ -119,7 +120,7 @@ if (!IsSet($_SESSION["name"]))
             <p>Say something about your business: <textarea required name="description" rows="7" cols="42"> </textarea></p>
             <button type="submit">Submit details</button>
 
-            <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
+            <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>
         </form>
 
 </div>

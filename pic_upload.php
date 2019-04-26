@@ -13,7 +13,7 @@ if (($_SESSION["user_type"]) != "Service Provider") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us Page</title>
+    <title>Manage Images</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">

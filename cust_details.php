@@ -8,10 +8,11 @@
 ?>
 <!DOCTYPE html>
 <html>
+<!-- Acknowledgements of sources can be found in the footer of each page -->
 <head>
 
     <meta charset="UTF-8">
-    <title>Service Provider Search Page</title>
+    <title>Customer Profile</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
     <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
@@ -96,7 +97,7 @@
 
         <button type="submit">Submit details</button>
 
-        <button type="button" onclick="location.href='index.html';" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="location.href='index.php';" class="cancelbtn">Cancel</button>
     </form>
 
 </div>
