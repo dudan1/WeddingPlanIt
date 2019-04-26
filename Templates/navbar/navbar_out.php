@@ -3,7 +3,7 @@
 
 <div class="topnav" id="myTopnav" itemscope>
     <div>
-        <a href="index.php"><img src="assets/images/logo1.png" alt="image link back to portal"
+    <a href="index.php"><img src="assets/images/logo1.png" alt="image link back to portal"
                                  title="image link back to portal" class="responsive"></a>
     </div>
     <a href="faq.php">About Us/FAQs</a>
