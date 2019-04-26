@@ -60,7 +60,7 @@ echo "<br>";
         require_once ('PHP_database_insert/db.php');
         $sql2 = "SELECT business_name, category, price 
             FROM bookings c, service_provider s
-            WHERE c.SP_ID = s.SP_ID AND c.C_ID = '$cust_id' AND cancelled = '0'";
+            WHERE c.SP_ID = s.SP_ID AND c.C_ID = '$cust_id' AND c.cancelled = '0'";
         if ($result2 = mysqli_query($connection, $sql2)) {
             $allexpense = 0;
             if (mysqli_num_rows($result2) > 0) {
