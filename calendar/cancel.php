@@ -24,7 +24,7 @@ session_start();
 
 		$id = intval(htmlspecialchars($_POST["id"]));
 
-		$sql = "UPDATE bookings SET canceled=1 WHERE id = $id";
+		$sql = "UPDATE bookings SET cancelled=1 WHERE id = $id";
 		if (mysqli_query($connection, $sql)) {
 			echo "<h3>Booking cancelled.</h3>";
 		}
