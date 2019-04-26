@@ -194,7 +194,7 @@ if (!IsSet($_SESSION["name"]))
                 <?php
                 // to display reviews
               $sql =  " select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
-                        from reviews r JOIN customer c ON r.SP_ID = '$id' AND c.C_ID = r.C_ID ORDER BY RAND()";
+                        from reviews r JOIN customer c ON r.SP_ID = '$id' AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";
 
                 /*$sql = "select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname
                         from reviews r, customer c where c.C_ID = $_SESSION[cust_id] AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";*/

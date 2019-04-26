@@ -148,7 +148,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
                 <h2>Your Reviews</h2>
                 <?php
                 $sql =  " select r.review_title, r.review_score , r.review_text, r.review_date, c.first_name, c.surname 
-                        from reviews r JOIN customer c ON r.SP_ID = '$_SESSION[SP_ID]' AND c.C_ID = r.C_ID ORDER BY RAND()";
+                        from reviews r JOIN customer c ON r.SP_ID = '$_SESSION[SP_ID]' AND c.C_ID = r.C_ID ORDER BY RAND() LIMIT 3";
 
 
                 if ($result = mysqli_query($connection, $sql)) {
