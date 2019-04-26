@@ -29,7 +29,7 @@ session_start();
 			echo "<h3>Booking cancelled.</h3>";
 		}
 		else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 		}
 		
 		mysqli_close($connection);
