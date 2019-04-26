@@ -28,7 +28,7 @@
     <!-- form validation messages -->
 <!--    --><?php //include('messages.php'); ?>
     <div class="form-group">
-        <label>Your email address</label>
+        <label>To reset your password, please enter the email address associated with your account.<br><p>&nbsp;</p></label>
         <input required type="email" name="email">
     </div>
     <div class="form-group">
@@ -38,6 +38,10 @@
 </div>
 </main>
 </body>
+
+<footer class="footer">
+    <?php require 'Templates/footer/footer.php'; ?>
+</footer>
 
 </html>
 
