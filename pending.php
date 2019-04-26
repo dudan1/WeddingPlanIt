@@ -1,4 +1,4 @@
-<?php include('PHP_database_insert/app_logic.php'); ?>
+<?php include('PHP_database_insert/password_reset.php'); ?>
 <!DOCTYPE html>
 <html>
 <!-- Acknowledgements of sources can be found in the footer of each page -->

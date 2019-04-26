@@ -1,7 +1,7 @@
 <?php
 $token = $_GET['token'];
 
-include('PHP_database_insert/app_logic.php');
+include('PHP_database_insert/password_reset.php');
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ include('PHP_database_insert/app_logic.php');
 </header>
 <main>
     <div class="bg-text3">
-        <form class="login-form" action="PHP_database_insert/app_logic.php" method="post">
+        <form class="login-form" action="PHP_database_insert/password_reset.php" method="post">
             <h2 class="form-title">New password</h2>
             <!-- form validation messages -->
             <!--    --><?php //include('messages.php'); ?>
